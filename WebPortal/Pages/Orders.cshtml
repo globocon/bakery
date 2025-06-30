@@ -1,0 +1,215 @@
+﻿@page
+@model WebPortal.Pages.OrdersModel
+@{
+	ViewData["Title"] = "Orders";
+}
+
+<!--breadcrumb-->
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+	<div class="breadcrumb-title pe-3">BMS</div>
+	<div class="ps-3">
+		<nav aria-label="breadcrumb">
+			<ol class="breadcrumb mb-0 p-0">
+				<li class="breadcrumb-item">
+					<a href="javascript:;"><i class="bx bx-home-alt"></i></a>
+				</li>
+				<li class="breadcrumb-item active" aria-current="page">Orders</li>
+			</ol>
+		</nav>
+	</div>
+</div>
+<!--end breadcrumb-->
+
+
+<div class="row">
+	<div class="col-xl-12 mx-auto">
+		<div class="card border-top border-0 border-4 border-primary">
+			<div class="card-body p-5">
+				<div class="card-title d-flex align-items-center">
+					<div>
+						<i class="bx bxs-store me-1 font-22 text-primary"></i>
+					</div>
+					<h5 class="mb-0 text-primary">New Order</h5>
+				</div>
+				<hr>
+				<form id="frmNormalOrder" name="frmNormalOrder" class="row g-3">
+					<div class="col-md-6">
+						<label for="inputDeliveryDate" class="form-label">Delivery Date</label>
+						<input type="text" class="form-control datepicker" id="inputDeliveryDate" />
+					</div>
+					<div class="col-md-6">
+						<label class="form-label">Customer</label>
+						<select class="single-select">
+							<option value="">Select Customer</option>
+							<option value="Moon Bakery">Moon Bakery</option>
+							<option value="Hotel Margretta">Hotel Margretta</option>
+							<option value="Best Bakery">Best Bakery</option>
+							<option value="Hotel Grand">Hotel Grand</option>
+							<option value="Roastown Grill">Roastown Grill</option>
+						</select>
+					</div>
+					<div class="card-title d-flex align-items-center">
+						<div>
+							<i class="bx bxs-list me-1 font-18 text-primary"></i>
+						</div>
+						<h5 class="mb-0 text-primary">Products</h5>
+					</div>
+					<hr>
+					<div class="col-md-3">
+						<div class="card bg-primary bg-gradient text-center">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">Egg Puffs</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty1" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom1">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card bg-primary bg-gradient text-center">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">Bread</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty2" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom2">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card bg-primary bg-gradient text-center">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">Milk Bread</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty3" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom3">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3 mb-0">
+						<div class="card bg-primary bg-gradient text-center mb-0">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">Cream Bun</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty4" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom4">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card bg-primary bg-gradient text-center mb-0">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">Burger Bun</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty5" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom5">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card bg-primary bg-gradient text-center mb-0">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">Choclate Doughnut</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty6" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom6">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card bg-primary bg-gradient text-center mb-0">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">White Forest Cake</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty7" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom7">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-3">
+						<div class="card bg-primary bg-gradient text-center mb-0">
+							<div class="card-body">
+								<label class="form-label  text-white rounded">Black Forest Cake</label>
+								<div class="input-group text-white rounded">
+									<input type="number" class="form-control" id="inputOrderQty8" placeholder="Enter Qty" />
+									<span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom8">Nos</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-12 pull-right">
+						<button type="button" class="btn btn-success pull-right px-5">Save</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="row">
+	<div class="col-xl-12 mx-auto">
+		<div class="card">
+			<div class="card-body p-5">
+				<div class="card-title d-flex align-items-center">
+					<div>
+						<i class="bx bxs-store me-1 font-22 text-primary"></i>
+					</div>
+					<h5 class="mb-0 text-primary">Special Order</h5>
+				</div>
+				<hr>
+				<form id="frmSpecialOrder" name="frmSpecialOrder" class="row g-3">
+					<div class="col-md-4">
+						<label class="form-label">Customer</label>
+						<select class="single-select">
+							<option value="">Select Customer</option>
+							<option value="Moon Bakery">Moon Bakery</option>
+							<option value="Hotel Margretta">Hotel Margretta</option>
+							<option value="Best Bakery">Best Bakery</option>
+							<option value="Hotel Grand">Hotel Grand</option>
+							<option value="Roastown Grill">Roastown Grill</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<label for="inputDeliveryDate" class="form-label">Delivery Date</label>
+						<input type="text" class="form-control datepicker" id="inputDeliveryDate" />
+					</div>
+					<div class="col-md-4">
+						<label for="inputDeliveryTime" class="form-label">Delivery Time</label>
+						<input type="text" class="form-control timepicker" id="inputDeliveryTime" />
+					</div>
+					<div class="col-md-4">
+						<label class="form-label">Product</label>
+						<select class="single-select">
+							<option value="Egg Puffs">Egg Puffs</option>
+							<option value="Bread">Bread</option>
+							<option value="Milk Bread">Milk Bread</option>
+							<option value="Cream Bun">Cream Bun</option>
+							<option value="Burger Bun">Burger Bun</option>
+							<option value="Choclate Doughnut">Choclate Doughnut</option>
+							<option value="White Forest Cake">White Forest Cake</option>
+							<option value="Black Forest Cake">Black Forest Cake</option>
+						</select>
+					</div>
+					<div class="col-md-4">
+						<label for="inputOrderQty" class="form-label">Order Qty</label>
+						<div class="input-group">
+							<input type="number" class="form-control" id="inputOrderQty" placeholder="Enter Qty" />
+							<span class="input-group-text bg-transparent" id="inputOrderQtyUom">Nos</span>
+						</div>
+					</div>
+					<div class="col-12 float-right">
+						<div class="pull-right float-right">
+							<button type="button" class="btn btn-success px-5 float-right">Save</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</div>

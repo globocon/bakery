@@ -1,0 +1,37 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!--favicon-->
+    <link rel="icon" href="/favicon-32x32.png" asp-append-version="true" type="image/png" />
+
+    <!-- Bootstrap CSS -->
+    <link href="~/assets/css/bootstrap.min.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-extended.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/app.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/icons.css" asp-append-version="true" rel="stylesheet">
+    <title>Thannickal Bakery - Bakery Management System</title>
+    @await RenderSectionAsync("PageHeaders", required: false)
+</head>
+<body class="bg-login">
+
+    @* <p class="nav navbar-text">Hello, @User.Identity?.Name!</p> *@
+
+    <!--wrapper-->
+    <div class="wrapper">
+        <div class="section-authentication-signin d-flex align-items-center justify-content-center my-5 my-lg-0">
+            <div class="container-fluid">
+                @RenderBody()
+            </div>
+        </div>
+    </div>
+    <!--end wrapper-->
+    <!-- Bootstrap JS -->
+    <script src="~/assets/js/bootstrap.bundle.min.js" asp-append-version="true"></script>
+    <!--plugins-->
+    <script src="~/assets/js/jquery.min.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+</body>
+</html>

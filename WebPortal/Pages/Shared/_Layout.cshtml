@@ -1,0 +1,313 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!--favicon-->
+    <link rel="icon" href="favicon-32x32.png" asp-append-version="true" type="image/png" />
+    <!--plugins-->
+    <link href="~/assets/plugins/simplebar/css/simplebar.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/plugins/perfect-scrollbar/css/perfect-scrollbar.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/plugins/metismenu/css/metisMenu.min.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" asp-append-version="true" rel="stylesheet">
+    <!-- loader-->
+    <!-- Bootstrap CSS -->
+    <link href="~/assets/css/bootstrap.min.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/bootstrap-extended.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/app.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/icons.css" asp-append-version="true" rel="stylesheet">
+    <!-- Theme Style CSS -->
+    <link href="~/assets/css/dark-theme.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/semi-dark.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/css/header-colors.css" asp-append-version="true" rel="stylesheet">
+
+    <link href="~/assets/plugins/select2/css/select2.min.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/plugins/select2/css/select2-bootstrap4.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/plugins/datetimepicker/css/classic.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/plugins/datetimepicker/css/classic.time.css" asp-append-version="true" rel="stylesheet">
+    <link href="~/assets/plugins/datetimepicker/css/classic.date.css" asp-append-version="true" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <title>@ViewData["Title"] - Bakery Management System</title>
+    @await RenderSectionAsync("PageHeaders", required: false)
+</head>
+<body>
+
+    @* <p class="nav navbar-text">Hello, @User.Identity?.Name!</p> *@
+
+    <!--wrapper-->
+    <div class="wrapper">
+        <!--sidebar wrapper -->
+        <div class="sidebar-wrapper" data-simplebar="true">
+            <div class="sidebar-header">
+                <div>
+                    <img src="assets/images/logo-icon.png" class="logo-icon" alt="logo icon">
+                </div>
+                <div>
+                    <h4 class="logo-text">Thannickal Bakery</h4>
+                </div>
+                <div class="toggle-icon ms-auto">
+                    <i class='bx bx-arrow-to-left'></i>
+                </div>
+            </div>
+            <!--navigation-->
+            <ul class="metismenu" id="menu">
+                <li>
+                    <a href="/Customers">
+                        <div class="parent-icon">
+                            <i class='bx bx-user-circle'></i>
+                        </div>
+                        <div class="menu-title">Customers</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Teams">
+                        <div class="parent-icon">
+                            <i class='bx bx-group'></i>
+                        </div>
+                        <div class="menu-title">Teams</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="/Orders">
+                        <div class="parent-icon">
+                            <i class='bx bx-store'></i>
+                        </div>
+                        <div class="menu-title">Orders</div>
+                    </a>
+                </li>
+                <li>
+                    <a href="javascript:;" class="has-arrow">
+                        <div class="parent-icon">
+                            <i class='bx bx-cart'></i>
+                        </div>
+                        <div class="menu-title">Product Management</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="/Category"><i class="bx bx-category"></i>Category</a>
+                        </li>
+                        <li>
+                            <a href="/Products"><i class="bx bx-right-arrow-alt"></i>Products</a>
+                        </li>
+                        <li>
+                            <a href="/ProductIngredients"><i class="bx bx-right-arrow-alt"></i>Product Ingredients</a>
+                        </li>
+                        <li>
+                            <a href="/AddEditProduct"><i class="bx bx-right-arrow-alt"></i>Add New Products</a>
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="/Invoices">
+                        <div class="parent-icon">
+                            <i class="bx bx-user-circle"></i>
+                        </div>
+                        <div class="menu-title">Invoices</div>
+                    </a>
+                </li>
+                <li>
+                    <a class="has-arrow" href="javascript:;">
+                        <div class="parent-icon">
+                            <i class="bx bx-repeat"></i>
+                        </div>
+                        <div class="menu-title">Reports</div>
+                    </a>
+                    <ul>
+                        <li>
+                            <a href="content-grid-system.html"><i class="bx bx-right-arrow-alt"></i>Today's Orders</a>
+                        </li>
+                        <li>
+                            <a href="content-typography.html"><i class="bx bx-right-arrow-alt"></i>All Orders</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+            <!--end navigation-->
+        </div>
+        <!--end sidebar wrapper -->
+        <!--start header -->
+        <header >
+            <div  class="topbar d-flex align-items-center">
+                <nav  class="navbar navbar-expand">
+                    <div  class="mobile-toggle-menu">
+                        <i  class='bx bx-menu'></i>
+                    </div>
+                    <div  class="search-bar flex-grow-1">
+                        <div  class="position-relative search-bar-box d-none">
+                            <input  type="text" class="form-control search-control" placeholder="Type to search..."> <span  class="position-absolute top-50 search-show translate-middle-y"><i  class='bx bx-search'></i></span>
+                            <span  class="position-absolute top-50 search-close translate-middle-y"><i  class='bx bx-x'></i></span>
+                        </div>
+                    </div>
+                    <div  class="top-menu ms-auto d-none">
+                        <ul  class="navbar-nav align-items-center">
+                            <li  class="nav-item mobile-search-icon">
+                                <a  class="nav-link" href="#">
+                                    <i  class='bx bx-search'></i>
+                                </a>
+                            </li>
+                            <li  class="nav-item dropdown dropdown-large">
+                                <a  class="nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <i  class='bx bx-category'></i>
+                                </a>
+                                <div  class="dropdown-menu dropdown-menu-end">
+                                    <div  class="row row-cols-3 g-3 p-3">
+                                        <div  class="col text-center">
+                                            <div  class="app-box mx-auto bg-gradient-cosmic text-white">
+                                                <i  class='bx bx-group'></i>
+                                            </div>
+                                            <div  class="app-title">Teams</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                            <li  class="nav-item dropdown dropdown-large">
+                                <a  class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span  class="alert-count">7</span>
+                                    <i  class='bx bx-bell'></i>
+                                </a>
+                                <div  class="dropdown-menu dropdown-menu-end">
+                                    <a  href="javascript:;">
+                                        <div  class="msg-header">
+                                            <p  class="msg-header-title">Notifications</p>
+                                            <p  class="msg-header-clear ms-auto">Marks all as read</p>
+                                        </div>
+                                    </a>
+                                    <div  class="header-notifications-list">
+                                        <a  class="dropdown-item" href="javascript:;">
+                                            <div  class="d-flex align-items-center">
+                                                <div  class="notify bg-light-primary text-primary">
+                                                    <i  class="bx bx-group"></i>
+                                                </div>
+                                                <div  class="flex-grow-1">
+                                                    <h6  class="msg-name">
+                                                        New Customers<span  class="msg-time float-end">
+                                                            14 Sec
+                                                            ago
+                                                        </span>
+                                                    </h6>
+                                                    <p  class="msg-info">5 new user registered</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a  href="javascript:;">
+                                        <div  class="text-center msg-footer">View All Notifications</div>
+                                    </a>
+                                </div>
+                            </li>
+                            <li  class="nav-item dropdown dropdown-large">
+                                <a  class="nav-link dropdown-toggle dropdown-toggle-nocaret position-relative" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                    <span  class="alert-count">8</span>
+                                    <i  class='bx bx-comment'></i>
+                                </a>
+                                <div  class="dropdown-menu dropdown-menu-end">
+                                    <a  href="javascript:;">
+                                        <div  class="msg-header">
+                                            <p  class="msg-header-title">Messages</p>
+                                            <p  class="msg-header-clear ms-auto">Marks all as read</p>
+                                        </div>
+                                    </a>
+                                    <div  class="header-message-list">
+                                        <a  class="dropdown-item" href="javascript:;">
+                                            <div  class="d-flex align-items-center">
+                                                <div  class="user-online">
+                                                    <img  src="images/avatars/avatar-1.png" class="msg-avatar" alt="user avatar">
+                                                </div>
+                                                <div  class="flex-grow-1">
+                                                    <h6  class="msg-name">
+                                                        Daisy Anderson <span  class="msg-time float-end">
+                                                            5 sec
+                                                            ago
+                                                        </span>
+                                                    </h6>
+                                                    <p  class="msg-info">The standard chunk of lorem</p>
+                                                </div>
+                                            </div>
+                                        </a>
+                                    </div>
+                                    <a  href="javascript:;">
+                                        <div  class="text-center msg-footer">View All Messages</div>
+                                    </a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div  class="user-box dropdown">
+                        <a  class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <img src="assets/images/avatars/avatar-1.png" class="user-img" alt="user avatar">
+                            <div  class="user-info ps-3">
+                                <p class="designattion mb-0">Hello, @User.Identity?.Name!</p>
+                            </div>
+                        </a>
+                        <ul  class="dropdown-menu dropdown-menu-end">
+                            <li >
+                                <a  class="dropdown-item" href="javascript:;"><i  class="bx bx-user"></i><span >Profile</span></a>
+                            </li>
+                            <li >
+                                <a class="dropdown-item" href="javascript:;" onclick="confirmLogout()"><i class='bx bx-log-out-circle'></i><span>Logout</span></a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </header>
+        <!--end header -->
+        <!--start page wrapper -->
+        <div  class="page-wrapper">
+            <div  class="page-content">
+                @RenderBody()
+            </div>
+        </div>
+        <!--end page wrapper -->
+        <!--start overlay-->
+        <div  class="overlay toggle-icon"></div>
+        <!--end overlay-->
+        <!--Start Back To Top Button-->
+        <a  href="javaScript:;" class="back-to-top"><i  class='bx bxs-up-arrow-alt'></i></a>
+        <!--End Back To Top Button-->
+
+        <footer  class="page-footer">
+            @* <p  class="mb-0">Copyright &copy; @DateTime.Now.Year.ToString() - WebPortal. All right reserved.</p> *@
+            <p class="mb-0">Copyright  &copy; @DateTime.Now.Year.ToString() - WebPortal. All right reserved. | Ver @System.Reflection.Assembly.GetExecutingAssembly().GetName().Version </p>
+        </footer>
+    </div>
+    <!--end wrapper-->
+    
+
+    <!-- Bootstrap JS -->
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/js/jquery.min.js"></script>
+
+    <!--plugins-->    
+    <script src="~/assets/plugins/simplebar/js/simplebar.min.js"></script>
+    <script src="~/assets/plugins/metismenu/js/metisMenu.min.js"></script>
+    <script src="~/assets/plugins/perfect-scrollbar/js/perfect-scrollbar.js"></script>
+    <script src="~/assets/plugins/apexcharts-bundle/js/apexcharts.min.js"></script>
+    <script src="~/assets/plugins/datatable/js/jquery.dataTables.min.js"></script>
+    <script src="~/assets/plugins/datatable/js/dataTables.bootstrap5.min.js"></script>
+
+    <script src="~/assets/plugins/select2/js/select2.min.js" asp-append-version="true"></script>
+    <script src="~/assets/js/form-select2.js" asp-append-version="true"></script>
+
+    <script src="~/assets/plugins/datetimepicker/js/legacy.js" asp-append-version="true"></script>
+    <script src="~/assets/plugins/datetimepicker/js/picker.js" asp-append-version="true"></script>
+    <script src="~/assets/plugins/datetimepicker/js/picker.time.js" asp-append-version="true"></script>
+    <script src="~/assets/plugins/datetimepicker/js/picker.date.js" asp-append-version="true"></script>
+    <script src="~/assets/js/form-date-time-pickes.js" asp-append-version="true"></script>
+
+    <!--app JS-->
+    <script src="~/assets/js/app.js" asp-append-version="true"></script>
+
+    @await RenderSectionAsync("Scripts", required: false)
+
+    <script>
+        function confirmLogout() {
+            if (confirm("Are you sure you want to logout?")) {
+                window.location.href = "/account/logout"; // change this to your logout URL
+            }
+        }
+    </script>
+</body>
+</html>

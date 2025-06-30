@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36221.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebPortal", "WebPortal\WebPortal.csproj", "{65E931EC-4DE8-4ABE-8BEA-AC1A7625710D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BMS.Data", "BMS.Data\BMS.Data.csproj", "{44F5F481-9BAD-089F-ED3C-D8D4A8C86CF9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{65E931EC-4DE8-4ABE-8BEA-AC1A7625710D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65E931EC-4DE8-4ABE-8BEA-AC1A7625710D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65E931EC-4DE8-4ABE-8BEA-AC1A7625710D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65E931EC-4DE8-4ABE-8BEA-AC1A7625710D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44F5F481-9BAD-089F-ED3C-D8D4A8C86CF9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44F5F481-9BAD-089F-ED3C-D8D4A8C86CF9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44F5F481-9BAD-089F-ED3C-D8D4A8C86CF9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44F5F481-9BAD-089F-ED3C-D8D4A8C86CF9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4F31CBF6-D913-44D7-9FCD-891E6A94C878}
+	EndGlobalSection
+EndGlobal
