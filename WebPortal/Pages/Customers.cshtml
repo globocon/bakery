@@ -27,128 +27,36 @@
 <h6 class="mb-0 text-uppercase">All Customers</h6>
 <hr />
 <div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/1.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Hotel Margretta</h5>
-					<p class="mb-3">Hotel</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
+	@{
+			// This is where you can dynamically generate customer cards if you have a list of customers.
+		// For example, you could loop through a list of customer objects and create a card for each.
+		
+		foreach(var customer in Model.Customers)
+		{
+			var customerId = customer.CustomerId;
+			var imgExtn = customer.ImgFileExtn;
+			var imagePath = !string.IsNullOrEmpty(imgExtn)
+			? $"/uploads/Customers/{customerId}{imgExtn}"
+			: "/assets/images/avatars/NoCustomerImage.jpg";
+
+			<div class="col">
+				<div class="card radius-15">
+					<div class="card-body text-center">
+						<div class="p-4 border radius-15">
+							<img src="@imagePath" width="110" height="110" class="rounded-circle shadow" alt="">
+							<h5 class="mb-0 mt-5">@customer.Name</h5>
+							<p class="mb-3">@customer.Address</p>
+							<div class="btn-group" role="group" aria-label="Basic example">
+								<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
+								<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/7.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Moon Bakery</h5>
-					<p class="mb-3">Bakery</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/8.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Best Bakery</h5>
-					<p class="mb-3">Bakery</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/2.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Hotel Grand</h5>
-					<p class="mb-3">Hotel</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
+        }
+
+	}	
 </div>
-<!--end row-->
-<div class="row row-cols-1 row-cols-lg-2 row-cols-xl-4">
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/3.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Roastown Grill</h5>
-					<p class="mb-3">Restaurant</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/4.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Fort Paragon</h5>
-					<p class="mb-3">Restaurant</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/5.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Ginger House</h5>
-					<p class="mb-3">Restaurant</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-	<div class="col">
-		<div class="card radius-15">
-			<div class="card-body text-center">
-				<div class="p-4 border radius-15">
-					<img src="images/customers/6.jpg" width="110" height="110" class="rounded-circle shadow" alt="">
-					<h5 class="mb-0 mt-5">Rasoi Fort Kochi</h5>
-					<p class="mb-3">Restaurant</p>
-					<div class="btn-group" role="group" aria-label="Basic example">
-						<button type="button" class="btn btn-outline-primary"><i class='bx bx-pencil me-0'></i></button>
-						<button type="button" class="btn btn-outline-danger"><i class='bx bx-trash me-0'></i></button>
-					</div>
-				</div>
-			</div>
-		</div>
-	</div>
-</div>
+
 <!--end row-->

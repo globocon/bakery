@@ -1,10 +1,4 @@
-﻿using iText.Layout.Borders;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace BMS.Data.Models
 {
@@ -17,6 +11,10 @@ namespace BMS.Data.Models
         public string? Email { get; set; }
         public string? Address { get; set; }
         public string? GSTNo { get; set; }
+        public string? ImgFileExtn { get; set; }
+        public string CreatedById { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public bool IsDeleted { get; set; } = false;
 
         public ICollection<Order> Orders { get; set; }
         public ICollection<Invoice> Invoices { get; set; }

@@ -1,4 +1,4 @@
-using BMS.Data.Models;
+﻿using BMS.Data.Models;
 using BMS.Data.Services;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authentication.Cookies;
@@ -22,18 +22,18 @@ namespace WebPortal.Pages.Account
 
         public void OnGet()
         {
-           // HttpContext.Session.SetInt32("GuardId", 0);
-            LoginUser = new USR_Users() { LoginId="Admin", UserName="", Password= "admin@123", IsAdmin = false, IsDeleted= false };
+            // HttpContext.Session.SetInt32("GuardId", 0);
+            LoginUser = new USR_Login() { LoginId = "Admin", Password = "admin@123" };
         }
 
         [BindProperty]
-        public USR_Users LoginUser { get; set; }
+        public USR_Login LoginUser { get; set; }
 
         public IActionResult OnPost(string returnUrl)
         {
             if (string.IsNullOrEmpty(returnUrl))
                 returnUrl = Url.Page("/Orders");
-           
+
             var isValidLogin = _userAuthentication.TryGetLoginUser(LoginUser, out USR_Users user);
 
             if (!isValidLogin)
@@ -55,6 +55,7 @@ namespace WebPortal.Pages.Account
                 new Claim(ClaimTypes.Name, user.UserName),
                 new Claim(ClaimTypes.Sid, user.Id.ToString()),
                 new Claim(ClaimTypes.Role, user.IsAdmin ? "Administrator" : "User"),
+                new Claim("ImgFileExtn", user.ImgFileExtn ?? string.Empty) // Added custom claim
             };
 
             var claimsIdentity = new ClaimsIdentity(claims, CookieAuthenticationDefaults.AuthenticationScheme);
@@ -66,8 +67,7 @@ namespace WebPortal.Pages.Account
             };
 
             HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme,
-                new ClaimsPrincipal(claimsIdentity),
-                authProperties);
+                new ClaimsPrincipal(claimsIdentity), authProperties);
         }
     }
 }

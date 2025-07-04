@@ -30,4 +30,9 @@
     <ProjectReference Include="..\BMS.Data\BMS.Data.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="wwwroot\uploads\Customers\" />
+    <Folder Include="wwwroot\uploads\users\" />
+  </ItemGroup>
+
 </Project>

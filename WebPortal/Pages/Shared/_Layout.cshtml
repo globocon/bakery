@@ -236,9 +236,17 @@
                     </div>
                     <div  class="user-box dropdown">
                         <a  class="d-flex align-items-center nav-link dropdown-toggle dropdown-toggle-nocaret" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            <img src="assets/images/avatars/avatar-1.png" class="user-img" alt="user avatar">
+                            @{
+                                var userId = User.FindFirst(System.Security.Claims.ClaimTypes.Sid)?.Value;
+                                var imgExtn = User.FindFirst("ImgFileExtn")?.Value;
+                                var imagePath = !string.IsNullOrEmpty(imgExtn)
+                                ? $"/uploads/users/{userId}{imgExtn}"
+                                : "/assets/images/avatars/NoImage.jpg";
+                            }
+                            <img src="@imagePath" class="user-img" alt="user avatar">
+                            @* <img src="assets/images/avatars/avatar-1.png" class="user-img" alt="user avatar"> *@
                             <div  class="user-info ps-3">
-                                <p class="designattion mb-0">Hello, @User.Identity?.Name!</p>
+                                <p class="designattion mb-0">Hello, @User.Identity?.Name</p>
                             </div>
                         </a>
                         <ul  class="dropdown-menu dropdown-menu-end">
@@ -274,7 +282,24 @@
         </footer>
     </div>
     <!--end wrapper-->
-    
+    <!-- Delete confirmation modal -->
+    <div class="modal fade" id="LogoutConfirmModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirm</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p id="msgLogoutConfirmModal">Are you sure you want to logout?</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" id="btnLogoutConfirmModal" onclick="logoutConfirmed()" class="btn btn-success">Confirm</button>
+                    <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="~/assets/js/bootstrap.bundle.min.js"></script>
@@ -302,11 +327,12 @@
 
     @await RenderSectionAsync("Scripts", required: false)
 
-    <script>
-        function confirmLogout() {
-            if (confirm("Are you sure you want to logout?")) {
-                window.location.href = "/account/logout"; // change this to your logout URL
-            }
+    <script> 
+        function logoutConfirmed() {            
+                window.location.href = "/account/logout"; // change this to your logout URL            
+        }
+        function confirmLogout() {   
+            $('#LogoutConfirmModal').modal('show');
         }
     </script>
 </body>

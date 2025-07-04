@@ -48,6 +48,8 @@ namespace WebPortal.Pages.Account
             //HttpContext.Session.Clear();
             //return Redirect(logouturl);
 
+            await Task.CompletedTask;
+
             return Redirect("/");
 
         }

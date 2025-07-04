@@ -11,6 +11,9 @@ namespace BMS.Data.Models
         public float StockQuantity { get; set; }
         public decimal CP { get; set; }
         public string Unit { get; set; }
+        public string CreatedById { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public bool IsDeleted { get; set; } = false;
 
         public ICollection<ProductRawMaterial> ProductRawMaterials { get; set; }
     }

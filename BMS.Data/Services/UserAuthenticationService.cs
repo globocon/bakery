@@ -6,7 +6,7 @@ namespace BMS.Data.Services
 {
     public interface IUserAuthenticationService
     {
-        bool TryGetLoginUser(USR_Users userLogin, out USR_Users user);
+        bool TryGetLoginUser(USR_Login userLogin, out USR_Users user);
     }
     public class UserAuthenticationService : IUserAuthenticationService
     {
@@ -15,7 +15,7 @@ namespace BMS.Data.Services
         {
             _context = context;
         }
-        public bool TryGetLoginUser(USR_Users userLogin, out USR_Users user)
+        public bool TryGetLoginUser(USR_Login userLogin, out USR_Users user)
         {
             user = null;
 

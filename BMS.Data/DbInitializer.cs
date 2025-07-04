@@ -13,7 +13,7 @@ namespace BMS.Data
 
             var defaultUser = new USR_Users
             {
-                Id = Guid.NewGuid().ToString(),
+                Id = "8f3c9d8e-1234-4bcd-a456-7890abcdef12", //Guid.NewGuid().ToString(),
                 LoginId = "Admin",
                 UserName = "Administrator",
                 Password = PasswordHelper.EncryptPassword("admin@123"), // Note: in production, use hashing!

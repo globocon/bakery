@@ -7,14 +7,16 @@ namespace BMS.Data.Models
     {
         [Key]
         public int InvoiceId { get; set; }
+        public string InvoiceNumber { get; set; }
         public int CustomerId { get; set; }
-        public int OrderId { get; set; }
         public DateTime InvoiceDate { get; set; }
         public decimal DiscountAmount { get; set; }
         public decimal TotalAmount { get; set; }
+        public string CreatedById { get; set; }
+        public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public bool IsDeleted { get; set; } = false;
 
         public Customer Customer { get; set; }
-        public Order Order { get; set; }
         public ICollection<InvoiceItem> InvoiceItems { get; set; }
     }
 

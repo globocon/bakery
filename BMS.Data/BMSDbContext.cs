@@ -18,33 +18,95 @@ namespace BMS.Data
             base.OnModelCreating(modelBuilder);
 
             modelBuilder.Entity<Order>().Property(o => o.OrderDate).HasDefaultValueSql("GETDATE()");
-            modelBuilder.Entity<Invoice>().Property(i => i.InvoiceDate).HasDefaultValueSql("GETDATE()");
+            modelBuilder.Entity<Order>().Property(o => o.IsDeleted).HasDefaultValue(false);
             modelBuilder.Entity<Order>().Property(o => o.Status).HasDefaultValue("Pending");
-            modelBuilder.Entity<RawMaterial>().Property(r => r.StockQuantity).HasDefaultValue(0);
+            // Order → Customer
+            modelBuilder.Entity<Order>()
+                .HasOne(o => o.Customer)
+                .WithMany(c => c.Orders)
+                .HasForeignKey(o => o.CustomerId)
+                .OnDelete(DeleteBehavior.NoAction);
 
-            modelBuilder.Entity<Product>()
-                .HasOne<Category>()
-                .WithMany()
-                .HasForeignKey(cp => cp.CategoryId);
+            modelBuilder.Entity<Invoice>().Property(i => i.InvoiceDate).HasDefaultValueSql("GETDATE()");
+            modelBuilder.Entity<Invoice>().Property(o => o.IsDeleted).HasDefaultValue(false);
+            // Invoice → Customer
+            modelBuilder.Entity<Invoice>()
+                .HasOne(i => i.Customer)
+                .WithMany(c => c.Invoices)
+                .HasForeignKey(i => i.CustomerId)
+                .OnDelete(DeleteBehavior.NoAction);
 
-            //modelBuilder.Entity<CategoryProduct>()
-            //    .HasOne<Product>()
-            //    .WithMany()
-            //    .HasForeignKey(cp => cp.ProductId);
+            modelBuilder.Entity<USR_Users>().Property(o => o.IsDeleted).HasDefaultValue(false);
 
-            //modelBuilder.Entity<PreparationTeam>()
-            //    .HasOne<Category>()
-            //    .WithMany()
-            //    .HasForeignKey(tc => tc.TeamId);
-
+            modelBuilder.Entity<Customer>().Property(o => o.IsDeleted).HasDefaultValue(false);            
+            
+            modelBuilder.Entity<Category>().Property(o => o.IsDeleted).HasDefaultValue(false);
             modelBuilder.Entity<Category>()
-                .HasOne<PreparationTeam>()
-                .WithMany()
-                .HasForeignKey(tc => tc.TeamId);
+                .HasOne(c => c.PreparationTeam)
+                .WithMany(t => t.Categories)
+                .HasForeignKey(c => c.PreparationTeamId)
+                .OnDelete(DeleteBehavior.NoAction);
 
+
+            modelBuilder.Entity<SubCategory>().Property(o => o.IsDeleted).HasDefaultValue(false);
+
+            modelBuilder.Entity<RawMaterial>().Property(r => r.StockQuantity).HasDefaultValue(0);
+            modelBuilder.Entity<RawMaterial>().Property(o => o.IsDeleted).HasDefaultValue(false);
+                        
+            modelBuilder.Entity<Product>().Property(o => o.IsDeleted).HasDefaultValue(false);
+            modelBuilder.Entity<Product>()
+                .HasOne(p => p.Category)
+                .WithMany(c => c.Products)
+                .HasForeignKey(p => p.CategoryId);
+
+            modelBuilder.Entity<PreparationTeam>().Property(o => o.IsDeleted).HasDefaultValue(false);
+            //modelBuilder.Entity<PreparationTeam>()
+            //    .HasMany<Category>()
+            //    .WithOne(c => c.PreparationTeam)
+            //    .HasForeignKey(c => c.PreparationTeamId);
+
+            
 
             BakeryDbSeeder.Seed(modelBuilder);
         }
+
+        //public override int SaveChanges()
+        //{
+        //    foreach (var entry in ChangeTracker.Entries<Order>()
+        //             .Where(e => e.State == EntityState.Added))
+        //    {
+        //        // Set OrderNumber after OrderId is generated
+        //        entry.State = EntityState.Detached;
+        //    }
+
+        //    foreach (var entry in ChangeTracker.Entries<Invoice>()
+        //             .Where(e => e.State == EntityState.Added))
+        //    {
+        //        // Set InvoiceNumber after InvoiceId is generated
+        //        entry.State = EntityState.Detached;
+        //    }
+
+        //    var result = base.SaveChanges();
+
+        //    // Now OrderId is available, update OrderNumber
+        //    foreach (var order in ChangeTracker.Entries<Order>()
+        //             .Where(e => e.State == EntityState.Detached))
+        //    {
+        //        order.Entity.OrderNumber = $"ORD-{order.Entity.OrderId:D6}-{DateTime.UtcNow.Year}";
+        //        Entry(order.Entity).State = EntityState.Modified;
+        //    }
+
+        //    // Now InvoiceId is available, update InvoiceNumber
+        //    foreach (var invoice in ChangeTracker.Entries<Invoice>()
+        //             .Where(e => e.State == EntityState.Detached))
+        //    {
+        //        invoice.Entity.InvoiceNumber = $"INV-{invoice.Entity.InvoiceId:D6}-{DateTime.UtcNow.Year}";
+        //        Entry(invoice.Entity).State = EntityState.Modified;
+        //    }
+
+        //    base.SaveChanges();
+        //    return result;
+        //}
 
         public DbSet<USR_Users> USR_Users { get; set; }
 

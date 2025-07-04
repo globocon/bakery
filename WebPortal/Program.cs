@@ -1,4 +1,5 @@
 using BMS.Data;
+using BMS.Data.Providers;
 using BMS.Data.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Negotiate;
@@ -23,7 +24,11 @@ var connectionString = builder.Configuration.GetConnectionString("DefaultConnect
 builder.Services.AddDbContext<BMSDbContext>(options =>  options.UseSqlServer(connectionString));
 
 builder.Services.AddScoped<IUserAuthenticationService, UserAuthenticationService>();
-
+builder.Services.AddScoped<IDbService, DbService>();
+builder.Services.AddScoped<IProductsDataProvider, ProductsDataProvider>();
+builder.Services.AddScoped<IOrderDataProvider, OrderDataProvider>();
+builder.Services.AddScoped<ICustomerDataProvider, CustomerDataProvider>();
+builder.Services.AddScoped<ITeamsDataProvider, TeamsDataProvider>();
 
 builder.Services.AddRazorPages(options =>
 {
