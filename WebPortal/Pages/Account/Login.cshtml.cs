@@ -19,15 +19,25 @@ namespace WebPortal.Pages.Account
         {
             _userAuthentication = userAuthentication;
         }
+        [BindProperty]
+        public USR_Login LoginUser { get; set; }
 
         public void OnGet()
         {
-            // HttpContext.Session.SetInt32("GuardId", 0);
-            LoginUser = new USR_Login() { LoginId = "Admin", Password = "admin@123" };
+            if (Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development")
+            {
+                // In development mode, pre-fill the login credentials for testing purposes
+                if (LoginUser == null)
+                {
+                    LoginUser = new USR_Login() { LoginId = "Admin", Password = "admin@123" };
+                }
+            }
+            else {
+                LoginUser = new USR_Login(); 
+            }                
         }
 
-        [BindProperty]
-        public USR_Login LoginUser { get; set; }
+       
 
         public IActionResult OnPost(string returnUrl)
         {
