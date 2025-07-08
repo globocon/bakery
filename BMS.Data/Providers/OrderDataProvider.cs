@@ -14,7 +14,7 @@ namespace BMS.Data.Providers
         Task<string> SaveOrderAsync(OrderNewEdit order);
         Task<List<Order>> GetOrdersByDateAsync(DateTime orderDate);
         Task ConfirmOrdersAsync(List<int> orderIds);
-
+        Task<List<OrderConfirmData>> GetConfirmedOrderReportByDateAsync(DateTime orderDate);
     }
     public class OrderDataProvider : IOrderDataProvider
     {
@@ -186,6 +186,13 @@ namespace BMS.Data.Providers
             }
             // Save changes
             await _dbService.ConfirmOrders(orderConfirmDataList);
+        }
+
+        public async Task<List<OrderConfirmData>> GetConfirmedOrderReportByDateAsync(DateTime orderDate)
+        {
+            // Fetch all OrderConfirmData for the given date and status "Confirmed"
+            // You may need to add a method in your DbService to fetch this data
+            return await _dbService.GetOrderConfirmDataByDateAndStatus(orderDate);
         }
     }
 }

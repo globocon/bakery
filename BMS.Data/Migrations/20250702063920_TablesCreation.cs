@@ -393,7 +393,9 @@ namespace BMS.Data.Migrations
                     { 68, 2m, "Initial Creation", new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602), "Water", 20f, "kg" },
                     { 69, 5m, "Initial Creation", new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602), "Pista Nuts", 20f, "kg" },
                     { 70, 200m, "Initial Creation", new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602), "Muffin Mix Vanila", 20f, "kg" },
-                    { 71, 250m, "Initial Creation", new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602), "Muffin Mix Choc", 20f, "kg" }
+                    { 71, 250m, "Initial Creation", new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602), "Muffin Mix Choc", 20f, "kg" },
+                    { 72, 135m, "Initial Creation", new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602), "Chicken", 20f, "kg" },
+                    { 73, 450m, "Initial Creation", new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602), "Meat", 20f, "kg" }
                 });
 
             migrationBuilder.InsertData(

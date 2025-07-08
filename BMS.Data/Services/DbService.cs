@@ -1,5 +1,4 @@
-﻿
-using BMS.Data.Models;
+﻿using BMS.Data.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
 
@@ -57,6 +56,7 @@ namespace BMS.Data.Services
         Task<List<Order>?> GetAllOrdersUnderCustomerId(int CustomerId);
         Task<List<Order>?> GetAllOrdersByOrderDate(DateTime OrderDate);
         Task ConfirmOrders(List<OrderConfirmData> ocd);
+        Task<List<OrderConfirmData>> GetOrderConfirmDataByDateAndStatus(DateTime orderDate);
         #endregion "Orders"
 
     }
@@ -169,6 +169,14 @@ namespace BMS.Data.Services
             await _context.SaveChangesAsync();
             return;
         }
+
+        public async Task<List<OrderConfirmData>> GetOrderConfirmDataByDateAndStatus(DateTime orderDate)
+        {
+            // Assuming you have a DbSet<OrderConfirmData> in your context
+            return await _context.OrderConfirmData
+                .Where(o => o.OrderDate.Date == orderDate.Date)
+                .ToListAsync();
+        }
         #endregion "Orders"
 
         #region "ProductRawMaterials"
@@ -189,7 +197,7 @@ namespace BMS.Data.Services
                 ?? throw new KeyNotFoundException($"ProductRawMaterial with Product Id {ProductId} not found or is deleted.");
         }
 
-        public async Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialId(int ProductId,int RawMaterialId)
+        public async Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialId(int ProductId, int RawMaterialId)
         {
             return await _context.ProductRawMaterials
                 .Include(p => p.RawMaterial)

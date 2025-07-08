@@ -22,13 +22,14 @@
 
 <div class="card mb-4">
     <div class="card-body">
-        <form method="get" class="row g-3" id="orderDateForm">
+        <form method="get" class="row g-3" id="orderDateForm" autocomplete="off">
             <div class="col-md-4">
                 <label for="OrderDate" class="form-label">Order Date</label>
-                <input type="text" class="form-control datepicker" id="OrderDate" name="OrderDate" value="@Model.SelectedOrderDate?.ToString("yyyy-MM-dd")" autocomplete="off" required />
+                <input type="text" class="form-control datepicker" id="OrderDate" name="OrderDate" value="@Model.SelectedOrderDate?.ToString("yyyy-MM-dd")" required />
             </div>
-            <div class="col-md-2 align-self-end">
-                <button type="submit" class="btn btn-primary">Show Orders</button>
+            <div class="col-md-6 align-self-end">
+                <button type="button" id="btnGetOrdersByDate" class="btn btn-primary">Show Orders</button>
+                <button type="button" id="btnGetOrdersPrintByDate" class="btn btn-primary">Show Print</button>
             </div>
         </form>
     </div>
@@ -82,17 +83,5 @@ else if (Model.SelectedOrderDate != null)
 }
 
 @section Scripts {
-    <script>
-        $(function () {
-            // Datepicker initialization (if not already handled globally)
-            if ($('.datepicker').datepicker) {
-                $('.datepicker').datepicker({ format: 'yyyy-mm-dd', autoclose: true });
-            }
-
-            // Select all checkbox
-            $('#selectAll').on('change', function () {
-                $('.order-checkbox').prop('checked', this.checked);
-            });
-        });
-    </script>
+    <script src="~/assets/js/confirmorder.js" asp-append-version="true"></script>
 }
