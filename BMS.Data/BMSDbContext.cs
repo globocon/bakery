@@ -1,5 +1,4 @@
 ﻿using BMS.Data.Models;
-using iText.Layout.Borders;
 using Microsoft.EntityFrameworkCore;
 
 #nullable disable
@@ -117,9 +116,11 @@ namespace BMS.Data
         public DbSet<RawMaterial> RawMaterials { get; set; }
         public DbSet<ProductRawMaterial> ProductRawMaterials { get; set; }
         public DbSet<Category> Categories { get; set; }
+        public DbSet<SubCategory> SubCategories { get; set; }
         public DbSet<PreparationTeam> PreparationTeams { get; set; }
         public DbSet<Invoice> Invoices { get; set; }
         public DbSet<InvoiceItem> InvoiceItems { get; set; }
+        public DbSet<OrderConfirmData> OrderConfirmData { get; set; }
 
     }
    

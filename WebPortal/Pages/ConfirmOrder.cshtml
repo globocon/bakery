@@ -1,0 +1,98 @@
+@page
+@model WebPortal.Pages.ConfirmOrderModel
+@{
+    ViewData["Title"] = "Confirm Orders";
+}
+
+<!--breadcrumb-->
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="breadcrumb-title pe-3">BMS</div>
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item">
+                    <a href="/"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Confirm Orders</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form method="get" class="row g-3" id="orderDateForm">
+            <div class="col-md-4">
+                <label for="OrderDate" class="form-label">Order Date</label>
+                <input type="text" class="form-control datepicker" id="OrderDate" name="OrderDate" value="@Model.SelectedOrderDate?.ToString("yyyy-MM-dd")" autocomplete="off" required />
+            </div>
+            <div class="col-md-2 align-self-end">
+                <button type="submit" class="btn btn-primary">Show Orders</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+@if (Model.Orders != null && Model.Orders.Count > 0)
+{
+    <form method="post" asp-page-handler="ConfirmOrders" id="confirmOrdersForm">
+        <div class="card">
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th><input type="checkbox" id="selectAll" /></th>
+                                <th>Order #</th>
+                                <th>Customer</th>
+                                <th>Order Date</th>
+                                <th>Status</th>
+                                <th>Total Items</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @for (int i = 0; i < Model.Orders.Count; i++)
+                            {
+                                var order = Model.Orders[i];
+                                <tr>
+                                    <td>
+                                        <input type="checkbox" name="SelectedOrderIds" value="@order.OrderId" class="order-checkbox" />
+                                    </td>
+                                    <td>@order.OrderNumber</td>
+                                    <td>@order.Customer?.Name</td>
+                                    <td>@order.OrderDate.ToString("yyyy-MM-dd")</td>
+                                    <td>@order.Status</td>
+                                    <td>@order.OrderItems?.Count()</td>
+                                </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <div class="text-end">
+                    <button type="submit" class="btn btn-success px-5" id="btnConfirmOrders">Confirm Selected Orders</button>
+                </div>
+            </div>
+        </div>
+    </form>
+}
+else if (Model.SelectedOrderDate != null)
+{
+    <div class="alert alert-info">No orders found for the selected date.</div>
+}
+
+@section Scripts {
+    <script>
+        $(function () {
+            // Datepicker initialization (if not already handled globally)
+            if ($('.datepicker').datepicker) {
+                $('.datepicker').datepicker({ format: 'yyyy-mm-dd', autoclose: true });
+            }
+
+            // Select all checkbox
+            $('#selectAll').on('change', function () {
+                $('.order-checkbox').prop('checked', this.checked);
+            });
+        });
+    </script>
+}

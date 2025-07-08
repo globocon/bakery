@@ -12,5 +12,6 @@ namespace BMS.Data.Models
         public string CreatedById { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
         public bool IsDeleted { get; set; } = false;
+        public Category Category { get; set; }
     }
 }

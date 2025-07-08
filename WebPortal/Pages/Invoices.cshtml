@@ -1,0 +1,53 @@
+﻿@page
+@model WebPortal.Pages.InvoicesModel
+@{
+    ViewData["Title"] = "Generate Invoice";
+}
+@Html.AntiForgeryToken()
+<!--breadcrumb-->
+<div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+    <div class="breadcrumb-title pe-3">BMS</div>
+    <div class="ps-3">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb mb-0 p-0">
+                <li class="breadcrumb-item">
+                    <a href="/"><i class="bx bx-home-alt"></i></a>
+                </li>
+                <li class="breadcrumb-item active" aria-current="page">Invoice</li>
+            </ol>
+        </nav>
+    </div>
+</div>
+<!--end breadcrumb-->
+
+<div class="card mb-4">
+    <div class="card-body">
+        <form id="generateInvoiceForm" class="row g-3">
+            <div class="col-md-6">
+                <label for="CustomerId" class="form-label">Customer</label>
+                <select id="CustomerId" name="CustomerId" class="form-select" required>
+                    <option value="">Select Customer</option>
+                    @foreach (var customer in Model.Customers)
+                    {
+                        <option value="@customer.CustomerId">@customer.Name</option>
+                    }
+                </select>
+            </div>
+            <div class="col-md-6">
+                <label for="inputInvoiceDate" class="form-label">Invoice Date</label>
+                @* <input type="date" id="InvoiceDate" name="InvoiceDate" class="form-control" required value="@DateTime.Now.ToString("yyyy-MM-dd")" /> *@
+                <input type="text" class="form-control datepicker" id="inputInvoiceDate" required/>
+            </div>
+            <div class="col-12 text-end">
+                <button type="button" id="btnGenerateInvoice" class="btn btn-primary px-5">Generate Invoice</button>
+                <button type="button" id="btnDownloadInvoicePdf" class="btn btn-danger px-5">Export as PDF</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div id="invoiceResult"></div>
+
+@section Scripts {
+    <script src="~/assets/js/invoice.js" asp-append-version="true"></script>
+}

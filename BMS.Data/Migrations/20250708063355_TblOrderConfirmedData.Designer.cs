@@ -4,6 +4,7 @@ using BMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BMS.Data.Migrations
 {
     [DbContext(typeof(BMSDbContext))]
-    partial class BMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250708063355_TblOrderConfirmedData")]
+    partial class TblOrderConfirmedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -2381,7 +2384,7 @@ namespace BMS.Data.Migrations
 
                     b.HasIndex("CategoryId");
 
-                    b.ToTable("SubCategories");
+                    b.ToTable("SubCategory");
 
                     b.HasData(
                         new
@@ -2564,13 +2567,11 @@ namespace BMS.Data.Migrations
 
             modelBuilder.Entity("BMS.Data.Models.SubCategory", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Category", "Category")
+                    b.HasOne("BMS.Data.Models.Category", null)
                         .WithMany("SubCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
-
-                    b.Navigation("Category");
                 });
 
             modelBuilder.Entity("BMS.Data.Models.Category", b =>

@@ -11,7 +11,12 @@ namespace BMS.Data.Models
         public int RawMaterialId { get; set; }
         public float QuantityRequired { get; set; }
 
-        public Product Product { get; set; }
-        public RawMaterial RawMaterial { get; set; }
+        public Product? Product { get; set; }
+        public RawMaterial? RawMaterial { get; set; }
+        
+        public override string ToString()
+        {
+            return $"ProductRawMaterial Id: {Id}, ProductId: {ProductId}, RawMaterialId: {RawMaterialId}, QuantityRequired: {QuantityRequired}";
+        }
     }
 }

@@ -1,10 +1,15 @@
+using AutoMapper;
 using BMS.Data;
+using BMS.Data.Models;
 using BMS.Data.Providers;
 using BMS.Data.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Extensions.DependencyInjection;
+using QuestPDF.Infrastructure;
 
+QuestPDF.Settings.License = LicenseType.Community;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -29,10 +34,17 @@ builder.Services.AddScoped<IProductsDataProvider, ProductsDataProvider>();
 builder.Services.AddScoped<IOrderDataProvider, OrderDataProvider>();
 builder.Services.AddScoped<ICustomerDataProvider, CustomerDataProvider>();
 builder.Services.AddScoped<ITeamsDataProvider, TeamsDataProvider>();
+builder.Services.AddScoped<IProductIngredientsDataProvider, ProductIngredientsDataProvider>();
+builder.Services.AddScoped<IRawMaterialsDataProvider, RawMaterialsDataProvider>();
+builder.Services.AddScoped<ICategoryDataProvider, CategoryDataProvider>();
+builder.Services.AddScoped<ISubCategoryDataProvider, SubCategoryDataProvider>();
+builder.Services.AddScoped<IInvoiceDataProvider, InvoiceDataProvider>();
+
+// Add AutoMapper
+builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());
 
 builder.Services.AddRazorPages(options =>
-{
-
+{        
     options.Conventions.AuthorizeFolder("/");
     options.Conventions.AuthorizeFolder("/Develop");
     options.Conventions.AllowAnonymousToFolder("/Account");
