@@ -79,7 +79,7 @@ namespace WebPortal.Pages
                     page.Size(PageSizes.A4);
                     page.Margin(20);
                     page.DefaultTextStyle(x => x.FontSize(12));
-                    page.Header().Text($"Team Wise Items Preparation List").FontSize(18).Bold().AlignCenter().Underline().FontColor(Color.FromHex("#31adec"));
+                    page.Header().PaddingBottom(5).Text($"Team Wise Items Preparation List").FontSize(18).Bold().AlignCenter().Underline().FontColor(Color.FromHex("#31adec"));
 
                     page.Content().Column(col =>
                     {
@@ -98,14 +98,17 @@ namespace WebPortal.Pages
                             col.Item().PaddingBottom(3);
 
                             // Group by RawMaterialName
-                            var rawMaterialData = teamGroup
-                                .GroupBy(r => r.RawMaterialName)
+                            var rawMaterialData = teamGroup.Where(r => r.ShowInReport == true)
+                                .GroupBy(r => new { r.RawMaterialName, r.RawMaterialMapType, r.ShowInReport})
                                 .Select((g, index) => new
                                 {
                                     Index = index + 1,
-                                    RawMaterialName = g.Key,
-                                    TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity)
-                                })
+                                    RawMaterialName = g.Key.RawMaterialName,
+                                    TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity),
+                                    MapType = g.Key.RawMaterialMapType,
+                                    ShowInReport = g.Key.ShowInReport,
+                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? "kg"
+                                }) 
                                 .ToList();
 
                             // Table
@@ -115,6 +118,7 @@ namespace WebPortal.Pages
                                 {
                                     columns.ConstantColumn(30); // #
                                     columns.RelativeColumn(2);   // RawMaterialName
+                                    columns.RelativeColumn(2);   // Required For
                                     columns.RelativeColumn(2);   // Calculated Quantity
                                 });
 
@@ -123,6 +127,7 @@ namespace WebPortal.Pages
                                 {
                                     header.Cell().Text("#").Bold();
                                     header.Cell().Text("Ingrident Name").Bold();
+                                    header.Cell().Text("Required For").Bold();
                                     header.Cell().Text("Required Qty").Bold();
                                 });
 
@@ -131,7 +136,8 @@ namespace WebPortal.Pages
                                 {
                                     table.Cell().Padding(2).Text(item.Index.ToString());
                                     table.Cell().Padding(2).Text(item.RawMaterialName);
-                                    table.Cell().Padding(2).Text(item.TotalRequired.ToString("0.### kg"));
+                                    table.Cell().Padding(2).Text(item.MapType);
+                                    table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("0.###")} {item.RawMaterialUOM}");
                                 }
                             });
 
@@ -159,22 +165,27 @@ namespace WebPortal.Pages
 
                                 // Group by Category Name
                                 var CategoryWiseData = categoryGroup
-                                 .GroupBy(r => new { r.RawMaterialName })
-                                 .Select((g, index) => new
-                                 {
-                                     Index = index + 1,
-                                     RawMaterialName = g.Key.RawMaterialName,
-                                     TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity)
-                                 })
-                                 .ToList();
+                                 .Where(r => r.ShowInReport == true)
+                                .GroupBy(r => new { r.RawMaterialName, r.RawMaterialMapType, r.ShowInReport })
+                                .Select((g, index) => new
+                                {
+                                    Index = index + 1,
+                                    RawMaterialName = g.Key.RawMaterialName,
+                                    TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity),
+                                    MapType = g.Key.RawMaterialMapType,
+                                    ShowInReport = g.Key.ShowInReport,
+                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? "kg"
+                                })
+                                .ToList();
 
                                 col.Item().PaddingLeft(10).Table(table =>
                                 {
                                     table.ColumnsDefinition(columns =>
                                     {
                                         columns.ConstantColumn(30); // #
-                                        columns.RelativeColumn(2);
-                                        columns.RelativeColumn(2);
+                                        columns.RelativeColumn(2);   // RawMaterialName
+                                        columns.RelativeColumn(2);   // Required For
+                                        columns.RelativeColumn(2);   // Calculated Quantity
                                     });
 
 
@@ -182,6 +193,7 @@ namespace WebPortal.Pages
                                     {
                                         header.Cell().Text("#").Bold();
                                         header.Cell().Text("Ingrident Name").Bold();
+                                        header.Cell().Text("Required For").Bold();
                                         header.Cell().Text("Required Qty").Bold();
                                     });
 
@@ -190,7 +202,8 @@ namespace WebPortal.Pages
                                     {
                                         table.Cell().Padding(2).Text(item.Index.ToString());
                                         table.Cell().Padding(2).Text(item.RawMaterialName);
-                                        table.Cell().Padding(2).Text(item.TotalRequired.ToString("0.### kg"));
+                                        table.Cell().Padding(2).Text(item.MapType);
+                                        table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("0.###")} {item.RawMaterialUOM}");
                                     }
                                 });
                             }
@@ -350,12 +363,5 @@ namespace WebPortal.Pages
         }
 
     }
-
-    public class ProductSummary
-    {
-        public int Index { get; set; }
-        public int ProductId { get; set; }
-        public string ProductName { get; set; }
-        public int TotalRequired { get; set; } // You can modify this now
-    }
+        
 }

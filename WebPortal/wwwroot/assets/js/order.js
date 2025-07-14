@@ -107,10 +107,9 @@ $(document).ready(function () {
             round_warning_noti('Please enter a valid quantity.');
             return;
         }
-        alert('deliveryTime:' + deliveryTime);
+        
         // Combine date and time for DeliveryDateTime
         var deliveryDateTime = new Date(deliveryDate + ' ' + deliveryTime);
-        alert('deliveryDateTime:' + deliveryDateTime);
         var orderData = {
             OrderId: 0,
             OrderNumber: null,

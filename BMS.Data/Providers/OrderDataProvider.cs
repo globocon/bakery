@@ -176,6 +176,8 @@ namespace BMS.Data.Providers
                                 orderConfirmData.RawMaterialRequiredQuantity = prm.QuantityRequired;
                                 orderConfirmData.RawMaterialCP = rawMaterial.CP;
                                 orderConfirmData.RawMaterialUnit = rawMaterial.Unit;
+                                orderConfirmData.RawMaterialMapType = prm.MapType;
+                                orderConfirmData.ShowInReport = prm.ShowInReport;
                                 orderConfirmData.CreatedById = CreatedById;
                                 orderConfirmData.CreatedOn = CreatedOnTime;
                                 orderConfirmDataList.Add(orderConfirmData);
