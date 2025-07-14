@@ -4,6 +4,7 @@ using BMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BMS.Data.Migrations
 {
     [DbContext(typeof(BMSDbContext))]
-    partial class BMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250714071629_InitialDataCorrection2")]
+    partial class InitialDataCorrection2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1338,7 +1341,7 @@ namespace BMS.Data.Migrations
                             CategoryId = 15,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = true,
+                            IsDeleted = false,
                             MRP = 450m,
                             Name = "TEA RUSK"
                         },
@@ -1348,7 +1351,7 @@ namespace BMS.Data.Migrations
                             CategoryId = 16,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = true,
+                            IsDeleted = false,
                             MRP = 450m,
                             Name = "WHITE RUSK"
                         },
