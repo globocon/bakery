@@ -30,6 +30,8 @@ namespace BMS.Data.Models
         public float RawMaterialRequiredQuantity { get; set; }
         public decimal RawMaterialCP { get; set; }
         public string RawMaterialUnit { get; set; }
+        public string? RawMaterialMapType { get; set; }
+        public bool ShowInReport { get; set; }
         public string CreatedById { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
 
