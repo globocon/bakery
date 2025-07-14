@@ -93,18 +93,20 @@
                         </tr>
                     </thead>
                     <tbody>
-                        @foreach (var pi in Model.ProductIngredients)
-                        {
-                            <tr>
-                                <td>@pi.Id</td>
-                                <td>@pi.Product?.Name</td>
-                                <td>@pi.RawMaterial?.Name</td>
-                                <td>@pi.QuantityRequired</td>
-                                <td>
-                                    <a asp-page="./ProductIngredients" asp-route-id="@pi.Id" class="btn btn-outline-primary btn-sm"><i class='bx bx-edit me-0'></i></a>
-                                    <button type="button" class="btn btn-outline-danger btn-sm ms-1" onclick="confirmDeleteIngredient(@pi.Id)"><i class='bx bx-trash me-0'></i></button>
-                                </td>
-                            </tr>
+                        @{
+                            foreach (var pi in Model.ProductIngredients)
+                            {
+                                <tr>
+                                    <td>@pi.Id</td>
+                                    <td>@pi.Product?.Name</td>
+                                    <td>@pi.RawMaterial?.Name</td>
+                                    <td>@pi.QuantityRequired</td>
+                                    <td>
+                                        <a asp-page="./ProductIngredients" asp-route-id="@pi.Id" class="btn btn-outline-primary btn-sm"><i class='bx bx-edit me-0'></i></a>
+                                        <button type="button" class="btn btn-outline-danger btn-sm ms-1" onclick="confirmDeleteIngredient(@pi.Id)"><i class='bx bx-trash me-0'></i></button>
+                                    </td>
+                                </tr>
+                            }
                         }
                     </tbody>
                 </table>
@@ -113,7 +115,7 @@
     </div>
 </div>
 
-@section Scripts {    
+@section Scripts {
     <script>
         function confirmDeleteIngredient(id) {
             Lobibox.confirm({
@@ -135,7 +137,7 @@
                    round_success_noti(notifyMsg);
                 } else if (notifyType === 'error') {
                     round_error_noti(notifyMsg);
-                }                
+                }
             }
         });
     </script>

@@ -59,22 +59,32 @@
                     <hr>
 
                     @{
-                        foreach (var product in Model.productsList)
+                        var groupedProducts = Model.productsList
+                        .OrderBy(p => p.Category.Name) // Sort by Category name
+                        .GroupBy(p => p.Category);
+
+                        foreach (var group in groupedProducts)
                         {
-                            <div class="col-md-3">
-                                <div class="card bg-primary bg-gradient text-center">
-                                    <div class="card-body">
-                                        <label class="form-label  text-white rounded">@product.Name</label>
-                                        <div class="input-group text-white rounded">
-                                            <input type="number" class="form-control" data-productid="@product.Id" id="inputOrderQty_@product.Id" placeholder="Enter Qty" />
-                                            <span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom_@product.Id">Nos</span>
+                            <div class="row mb-3">
+                                <h4 class="text-primary">Category: @group.Key.Name</h4> <!-- Category Name Header -->
+                                @foreach (var product in group.OrderBy(x=> x.Name))
+                                {
+                                    <div class="col-md-3">
+                                        <div class="card bg-primary bg-gradient text-center">
+                                            <div class="card-body">
+                                                <label class="form-label text-white rounded">@product.Name</label>
+                                                <div class="input-group text-white rounded">
+                                                    <input type="number" class="form-control" data-productid="@product.Id" id="inputOrderQty_@product.Id" placeholder="Enter Qty" />
+                                                    <span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom_@product.Id">Nos</span>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                }
                             </div>
                         }
                     }
-                                        
+
                     <div class="col-12 text-end">
                         <button type="button" id="btnSaveNormalOrder" class="btn btn-success px-5">Save</button>
                     </div>
@@ -122,7 +132,7 @@
                             {
                                 <option value="@product.Id">@product.Name</option>
                             }
-                        </select>                        
+                        </select>
                     </div>
                     <div class="col-md-4">
                         <label for="inputOrderQty" class="form-label">Order Qty</label>
@@ -132,7 +142,7 @@
                         </div>
                     </div>
                     <div class="col-12 text-end">
-                            <button type="button" id="btnSaveSpecialOrder" class="btn btn-success px-5">Save</button>
+                        <button type="button" id="btnSaveSpecialOrder" class="btn btn-success px-5">Save</button>
                     </div>
                 </form>
             </div>

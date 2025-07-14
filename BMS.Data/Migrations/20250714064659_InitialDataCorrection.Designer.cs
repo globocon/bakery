@@ -4,6 +4,7 @@ using BMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BMS.Data.Migrations
 {
     [DbContext(typeof(BMSDbContext))]
-    partial class BMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250714064659_InitialDataCorrection")]
+    partial class InitialDataCorrection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -307,15 +310,6 @@ namespace BMS.Data.Migrations
                             IsDeleted = false,
                             Name = "Samosa",
                             PreparationTeamId = 1
-                        },
-                        new
-                        {
-                            Id = 29,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Nadan",
-                            PreparationTeamId = 2
                         });
                 });
 
@@ -865,7 +859,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 11,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -875,7 +869,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 12,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -885,7 +879,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 13,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -895,7 +889,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 14,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -905,7 +899,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 15,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -915,7 +909,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 16,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -925,7 +919,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 17,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -935,7 +929,7 @@ namespace BMS.Data.Migrations
                         new
                         {
                             Id = 18,
-                            CategoryId = 29,
+                            CategoryId = 1,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
@@ -1178,7 +1172,7 @@ namespace BMS.Data.Migrations
                             CategoryId = 13,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = true,
+                            IsDeleted = false,
                             MRP = 450m,
                             Name = "GHEE CAKE"
                         },
@@ -1338,7 +1332,7 @@ namespace BMS.Data.Migrations
                             CategoryId = 15,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = true,
+                            IsDeleted = false,
                             MRP = 450m,
                             Name = "TEA RUSK"
                         },
@@ -1348,7 +1342,7 @@ namespace BMS.Data.Migrations
                             CategoryId = 16,
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = true,
+                            IsDeleted = false,
                             MRP = 450m,
                             Name = "WHITE RUSK"
                         },

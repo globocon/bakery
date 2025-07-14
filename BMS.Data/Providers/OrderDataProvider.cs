@@ -179,6 +179,10 @@ namespace BMS.Data.Providers
                                 orderConfirmData.CreatedById = CreatedById;
                                 orderConfirmData.CreatedOn = CreatedOnTime;
                                 orderConfirmDataList.Add(orderConfirmData);
+
+                                // Need to reduce the stock quantity
+                                // Need to insert it into the invoice table
+                                // Change invoice creation code to take data from invoice table
                             }
                         }
                     }                    
