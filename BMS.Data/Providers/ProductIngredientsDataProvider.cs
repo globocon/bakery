@@ -46,7 +46,7 @@ namespace BMS.Data.Providers
         public async Task AddProductRawMaterialMappingAsync(ProductRawMaterial ingredient)
         {
             // Check if mapping already exists
-            var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialId(ingredient.ProductId, ingredient.RawMaterialId);
+            var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(ingredient.ProductId, ingredient.RawMaterialId, ingredient.MapType);
             if (r != null) { throw new Exception($"Product and ingredient mapping already exists."); }
             await _dbService.AddProductRawMaterialMapping(ingredient);
         }

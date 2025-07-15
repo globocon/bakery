@@ -3,7 +3,7 @@
 @{
     ViewData["Title"] = "Confirm Orders";
 }
-
+@Html.AntiForgeryToken()
 <!--breadcrumb-->
 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
     <div class="breadcrumb-title pe-3">BMS</div>
@@ -71,7 +71,7 @@
                     </table>
                 </div>
                 <div class="text-end">
-                    <button type="submit" class="btn btn-success px-5" id="btnConfirmOrders">Confirm Selected Orders</button>
+                    <button type="button" class="btn btn-success px-5" id="btnConfirmOrders">Confirm Selected Orders</button>
                 </div>
             </div>
         </div>

@@ -2,7 +2,6 @@ using BMS.Data.Models;
 using BMS.Data.Providers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using QuestPDF.Fluent;
 using QuestPDF.Helpers;
 using QuestPDF.Infrastructure;
@@ -35,23 +34,26 @@ namespace WebPortal.Pages
                 Orders = await _orderDataProvider.GetOrdersByDateAsync(SelectedOrderDate.Value);
             }
         }
-
-        public async Task<IActionResult> OnPostConfirmOrdersAsync()
+                           
+        public async Task<IActionResult> OnPostConfirmOrdersAsync([FromBody] List<int> selectedOrderIds)
         {
-            if (SelectedOrderIds != null && SelectedOrderIds.Count > 0)
+            if (selectedOrderIds != null && selectedOrderIds.Count > 0)
             {
-                await _orderDataProvider.ConfirmOrdersAsync(SelectedOrderIds);
-                TempData["NotifyMsg"] = "Selected orders confirmed successfully.";
-                TempData["NotifyType"] = "success";
+                await _orderDataProvider.ConfirmOrdersAsync(selectedOrderIds);
+                return new JsonResult(new
+                {
+                    success = true,
+                    message = "Selected orders confirmed successfully."
+                });
             }
             else
             {
-                TempData["NotifyMsg"] = "No orders selected.";
-                TempData["NotifyType"] = "warning";
+                return new JsonResult(new
+                {
+                    success = false,
+                    message = "No orders selected."
+                });
             }
-
-            // Redirect to GET with the same date to refresh the list
-            return RedirectToPage(new { OrderDate = SelectedOrderDate?.ToString("yyyy-MM-dd") });
         }
 
         public async Task<IActionResult> OnGetPrintReportAsync(DateTime selectedOrderDate)

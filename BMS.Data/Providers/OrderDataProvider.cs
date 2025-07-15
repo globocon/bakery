@@ -34,7 +34,7 @@ namespace BMS.Data.Providers
         private readonly IMapper _mapper;
         private readonly IHttpContextAccessor _httpContextAccessor;
 
-        public OrderDataProvider(IDbService dbService, ICategoryDataProvider categoryDataProvider, ISubCategoryDataProvider subCategoryDataProvider, 
+        public OrderDataProvider(IDbService dbService, ICategoryDataProvider categoryDataProvider, ISubCategoryDataProvider subCategoryDataProvider,
             ICustomerDataProvider customerDataProvider,
             IInvoiceDataProvider invoiceDataProvider, IProductIngredientsDataProvider productIngredientsDataProvider,
             IProductsDataProvider productsDataProvider, IRawMaterialsDataProvider rawMaterialsDataProvider,
@@ -100,6 +100,9 @@ namespace BMS.Data.Providers
             string CreatedById = UserContextHelper.GetCurrentUserId(_httpContextAccessor) ?? ""; ;
             DateTime CreatedOnTime = DateTime.UtcNow;
 
+            List<Invoice> invoicesList = new List<Invoice>();
+            //List<CustomerInvoices> customerInvoices = new List<CustomerInvoices>();
+
             // Confirm orders by updating their status
             foreach (var orderId in orderIds)
             {
@@ -107,11 +110,20 @@ namespace BMS.Data.Providers
                 if (order != null && order.Status != "Confirmed")
                 {
                     order.Status = "Confirmed";
+                    //CustomerInvoices customerInvoice = new CustomerInvoices
+                    //{
+                    //    CustomerId = order.CustomerId,
+                    //    CustomerName = Customers.FirstOrDefault(c => c.CustomerId == order.CustomerId)?.Name ?? "",
+                    //    OrderDate = order.OrderDate,
+                    //    TotalInvoiceAmount = Math.Round(order.OrderItems.Sum(x => x.Quantity * x.Product.MRP), 2)
+                    //};
+                    //customerInvoices.Add(customerInvoice);
+                    PopulateInvoiceData(order, ref invoicesList, CreatedById, CreatedOnTime);
 
                     //Insert data into Order Confirm Table
-                    
+
                     int CustomerId;
-                    string CustomerName;                    
+                    string CustomerName;
                     int CategoryId;
                     string CategoryName;
                     int? SubCategoryId;
@@ -124,7 +136,7 @@ namespace BMS.Data.Providers
                     string? ImgFileExtn;
                     int ProductOrderQuantity;
                     DateTime? OrderDeliveryDateTime;
-                                        
+
 
                     foreach (var item in order.OrderItems)
                     {
@@ -134,7 +146,7 @@ namespace BMS.Data.Providers
                         CategoryName = Categories.FirstOrDefault(c => c.Id == item.Product.CategoryId)?.Name ?? "";
                         SubCategoryId = item.Product.SubCategoryId;
                         SubCategoryName = SubCategories.FirstOrDefault(sc => sc.Id == item.Product.SubCategoryId)?.Name ?? CategoryName;
-                        
+
                         var product = Products.FirstOrDefault(p => p.Id == item.ProductId);
                         ProductId = product?.Id ?? 0;
                         ProductName = product?.Name ?? "";
@@ -144,15 +156,15 @@ namespace BMS.Data.Providers
                         TeamId = PrepTeams.FirstOrDefault(t => t.Id == (Categories.FirstOrDefault(c => c.Id == CategoryId)?.PreparationTeamId ?? 0))?.Id ?? 0;
                         TeamName = PrepTeams.FirstOrDefault(t => t.Id == TeamId)?.TeamName ?? "";
                         OrderDeliveryDateTime = item.DeliveryDateTime;
-                                                
+
                         // Set Raw Materials
                         foreach (var prm in ProductRawMaterials.Where(prm => prm.ProductId == product?.Id))
-                        {                            
+                        {
                             var rawMaterial = RawMaterials.FirstOrDefault(rm => rm.RawMaterialId == prm.RawMaterialId);
                             if (rawMaterial != null)
                             {
                                 OrderConfirmData orderConfirmData = new OrderConfirmData();
-                                                                
+
                                 orderConfirmData.CustomerId = CustomerId;
                                 orderConfirmData.CustomerName = CustomerName;
                                 orderConfirmData.OrderId = order.OrderId;
@@ -183,15 +195,81 @@ namespace BMS.Data.Providers
                                 orderConfirmDataList.Add(orderConfirmData);
 
                                 // Need to reduce the stock quantity
-                                // Need to insert it into the invoice table
-                                // Change invoice creation code to take data from invoice table
+                                rawMaterial.StockQuantity -= ProductOrderQuantity * prm.QuantityRequired;
                             }
                         }
-                    }                    
+                    }
                 }
             }
             // Save changes
             await _dbService.ConfirmOrders(orderConfirmDataList);
+            if (invoicesList.Count > 0)
+            {
+                // Save the invoice to the database
+                await _dbService.AddInvoiceListAsync(invoicesList);
+            }
+            //else
+            //{
+            //    // If no new invoices were created, just update the existing invoice
+            //    await _dbService.UpdateInvoiceAsync();
+            //}
+        }
+
+        public void PopulateInvoiceData(Order order, ref List<Invoice> invoiceItems, string createdById, DateTime CreatedOnTime)
+        {
+
+            // Check if invoice already exists for this customer and date
+            var existingInvoice = _dbService.GetInvoiceByCustomerIdAndDateAsync(order.CustomerId, order.OrderDate).Result;
+            if (existingInvoice == null)
+            {
+                // Create a new invoice
+                Invoice newinvoice = new Invoice
+                {
+                    CustomerId = order.CustomerId,
+                    InvoiceDate = order.OrderDate,
+                    TotalAmount = 0,
+                    DiscountAmount = 0, // Set discount logic if needed
+                    CreatedById = createdById,
+                    CreatedOn = CreatedOnTime,
+                    InvoiceItems = new List<InvoiceItem>()
+                };
+
+                // Add each item from order to the invoice
+                foreach (var item in order.OrderItems)
+                {
+                    InvoiceItem newItem = new InvoiceItem
+                    {
+                        ProductId = item.ProductId,
+                        Quantity = item.Quantity,
+                        Price = item.Product.MRP,
+                        Discount = 0, // Set discount logic if needed
+                    };
+                    newinvoice.InvoiceItems.Add(newItem);
+                    newinvoice.TotalAmount = Math.Round(item.Quantity * item.Product.MRP, 2); ;
+                }
+                invoiceItems.Add(newinvoice);
+            }
+
+            else
+            {
+                // Update existing invoice with new items
+                foreach (var item in order.OrderItems)
+                {
+                    InvoiceItem newItem = new InvoiceItem
+                    {
+                        ProductId = item.ProductId,
+                        Quantity = item.Quantity,
+                        Price = item.Product.MRP,
+                        Discount = 0, // Set discount logic if needed
+                    };
+                    if (existingInvoice.InvoiceItems == null)
+                    {
+                        existingInvoice.InvoiceItems = new List<InvoiceItem>();
+                    }
+                    existingInvoice.InvoiceItems.Add(newItem);
+                    existingInvoice.TotalAmount += Math.Round(item.Quantity * item.Product.MRP, 2);
+                }
+            }
         }
 
         public async Task<List<OrderConfirmData>> GetConfirmedOrderReportByDateAsync(DateTime orderDate)
@@ -200,5 +278,13 @@ namespace BMS.Data.Providers
             // You may need to add a method in your DbService to fetch this data
             return await _dbService.GetOrderConfirmDataByDateAndStatus(orderDate);
         }
+    }
+
+    public class CustomerInvoices
+    {
+        public int CustomerId { get; set; }
+        public string CustomerName { get; set; }
+        public DateTime OrderDate { get; set; }
+        public decimal TotalInvoiceAmount { get; set; }
     }
 }

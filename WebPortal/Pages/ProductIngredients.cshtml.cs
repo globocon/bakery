@@ -117,5 +117,15 @@ namespace WebPortal.Pages
             TempData["NotifyType"] = "success";
             return RedirectToPage(new { notify = "deleted" });
         }
+
+        public async Task<IActionResult> OnGetProductIngredientsPartial(int? productId)
+        {
+            List<ProductRawMaterial> ingredients = new List<ProductRawMaterial>();
+            if (productId.HasValue)
+            {
+                ingredients = await _productIngredientsDataProvider.GetAllProductRawMaterialsMappingByProductIdAsync((int)productId);                
+            }
+            return Partial("./_ProductIngredientsTableBody", ingredients.OrderBy(o=> o.RawMaterial.Name));
+        }
     }
 }
