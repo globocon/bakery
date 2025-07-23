@@ -4,6 +4,7 @@ using BMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BMS.Data.Migrations
 {
     [DbContext(typeof(BMSDbContext))]
-    partial class BMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250715102855_IntialChanges5")]
+    partial class IntialChanges5
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -1065,7 +1068,7 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             MRP = 450m,
-                            Name = "Marble Cake - Tray"
+                            Name = "Marble Cake"
                         },
                         new
                         {
@@ -1075,7 +1078,7 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             MRP = 450m,
-                            Name = "Tea Cake - Tray"
+                            Name = "Tea Cake"
                         },
                         new
                         {
@@ -1085,7 +1088,7 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             MRP = 450m,
-                            Name = "Butter Plum - Tray"
+                            Name = "Butter Plum"
                         },
                         new
                         {
@@ -1095,7 +1098,7 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             MRP = 450m,
-                            Name = "Strawberry Cake - Tray"
+                            Name = "Strawberry Cake"
                         },
                         new
                         {
@@ -1115,7 +1118,7 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             MRP = 450m,
-                            Name = "Pineapple Cake - Tray"
+                            Name = "PINEAPPALE CAKE"
                         },
                         new
                         {
@@ -1225,7 +1228,7 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             MRP = 450m,
-                            Name = "Kuboose Single"
+                            Name = "Kubboos"
                         },
                         new
                         {
@@ -1696,226 +1699,6 @@ namespace BMS.Data.Migrations
                             IsDeleted = false,
                             MRP = 450m,
                             Name = "Orange Muffin 1 pkt (6 pcs)"
-                        },
-                        new
-                        {
-                            Id = 94,
-                            CategoryId = 2,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Bun Single"
-                        },
-                        new
-                        {
-                            Id = 95,
-                            CategoryId = 2,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Bun 1 packet (4nos)"
-                        },
-                        new
-                        {
-                            Id = 96,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Marble Cake - 800gm"
-                        },
-                        new
-                        {
-                            Id = 97,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Marble Cake - 400gm"
-                        },
-                        new
-                        {
-                            Id = 98,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Tea Cake - 800gm"
-                        },
-                        new
-                        {
-                            Id = 99,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Tea Cake - 400gm"
-                        },
-                        new
-                        {
-                            Id = 100,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Strawberry Cake - 800gm"
-                        },
-                        new
-                        {
-                            Id = 101,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Strawberry Cake - 400gm"
-                        },
-                        new
-                        {
-                            Id = 102,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Butter Plum - 800gm"
-                        },
-                        new
-                        {
-                            Id = 103,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Butter Plum - 400gm"
-                        },
-                        new
-                        {
-                            Id = 104,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Pineapple Cake - 800gm"
-                        },
-                        new
-                        {
-                            Id = 105,
-                            CategoryId = 4,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Pineapple Cake - 400gm"
-                        },
-                        new
-                        {
-                            Id = 106,
-                            CategoryId = 2,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Wheat Bread"
-                        },
-                        new
-                        {
-                            Id = 107,
-                            CategoryId = 14,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Kuboose 1 packet "
-                        },
-                        new
-                        {
-                            Id = 108,
-                            CategoryId = 14,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Tikka Chicken"
-                        },
-                        new
-                        {
-                            Id = 109,
-                            CategoryId = 14,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Pizza"
-                        },
-                        new
-                        {
-                            Id = 110,
-                            CategoryId = 25,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "White Cup"
-                        },
-                        new
-                        {
-                            Id = 111,
-                            CategoryId = 25,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Pineapple Cup"
-                        },
-                        new
-                        {
-                            Id = 112,
-                            CategoryId = 25,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Pineapple Muffin Cup"
-                        },
-                        new
-                        {
-                            Id = 113,
-                            CategoryId = 25,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Strawberry Muffin Cup"
-                        },
-                        new
-                        {
-                            Id = 114,
-                            CategoryId = 25,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Orange Muffin Cup"
-                        },
-                        new
-                        {
-                            Id = 115,
-                            CategoryId = 25,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            MRP = 450m,
-                            Name = "Mango Muffin Cup"
                         });
                 });
 
@@ -1955,512 +1738,512 @@ namespace BMS.Data.Migrations
                         {
                             Id = 1,
                             MapType = "Mix",
-                            ProductId = 82,
-                            QuantityRequired = 0.2125984f,
-                            RawMaterialId = 1,
-                            ShowInReport = false
+                            ProductId = 6,
+                            QuantityRequired = 0.528f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 2,
                             MapType = "Mix",
-                            ProductId = 82,
-                            QuantityRequired = 0.275591f,
-                            RawMaterialId = 2,
-                            ShowInReport = false
+                            ProductId = 6,
+                            QuantityRequired = 0.029f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 3,
                             MapType = "Mix",
-                            ProductId = 82,
-                            QuantityRequired = 0.11024f,
-                            RawMaterialId = 9,
-                            ShowInReport = false
+                            ProductId = 6,
+                            QuantityRequired = 0.0157f,
+                            RawMaterialId = 22,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 4,
                             MapType = "Mix",
-                            ProductId = 82,
-                            QuantityRequired = 0.2125984f,
-                            RawMaterialId = 7,
-                            ShowInReport = false
+                            ProductId = 6,
+                            QuantityRequired = 0.00057f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 5,
                             MapType = "Mix",
-                            ProductId = 82,
-                            QuantityRequired = 0.0944882f,
-                            RawMaterialId = 34,
-                            ShowInReport = false
+                            ProductId = 6,
+                            QuantityRequired = 0.0014f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 6,
                             MapType = "Mix",
-                            ProductId = 82,
-                            QuantityRequired = 7.086614f,
-                            RawMaterialId = 6,
-                            ShowInReport = false
+                            ProductId = 6,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 7,
                             MapType = "Mix",
-                            ProductId = 83,
-                            QuantityRequired = 0.2125984f,
-                            RawMaterialId = 1,
-                            ShowInReport = false
+                            ProductId = 6,
+                            QuantityRequired = 0.00028f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 8,
-                            MapType = "Mix",
-                            ProductId = 83,
-                            QuantityRequired = 0.275591f,
-                            RawMaterialId = 2,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.03f,
+                            RawMaterialId = 85,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 9,
-                            MapType = "Mix",
-                            ProductId = 83,
-                            QuantityRequired = 0.11024f,
-                            RawMaterialId = 9,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.003f,
+                            RawMaterialId = 82,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 10,
-                            MapType = "Mix",
-                            ProductId = 83,
-                            QuantityRequired = 0.2125984f,
-                            RawMaterialId = 7,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 79,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 11,
-                            MapType = "Mix",
-                            ProductId = 83,
-                            QuantityRequired = 0.0944882f,
-                            RawMaterialId = 34,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 88,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 12,
-                            MapType = "Mix",
-                            ProductId = 83,
-                            QuantityRequired = 7.086614f,
-                            RawMaterialId = 6,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 84,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 13,
-                            MapType = "Mix",
-                            ProductId = 84,
-                            QuantityRequired = 0.1062992f,
-                            RawMaterialId = 1,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 77,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 14,
-                            MapType = "Mix",
-                            ProductId = 84,
-                            QuantityRequired = 0.1377955f,
-                            RawMaterialId = 2,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 29,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 15,
-                            MapType = "Mix",
-                            ProductId = 84,
-                            QuantityRequired = 0.05512f,
-                            RawMaterialId = 9,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 78,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 16,
-                            MapType = "Mix",
-                            ProductId = 84,
-                            QuantityRequired = 0.1062992f,
-                            RawMaterialId = 7,
+                            MapType = "Masala",
+                            ProductId = 6,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 17,
                             ShowInReport = false
                         },
                         new
                         {
                             Id = 17,
                             MapType = "Mix",
-                            ProductId = 84,
-                            QuantityRequired = 0.0472441f,
-                            RawMaterialId = 34,
-                            ShowInReport = false
+                            ProductId = 8,
+                            QuantityRequired = 0.028f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 18,
                             MapType = "Mix",
-                            ProductId = 84,
-                            QuantityRequired = 3.543307f,
-                            RawMaterialId = 6,
-                            ShowInReport = false
+                            ProductId = 8,
+                            QuantityRequired = 0.029f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
                         },
                         new
                         {
                             Id = 19,
                             MapType = "Mix",
-                            ProductId = 85,
-                            QuantityRequired = 0.07441f,
-                            RawMaterialId = 1,
-                            ShowInReport = false
-                        },
-                        new
-                        {
-                            Id = 20,
-                            MapType = "Mix",
-                            ProductId = 85,
-                            QuantityRequired = 0.09646f,
-                            RawMaterialId = 2,
-                            ShowInReport = false
-                        },
-                        new
-                        {
-                            Id = 21,
-                            MapType = "Mix",
-                            ProductId = 85,
-                            QuantityRequired = 0.0386f,
-                            RawMaterialId = 9,
-                            ShowInReport = false
-                        },
-                        new
-                        {
-                            Id = 22,
-                            MapType = "Mix",
-                            ProductId = 85,
-                            QuantityRequired = 0.07441f,
-                            RawMaterialId = 7,
-                            ShowInReport = false
-                        },
-                        new
-                        {
-                            Id = 23,
-                            MapType = "Mix",
-                            ProductId = 85,
-                            QuantityRequired = 0.0331f,
-                            RawMaterialId = 34,
-                            ShowInReport = false
-                        },
-                        new
-                        {
-                            Id = 24,
-                            MapType = "Mix",
-                            ProductId = 85,
-                            QuantityRequired = 2.480315f,
-                            RawMaterialId = 6,
-                            ShowInReport = false
-                        },
-                        new
-                        {
-                            Id = 25,
-                            MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.0278f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 26,
-                            MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.02778f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 27,
-                            MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.015278f,
+                            ProductId = 8,
+                            QuantityRequired = 0.0157f,
                             RawMaterialId = 22,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 28,
+                            Id = 20,
                             MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.00056f,
+                            ProductId = 8,
+                            QuantityRequired = 0.00057f,
                             RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 29,
+                            Id = 21,
                             MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.001389f,
+                            ProductId = 8,
+                            QuantityRequired = 0.0014f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 30,
+                            Id = 22,
                             MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.0001389f,
+                            ProductId = 8,
+                            QuantityRequired = 0.00014f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 31,
+                            Id = 23,
                             MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.000278f,
+                            ProductId = 8,
+                            QuantityRequired = 0.00028f,
                             RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
+                            Id = 24,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.03f,
+                            RawMaterialId = 85,
+                            ShowInReport = false
+                        },
+                        new
+                        {
+                            Id = 25,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.003f,
+                            RawMaterialId = 82,
+                            ShowInReport = false
+                        },
+                        new
+                        {
+                            Id = 26,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 79,
+                            ShowInReport = false
+                        },
+                        new
+                        {
+                            Id = 27,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 88,
+                            ShowInReport = false
+                        },
+                        new
+                        {
+                            Id = 28,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 84,
+                            ShowInReport = false
+                        },
+                        new
+                        {
+                            Id = 29,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 77,
+                            ShowInReport = false
+                        },
+                        new
+                        {
+                            Id = 30,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 29,
+                            ShowInReport = false
+                        },
+                        new
+                        {
+                            Id = 31,
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 78,
+                            ShowInReport = false
+                        },
+                        new
+                        {
                             Id = 32,
-                            MapType = "Mix",
-                            ProductId = 6,
-                            QuantityRequired = 0.0125f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 8,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 17,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 33,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 8,
-                            QuantityRequired = 0.03158f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
+                            QuantityRequired = 0.01f,
+                            RawMaterialId = 73,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 34,
                             MapType = "Mix",
-                            ProductId = 8,
-                            QuantityRequired = 0.0316f,
-                            RawMaterialId = 1,
+                            ProductId = 10,
+                            QuantityRequired = 0.028f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 35,
                             MapType = "Mix",
-                            ProductId = 8,
-                            QuantityRequired = 0.01737f,
-                            RawMaterialId = 22,
+                            ProductId = 10,
+                            QuantityRequired = 0.029f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 36,
                             MapType = "Mix",
-                            ProductId = 8,
-                            QuantityRequired = 0.000632f,
-                            RawMaterialId = 3,
+                            ProductId = 10,
+                            QuantityRequired = 0.0157f,
+                            RawMaterialId = 22,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 37,
                             MapType = "Mix",
-                            ProductId = 8,
-                            QuantityRequired = 0.00158f,
-                            RawMaterialId = 2,
+                            ProductId = 10,
+                            QuantityRequired = 0.00057f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 38,
                             MapType = "Mix",
-                            ProductId = 8,
-                            QuantityRequired = 0.000158f,
-                            RawMaterialId = 5,
+                            ProductId = 10,
+                            QuantityRequired = 0.0014f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 39,
                             MapType = "Mix",
-                            ProductId = 8,
-                            QuantityRequired = 0.000316f,
-                            RawMaterialId = 4,
+                            ProductId = 10,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 40,
                             MapType = "Mix",
-                            ProductId = 8,
-                            QuantityRequired = 0.014211f,
-                            RawMaterialId = 68,
+                            ProductId = 10,
+                            QuantityRequired = 0.00028f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 41,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.03f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 88,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 42,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.03f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 84,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 43,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.0165f,
-                            RawMaterialId = 22,
-                            ShowInReport = true
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 77,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 44,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.0006f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
+                            QuantityRequired = 0.0003f,
+                            RawMaterialId = 29,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 45,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.0015f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 78,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 46,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.00015f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 17,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 47,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
+                            QuantityRequired = 0.019f,
+                            RawMaterialId = 86,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 48,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 10,
-                            QuantityRequired = 0.0135f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
+                            QuantityRequired = 0.0067f,
+                            RawMaterialId = 75,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 49,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.03158f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.0019f,
+                            RawMaterialId = 66,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 50,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.0316f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 74,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 51,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.01737f,
-                            RawMaterialId = 22,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 87,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 52,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.000632f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 79,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 53,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.00158f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.005f,
+                            RawMaterialId = 85,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 54,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.000158f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 82,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 55,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.000316f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 83,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 56,
-                            MapType = "Mix",
-                            ProductId = 7,
-                            QuantityRequired = 0.14211f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 10,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 80,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 57,
                             MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.0286f,
+                            ProductId = 7,
+                            QuantityRequired = 0.028f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
@@ -2468,8 +2251,8 @@ namespace BMS.Data.Migrations
                         {
                             Id = 58,
                             MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.0286f,
+                            ProductId = 7,
+                            QuantityRequired = 0.0316f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
@@ -2477,8 +2260,8 @@ namespace BMS.Data.Migrations
                         {
                             Id = 59,
                             MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.015715f,
+                            ProductId = 7,
+                            QuantityRequired = 0.0173f,
                             RawMaterialId = 22,
                             ShowInReport = true
                         },
@@ -2486,8 +2269,8 @@ namespace BMS.Data.Migrations
                         {
                             Id = 60,
                             MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.0005715f,
+                            ProductId = 7,
+                            QuantityRequired = 0.0002f,
                             RawMaterialId = 3,
                             ShowInReport = true
                         },
@@ -2495,8 +2278,8 @@ namespace BMS.Data.Migrations
                         {
                             Id = 61,
                             MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.0014286f,
+                            ProductId = 7,
+                            QuantityRequired = 0.00052f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
@@ -2504,8 +2287,8 @@ namespace BMS.Data.Migrations
                         {
                             Id = 62,
                             MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.000143f,
+                            ProductId = 7,
+                            QuantityRequired = 0.00052f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
@@ -2513,122 +2296,275 @@ namespace BMS.Data.Migrations
                         {
                             Id = 63,
                             MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.000286f,
+                            ProductId = 7,
+                            QuantityRequired = 0.0001f,
                             RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 64,
-                            MapType = "Mix",
-                            ProductId = 9,
-                            QuantityRequired = 0.01286f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
+                            MapType = "Masala",
+                            ProductId = 7,
+                            QuantityRequired = 0.03f,
+                            RawMaterialId = 85,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 65,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.000605f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.003f,
+                            RawMaterialId = 82,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 66,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.000605f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 79,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 67,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 6.05E-05f,
-                            RawMaterialId = 98,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 88,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 68,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.0012097f,
-                            RawMaterialId = 51,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 84,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 69,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.0015121f,
-                            RawMaterialId = 11,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 77,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 70,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.006339f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 29,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 71,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.0004839f,
-                            RawMaterialId = 10,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 78,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 72,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.0009073f,
-                            RawMaterialId = 52,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 17,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 73,
                             MapType = "Masala",
-                            ProductId = 9,
-                            QuantityRequired = 0.0010585f,
-                            RawMaterialId = 53,
-                            ShowInReport = true
+                            ProductId = 7,
+                            QuantityRequired = 0.01f,
+                            RawMaterialId = 72,
+                            ShowInReport = false
                         },
                         new
                         {
                             Id = 74,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 9,
-                            QuantityRequired = 0.0030242f,
-                            RawMaterialId = 21,
+                            QuantityRequired = 0.028f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 75,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 9,
-                            QuantityRequired = 0.0009073f,
-                            RawMaterialId = 68,
+                            QuantityRequired = 0.029f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 76,
+                            MapType = "Mix",
+                            ProductId = 9,
+                            QuantityRequired = 0.0157f,
+                            RawMaterialId = 22,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 77,
+                            MapType = "Mix",
+                            ProductId = 9,
+                            QuantityRequired = 0.00057f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 78,
+                            MapType = "Mix",
+                            ProductId = 9,
+                            QuantityRequired = 0.0014f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 79,
+                            MapType = "Mix",
+                            ProductId = 9,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 80,
+                            MapType = "Mix",
+                            ProductId = 9,
+                            QuantityRequired = 0.00028f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 81,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.0009f,
+                            RawMaterialId = 68,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 82,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 83,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 84,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.0595f,
+                            RawMaterialId = 19,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 85,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 51,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 86,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.0015f,
+                            RawMaterialId = 11,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 87,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 88,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 10,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 89,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.0009f,
+                            RawMaterialId = 52,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 90,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 53,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 91,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.003f,
+                            RawMaterialId = 21,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 92,
+                            MapType = "Masala",
+                            ProductId = 9,
+                            QuantityRequired = 0.025f,
+                            RawMaterialId = 67,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 93,
                             MapType = "Mix",
                             ProductId = 1,
                             QuantityRequired = 0.0375f,
@@ -2637,34 +2573,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 77,
+                            Id = 94,
                             MapType = "Mix",
                             ProductId = 1,
-                            QuantityRequired = 0.020625f,
+                            QuantityRequired = 0.0206f,
                             RawMaterialId = 22,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 78,
+                            Id = 95,
                             MapType = "Mix",
                             ProductId = 1,
-                            QuantityRequired = 0.00075f,
+                            QuantityRequired = 0.00025f,
                             RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 79,
+                            Id = 96,
                             MapType = "Mix",
                             ProductId = 1,
-                            QuantityRequired = 0.001875f,
+                            QuantityRequired = 0.0006f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 80,
+                            Id = 97,
                             MapType = "Mix",
                             ProductId = 1,
                             QuantityRequired = 0.0375f,
@@ -2673,43 +2609,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 81,
+                            Id = 98,
                             MapType = "Mix",
                             ProductId = 1,
-                            QuantityRequired = 0.0001875f,
+                            QuantityRequired = 0.00018f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 82,
+                            Id = 99,
                             MapType = "Mix",
                             ProductId = 1,
-                            QuantityRequired = 0.000375f,
+                            QuantityRequired = 0.00038f,
                             RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 83,
-                            MapType = "Mix",
-                            ProductId = 1,
-                            QuantityRequired = 0.016875f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 84,
+                            Id = 100,
                             MapType = "Masala",
                             ProductId = 1,
-                            QuantityRequired = 0.000625f,
+                            QuantityRequired = 0.0006f,
                             RawMaterialId = 53,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 85,
+                            Id = 101,
                             MapType = "Masala",
                             ProductId = 1,
                             QuantityRequired = 0.001f,
@@ -2718,16 +2645,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 86,
+                            Id = 102,
                             MapType = "Masala",
                             ProductId = 1,
                             QuantityRequired = 0.00025f,
-                            RawMaterialId = 98,
+                            RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 87,
+                            Id = 103,
                             MapType = "Masala",
                             ProductId = 1,
                             QuantityRequired = 0.00025f,
@@ -2736,7 +2663,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 88,
+                            Id = 104,
                             MapType = "Masala",
                             ProductId = 1,
                             QuantityRequired = 0.01f,
@@ -2745,317 +2672,173 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 89,
+                            Id = 105,
                             MapType = "Mix",
                             ProductId = 2,
-                            QuantityRequired = 0.0261f,
+                            QuantityRequired = 0.0285f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 90,
+                            Id = 106,
                             MapType = "Mix",
                             ProductId = 2,
-                            QuantityRequired = 0.0261f,
+                            QuantityRequired = 0.0285f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 91,
+                            Id = 107,
                             MapType = "Mix",
                             ProductId = 2,
-                            QuantityRequired = 0.014348f,
+                            QuantityRequired = 0.0157f,
                             RawMaterialId = 22,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 92,
+                            Id = 108,
                             MapType = "Mix",
                             ProductId = 2,
-                            QuantityRequired = 0.000522f,
+                            QuantityRequired = 0.00057f,
                             RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 93,
-                            MapType = "Mix",
-                            ProductId = 2,
-                            QuantityRequired = 0.001305f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 94,
-                            MapType = "Mix",
-                            ProductId = 2,
-                            QuantityRequired = 0.0001305f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 95,
-                            MapType = "Mix",
-                            ProductId = 2,
-                            QuantityRequired = 0.0002609f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 96,
-                            MapType = "Mix",
-                            ProductId = 2,
-                            QuantityRequired = 0.001174f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 97,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.007813f,
-                            RawMaterialId = 99,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 98,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.00313f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 99,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.0001563f,
-                            RawMaterialId = 98,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 100,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.0025f,
-                            RawMaterialId = 51,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 101,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.00125f,
-                            RawMaterialId = 53,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 102,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.000625f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 103,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.000625f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 104,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.000625f,
-                            RawMaterialId = 52,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 105,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.000625f,
-                            RawMaterialId = 8,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 106,
-                            MapType = "Masala 1",
-                            ProductId = 2,
-                            QuantityRequired = 0.000625f,
-                            RawMaterialId = 10,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 107,
-                            MapType = "Masala 2",
-                            ProductId = 2,
-                            QuantityRequired = 0.003469f,
-                            RawMaterialId = 21,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 108,
-                            MapType = "Masala 2",
-                            ProductId = 2,
-                            QuantityRequired = 0.0017344f,
-                            RawMaterialId = 11,
-                            ShowInReport = true
-                        },
-                        new
-                        {
                             Id = 109,
-                            MapType = "Masala 2",
+                            MapType = "Mix",
                             ProductId = 2,
-                            QuantityRequired = 0.00555f,
+                            QuantityRequired = 0.0014f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 110,
-                            MapType = "Masala 2",
+                            MapType = "Mix",
                             ProductId = 2,
-                            QuantityRequired = 6.94E-05f,
-                            RawMaterialId = 98,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 111,
-                            MapType = "Masala 2",
+                            MapType = "Mix",
                             ProductId = 2,
-                            QuantityRequired = 0.0013875f,
-                            RawMaterialId = 51,
+                            QuantityRequired = 0.000285f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 112,
-                            MapType = "Masala 2",
+                            MapType = "Masala",
                             ProductId = 2,
-                            QuantityRequired = 0.0012141f,
-                            RawMaterialId = 53,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 113,
-                            MapType = "Masala 2",
-                            ProductId = 2,
-                            QuantityRequired = 0.000694f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 114,
-                            MapType = "Masala 2",
-                            ProductId = 2,
-                            QuantityRequired = 0.000694f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 115,
-                            MapType = "Masala 2",
-                            ProductId = 2,
-                            QuantityRequired = 0.0010406f,
-                            RawMaterialId = 52,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 116,
-                            MapType = "Masala 2",
-                            ProductId = 2,
-                            QuantityRequired = 0.0010406f,
+                            QuantityRequired = 0.0023f,
                             RawMaterialId = 68,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 117,
-                            MapType = "Masala 2",
+                            Id = 113,
+                            MapType = "Masala",
                             ProductId = 2,
-                            QuantityRequired = 0.000555f,
-                            RawMaterialId = 10,
+                            QuantityRequired = 0.0022f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 114,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.0022f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 115,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.0017f,
+                            RawMaterialId = 19,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 116,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.0056f,
+                            RawMaterialId = 51,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 117,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.0111f,
+                            RawMaterialId = 11,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 118,
-                            MapType = "Mix",
-                            ProductId = 3,
-                            QuantityRequired = 0.107143f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 119,
-                            MapType = "Mix",
-                            ProductId = 3,
-                            QuantityRequired = 0.05893f,
-                            RawMaterialId = 22,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 120,
-                            MapType = "Mix",
-                            ProductId = 3,
-                            QuantityRequired = 0.002143f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 121,
-                            MapType = "Mix",
-                            ProductId = 3,
-                            QuantityRequired = 0.00536f,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.016f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
+                            Id = 119,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.0033f,
+                            RawMaterialId = 10,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 120,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.013f,
+                            RawMaterialId = 52,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 121,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.00298f,
+                            RawMaterialId = 53,
+                            ShowInReport = true
+                        },
+                        new
+                        {
                             Id = 122,
-                            MapType = "Mix",
-                            ProductId = 3,
-                            QuantityRequired = 0.1072f,
-                            RawMaterialId = 6,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.008f,
+                            RawMaterialId = 21,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 123,
-                            MapType = "Mix",
-                            ProductId = 3,
-                            QuantityRequired = 0.000536f,
-                            RawMaterialId = 5,
+                            MapType = "Masala",
+                            ProductId = 2,
+                            QuantityRequired = 0.0034f,
+                            RawMaterialId = 8,
                             ShowInReport = true
                         },
                         new
@@ -3063,8 +2846,8 @@ namespace BMS.Data.Migrations
                             Id = 124,
                             MapType = "Mix",
                             ProductId = 3,
-                            QuantityRequired = 0.001072f,
-                            RawMaterialId = 4,
+                            QuantityRequired = 0.125f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
@@ -3072,53 +2855,53 @@ namespace BMS.Data.Migrations
                             Id = 125,
                             MapType = "Mix",
                             ProductId = 3,
-                            QuantityRequired = 0.04822f,
-                            RawMaterialId = 68,
+                            QuantityRequired = 0.0687f,
+                            RawMaterialId = 22,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 126,
                             MapType = "Mix",
-                            ProductId = 4,
-                            QuantityRequired = 0.08824f,
-                            RawMaterialId = 6,
+                            ProductId = 3,
+                            QuantityRequired = 0.0025f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 127,
                             MapType = "Mix",
-                            ProductId = 4,
-                            QuantityRequired = 0.08824f,
-                            RawMaterialId = 1,
+                            ProductId = 3,
+                            QuantityRequired = 0.00625f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 128,
                             MapType = "Mix",
-                            ProductId = 4,
-                            QuantityRequired = 0.04853f,
-                            RawMaterialId = 22,
+                            ProductId = 3,
+                            QuantityRequired = 0.125f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 129,
                             MapType = "Mix",
-                            ProductId = 4,
-                            QuantityRequired = 0.001765f,
-                            RawMaterialId = 3,
+                            ProductId = 3,
+                            QuantityRequired = 0.00063f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 130,
                             MapType = "Mix",
-                            ProductId = 4,
-                            QuantityRequired = 0.004412f,
-                            RawMaterialId = 2,
+                            ProductId = 3,
+                            QuantityRequired = 0.00125f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
@@ -3126,8 +2909,8 @@ namespace BMS.Data.Migrations
                             Id = 131,
                             MapType = "Mix",
                             ProductId = 4,
-                            QuantityRequired = 0.0004412f,
-                            RawMaterialId = 5,
+                            QuantityRequired = 0.0285f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
@@ -3135,8 +2918,8 @@ namespace BMS.Data.Migrations
                             Id = 132,
                             MapType = "Mix",
                             ProductId = 4,
-                            QuantityRequired = 0.0008824f,
-                            RawMaterialId = 4,
+                            QuantityRequired = 0.0285f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
@@ -3144,49 +2927,85 @@ namespace BMS.Data.Migrations
                             Id = 133,
                             MapType = "Mix",
                             ProductId = 4,
-                            QuantityRequired = 0.03971f,
-                            RawMaterialId = 68,
+                            QuantityRequired = 0.0157f,
+                            RawMaterialId = 22,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 134,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 4,
-                            QuantityRequired = 0.058334f,
-                            RawMaterialId = 99,
+                            QuantityRequired = 0.00057f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 135,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 4,
-                            QuantityRequired = 0.025f,
+                            QuantityRequired = 0.0014f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 136,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 4,
-                            QuantityRequired = 0.000834f,
-                            RawMaterialId = 19,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 137,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 4,
-                            QuantityRequired = 0.02f,
-                            RawMaterialId = 51,
+                            QuantityRequired = 0.000285f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 138,
+                            MapType = "Masala",
+                            ProductId = 4,
+                            QuantityRequired = 0.062f,
+                            RawMaterialId = 11,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 139,
+                            MapType = "Masala",
+                            ProductId = 4,
+                            QuantityRequired = 0.026f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 140,
+                            MapType = "Masala",
+                            ProductId = 4,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 19,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 141,
+                            MapType = "Masala",
+                            ProductId = 4,
+                            QuantityRequired = 0.021f,
+                            RawMaterialId = 51,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 142,
                             MapType = "Masala",
                             ProductId = 4,
                             QuantityRequired = 0.01f,
@@ -3195,25 +3014,25 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 139,
+                            Id = 143,
                             MapType = "Masala",
                             ProductId = 4,
-                            QuantityRequired = 0.005f,
+                            QuantityRequired = 0.0052f,
                             RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 140,
+                            Id = 144,
                             MapType = "Masala",
                             ProductId = 4,
-                            QuantityRequired = 0.005f,
+                            QuantityRequired = 0.0052f,
                             RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 141,
+                            Id = 145,
                             MapType = "Masala",
                             ProductId = 4,
                             QuantityRequired = 0.005f,
@@ -3222,7 +3041,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 142,
+                            Id = 146,
                             MapType = "Masala",
                             ProductId = 4,
                             QuantityRequired = 0.005f,
@@ -3231,47 +3050,11 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 143,
+                            Id = 147,
                             MapType = "Masala",
                             ProductId = 4,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 10,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 144,
-                            MapType = "Mix",
-                            ProductId = 5,
-                            QuantityRequired = 0.027273f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 145,
-                            MapType = "Mix",
-                            ProductId = 5,
-                            QuantityRequired = 0.027273f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 146,
-                            MapType = "Mix",
-                            ProductId = 5,
-                            QuantityRequired = 0.015f,
-                            RawMaterialId = 22,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 147,
-                            MapType = "Mix",
-                            ProductId = 5,
-                            QuantityRequired = 0.0005455f,
-                            RawMaterialId = 3,
+                            QuantityRequired = 0.0052f,
+                            RawMaterialId = 76,
                             ShowInReport = true
                         },
                         new
@@ -3279,8 +3062,8 @@ namespace BMS.Data.Migrations
                             Id = 148,
                             MapType = "Mix",
                             ProductId = 5,
-                            QuantityRequired = 0.001364f,
-                            RawMaterialId = 2,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
@@ -3288,8 +3071,8 @@ namespace BMS.Data.Migrations
                             Id = 149,
                             MapType = "Mix",
                             ProductId = 5,
-                            QuantityRequired = 0.0001364f,
-                            RawMaterialId = 5,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
@@ -3297,8 +3080,8 @@ namespace BMS.Data.Migrations
                             Id = 150,
                             MapType = "Mix",
                             ProductId = 5,
-                            QuantityRequired = 0.0002727f,
-                            RawMaterialId = 4,
+                            QuantityRequired = 0.022f,
+                            RawMaterialId = 22,
                             ShowInReport = true
                         },
                         new
@@ -3306,13 +3089,40 @@ namespace BMS.Data.Migrations
                             Id = 151,
                             MapType = "Mix",
                             ProductId = 5,
-                            QuantityRequired = 0.012273f,
-                            RawMaterialId = 68,
+                            QuantityRequired = 0.008f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 152,
+                            MapType = "Mix",
+                            ProductId = 5,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 153,
+                            MapType = "Mix",
+                            ProductId = 5,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 154,
+                            MapType = "Mix",
+                            ProductId = 5,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 155,
                             MapType = "Mix",
                             ProductId = 23,
                             QuantityRequired = 0.225f,
@@ -3321,38 +3131,11 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 153,
-                            MapType = "Mix",
-                            ProductId = 23,
-                            QuantityRequired = 0.0225f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 154,
-                            MapType = "Mix",
-                            ProductId = 23,
-                            QuantityRequired = 0.003375f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 155,
-                            MapType = "Mix",
-                            ProductId = 23,
-                            QuantityRequired = 0.05625f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
                             Id = 156,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.001125f,
-                            RawMaterialId = 5,
+                            QuantityRequired = 0.023f,
+                            RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
@@ -3360,8 +3143,8 @@ namespace BMS.Data.Migrations
                             Id = 157,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.00225f,
-                            RawMaterialId = 4,
+                            QuantityRequired = 0.0034f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
@@ -3369,8 +3152,8 @@ namespace BMS.Data.Migrations
                             Id = 158,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.001125f,
-                            RawMaterialId = 7,
+                            QuantityRequired = 0.0563f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
@@ -3378,8 +3161,8 @@ namespace BMS.Data.Migrations
                             Id = 159,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.001125f,
-                            RawMaterialId = 12,
+                            QuantityRequired = 0.0011f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
@@ -3387,8 +3170,8 @@ namespace BMS.Data.Migrations
                             Id = 160,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.001125f,
-                            RawMaterialId = 9,
+                            QuantityRequired = 0.0023f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
@@ -3396,8 +3179,8 @@ namespace BMS.Data.Migrations
                             Id = 161,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.005625f,
-                            RawMaterialId = 15,
+                            QuantityRequired = 0.00113f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
@@ -3405,8 +3188,8 @@ namespace BMS.Data.Migrations
                             Id = 162,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.003825f,
-                            RawMaterialId = 16,
+                            QuantityRequired = 0.00113f,
+                            RawMaterialId = 12,
                             ShowInReport = true
                         },
                         new
@@ -3414,436 +3197,328 @@ namespace BMS.Data.Migrations
                             Id = 163,
                             MapType = "Mix",
                             ProductId = 23,
-                            QuantityRequired = 0.14625f,
-                            RawMaterialId = 68,
+                            QuantityRequired = 0.00113f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 164,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0275f,
-                            RawMaterialId = 1,
+                            ProductId = 23,
+                            QuantityRequired = 0.0063f,
+                            RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 165,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.00275f,
-                            RawMaterialId = 23,
+                            ProductId = 23,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 166,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0004125f,
-                            RawMaterialId = 3,
+                            ProductId = 24,
+                            QuantityRequired = 0.028f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 167,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.006875f,
-                            RawMaterialId = 2,
+                            ProductId = 24,
+                            QuantityRequired = 0.0028f,
+                            RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 168,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0001375f,
-                            RawMaterialId = 5,
+                            ProductId = 24,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 169,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.000275f,
-                            RawMaterialId = 4,
+                            ProductId = 24,
+                            QuantityRequired = 0.0069f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 170,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0001375f,
-                            RawMaterialId = 7,
+                            ProductId = 24,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 171,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0001375f,
-                            RawMaterialId = 12,
+                            ProductId = 24,
+                            QuantityRequired = 0.00028f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 172,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0001375f,
-                            RawMaterialId = 9,
+                            ProductId = 24,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 173,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0006875f,
-                            RawMaterialId = 15,
+                            ProductId = 24,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 12,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 174,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.017875f,
-                            RawMaterialId = 68,
+                            ProductId = 24,
+                            QuantityRequired = 0.00014f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 175,
                             MapType = "Mix",
-                            ProductId = 94,
-                            QuantityRequired = 0.0004675f,
-                            RawMaterialId = 16,
+                            ProductId = 24,
+                            QuantityRequired = 0.00069f,
+                            RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 176,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.11f,
-                            RawMaterialId = 1,
+                            ProductId = 24,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 177,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.011f,
-                            RawMaterialId = 23,
+                            ProductId = 25,
+                            QuantityRequired = 0.165f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 178,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.00165f,
-                            RawMaterialId = 3,
+                            ProductId = 25,
+                            QuantityRequired = 0.016f,
+                            RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 179,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.0275f,
-                            RawMaterialId = 2,
+                            ProductId = 25,
+                            QuantityRequired = 0.0024f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 180,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.00055f,
-                            RawMaterialId = 5,
+                            ProductId = 25,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 181,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.0011f,
-                            RawMaterialId = 4,
+                            ProductId = 25,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 182,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.00055f,
-                            RawMaterialId = 7,
+                            ProductId = 25,
+                            QuantityRequired = 0.0016f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 183,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.00055f,
-                            RawMaterialId = 12,
+                            ProductId = 25,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 184,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.00055f,
-                            RawMaterialId = 9,
+                            ProductId = 25,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 12,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 185,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.00275f,
-                            RawMaterialId = 15,
+                            ProductId = 25,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 186,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.0715f,
-                            RawMaterialId = 68,
+                            ProductId = 25,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 187,
                             MapType = "Mix",
-                            ProductId = 95,
-                            QuantityRequired = 0.00187f,
+                            ProductId = 25,
+                            QuantityRequired = 0.0034f,
                             RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 188,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.155f,
-                            RawMaterialId = 1,
+                            QuantityRequired = 0.02f,
+                            RawMaterialId = 68,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 189,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.0155f,
-                            RawMaterialId = 23,
+                            QuantityRequired = 0.0133f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 190,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.002325f,
-                            RawMaterialId = 3,
+                            QuantityRequired = 0.0133f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 191,
-                            MapType = "Mix",
+                            MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.03875f,
-                            RawMaterialId = 2,
+                            QuantityRequired = 0.0013f,
+                            RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 192,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.000775f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 193,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.00155f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 194,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.000775f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 195,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.000775f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 196,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.000775f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 197,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.003875f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 198,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.002635f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 199,
-                            MapType = "Mix",
-                            ProductId = 25,
-                            QuantityRequired = 0.10075f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 200,
                             MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.006855f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 201,
-                            MapType = "Masala",
-                            ProductId = 25,
-                            QuantityRequired = 0.006855f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 202,
-                            MapType = "Masala",
-                            ProductId = 25,
-                            QuantityRequired = 0.0006855f,
-                            RawMaterialId = 98,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 203,
-                            MapType = "Masala",
-                            ProductId = 25,
-                            QuantityRequired = 0.0137097f,
+                            QuantityRequired = 0.0267f,
                             RawMaterialId = 51,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 204,
+                            Id = 193,
                             MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.0171371f,
+                            QuantityRequired = 0.0333f,
                             RawMaterialId = 11,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 205,
+                            Id = 194,
                             MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.054839f,
+                            QuantityRequired = 0.107f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 206,
+                            Id = 195,
                             MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.0054839f,
+                            QuantityRequired = 0.011f,
                             RawMaterialId = 10,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 207,
+                            Id = 196,
                             MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.0102823f,
+                            QuantityRequired = 0.02f,
                             RawMaterialId = 52,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 208,
+                            Id = 197,
                             MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.011996f,
+                            QuantityRequired = 0.0233f,
                             RawMaterialId = 53,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 209,
+                            Id = 198,
                             MapType = "Masala",
                             ProductId = 25,
-                            QuantityRequired = 0.0342742f,
+                            QuantityRequired = 0.067f,
                             RawMaterialId = 21,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 210,
-                            MapType = "Masala",
-                            ProductId = 25,
-                            QuantityRequired = 0.0102823f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 211,
+                            Id = 199,
                             MapType = "Mix",
                             ProductId = 26,
                             QuantityRequired = 0.035f,
@@ -3852,7 +3527,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 212,
+                            Id = 200,
                             MapType = "Mix",
                             ProductId = 26,
                             QuantityRequired = 0.0035f,
@@ -3861,235 +3536,343 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 213,
+                            Id = 201,
                             MapType = "Mix",
                             ProductId = 26,
-                            QuantityRequired = 0.00175f,
+                            QuantityRequired = 0.00053f,
                             RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 202,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.0088f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 203,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.00018f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 204,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.0036f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 205,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.00018f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 206,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.00018f,
+                            RawMaterialId = 12,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 207,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.00018f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 208,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.00088f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 209,
+                            MapType = "Mix",
+                            ProductId = 26,
+                            QuantityRequired = 0.0009f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 210,
+                            MapType = "Mix",
+                            ProductId = 72,
+                            QuantityRequired = 0.115f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 211,
+                            MapType = "Mix",
+                            ProductId = 72,
+                            QuantityRequired = 0.0115f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 212,
+                            MapType = "Mix",
+                            ProductId = 72,
+                            QuantityRequired = 0.0023f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 213,
+                            MapType = "Mix",
+                            ProductId = 72,
+                            QuantityRequired = 0.0115f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 214,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.00875f,
-                            RawMaterialId = 2,
+                            ProductId = 72,
+                            QuantityRequired = 0.0115f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 215,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 5,
+                            ProductId = 72,
+                            QuantityRequired = 0.0115f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 216,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.00035f,
-                            RawMaterialId = 4,
+                            ProductId = 72,
+                            QuantityRequired = 0.0058f,
+                            RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 217,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 7,
+                            ProductId = 72,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 8,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 218,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 12,
+                            ProductId = 72,
+                            QuantityRequired = 0.014f,
+                            RawMaterialId = 51,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 219,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 9,
+                            ProductId = 72,
+                            QuantityRequired = 0.008f,
+                            RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 220,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.000875f,
-                            RawMaterialId = 15,
+                            ProductId = 28,
+                            QuantityRequired = 0.12f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 221,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
+                            ProductId = 28,
+                            QuantityRequired = 0.012f,
+                            RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 222,
                             MapType = "Mix",
-                            ProductId = 26,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
+                            ProductId = 28,
+                            QuantityRequired = 0.0018f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 223,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 28,
-                            QuantityRequired = 1.3334f,
-                            RawMaterialId = 18,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 224,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 28,
-                            QuantityRequired = 0.01667f,
-                            RawMaterialId = 5,
+                            QuantityRequired = 0.012f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 225,
-                            MapType = "Masala",
+                            MapType = "Mix",
                             ProductId = 28,
-                            QuantityRequired = 0.01667f,
-                            RawMaterialId = 4,
+                            QuantityRequired = 0.012f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 226,
-                            MapType = "Masala",
-                            ProductId = 26,
-                            QuantityRequired = 0.00423f,
-                            RawMaterialId = 25,
+                            MapType = "Mix",
+                            ProductId = 28,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 227,
-                            MapType = "Masala",
-                            ProductId = 26,
-                            QuantityRequired = 0.005634f,
-                            RawMaterialId = 18,
+                            MapType = "Mix",
+                            ProductId = 28,
+                            QuantityRequired = 0.01f,
+                            RawMaterialId = 12,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 228,
-                            MapType = "Masala",
-                            ProductId = 26,
-                            QuantityRequired = 7.04E-05f,
-                            RawMaterialId = 5,
+                            MapType = "Mix",
+                            ProductId = 28,
+                            QuantityRequired = 0.0024f,
+                            RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 229,
-                            MapType = "Masala",
-                            ProductId = 26,
-                            QuantityRequired = 7.04E-05f,
-                            RawMaterialId = 4,
+                            MapType = "Mix",
+                            ProductId = 29,
+                            QuantityRequired = 0.035f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 230,
-                            MapType = "Masala",
-                            ProductId = 5,
-                            QuantityRequired = 0.00846f,
-                            RawMaterialId = 25,
+                            MapType = "Mix",
+                            ProductId = 29,
+                            QuantityRequired = 0.0035f,
+                            RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 231,
-                            MapType = "Masala",
-                            ProductId = 5,
-                            QuantityRequired = 0.011268f,
-                            RawMaterialId = 18,
+                            MapType = "Mix",
+                            ProductId = 29,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 232,
-                            MapType = "Masala",
-                            ProductId = 5,
-                            QuantityRequired = 0.0001408f,
-                            RawMaterialId = 5,
+                            MapType = "Mix",
+                            ProductId = 29,
+                            QuantityRequired = 0.0105f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 233,
-                            MapType = "Masala",
-                            ProductId = 5,
-                            QuantityRequired = 0.0001408f,
-                            RawMaterialId = 4,
+                            MapType = "Mix",
+                            ProductId = 29,
+                            QuantityRequired = 0.0035f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 234,
-                            MapType = "Masala",
-                            ProductId = 5,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 52,
+                            MapType = "Mix",
+                            ProductId = 29,
+                            QuantityRequired = 0.0035f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 235,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.1019f,
-                            RawMaterialId = 1,
+                            ProductId = 29,
+                            QuantityRequired = 0.0018f,
+                            RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 236,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.01019f,
-                            RawMaterialId = 23,
+                            ProductId = 29,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 237,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.001529f,
-                            RawMaterialId = 3,
+                            ProductId = 30,
+                            QuantityRequired = 0.385f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 238,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.03057f,
+                            ProductId = 30,
+                            QuantityRequired = 0.508f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
@@ -4097,401 +3880,95 @@ namespace BMS.Data.Migrations
                         {
                             Id = 239,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.01019f,
-                            RawMaterialId = 7,
+                            ProductId = 30,
+                            QuantityRequired = 0.319f,
+                            RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 240,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.01019f,
-                            RawMaterialId = 9,
+                            ProductId = 30,
+                            QuantityRequired = 0.0654f,
+                            RawMaterialId = 12,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 241,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.005095f,
-                            RawMaterialId = 15,
+                            ProductId = 30,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 242,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.005714f,
-                            RawMaterialId = 8,
+                            ProductId = 30,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 243,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.014286f,
-                            RawMaterialId = 51,
+                            ProductId = 30,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 244,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.0007133f,
-                            RawMaterialId = 19,
+                            ProductId = 30,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 245,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.066235f,
-                            RawMaterialId = 68,
+                            ProductId = 30,
+                            QuantityRequired = 11.54f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 246,
                             MapType = "Mix",
-                            ProductId = 72,
-                            QuantityRequired = 0.0017323f,
-                            RawMaterialId = 16,
+                            ProductId = 30,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 40,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 247,
                             MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.1063f,
-                            RawMaterialId = 1,
+                            ProductId = 30,
+                            QuantityRequired = 0.0038f,
+                            RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 248,
                             MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.01063f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 249,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.001595f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 250,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.03189f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 251,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.01063f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 252,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.01063f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 253,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.00532f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 254,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.010099f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 255,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.0007441f,
-                            RawMaterialId = 19,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 256,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.069095f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 257,
-                            MapType = "Mix",
-                            ProductId = 28,
-                            QuantityRequired = 0.00181f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 258,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.031f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 259,
-                            MapType = "Mix",
-                            ProductId = 29,
+                            ProductId = 30,
                             QuantityRequired = 0.0031f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 260,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.000465f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 261,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.0093f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 262,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.0031f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 263,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.0031f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 264,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.00155f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 265,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.000217f,
-                            RawMaterialId = 19,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 266,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.02015f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 267,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.00385f,
-                            RawMaterialId = 97,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 268,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.00231f,
-                            RawMaterialId = 110,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 269,
-                            MapType = "Mix",
-                            ProductId = 29,
-                            QuantityRequired = 0.000527f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 270,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.3846154f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 271,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.5076923f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 272,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.3192308f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 273,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.0653846f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 274,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.0307692f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 275,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.0307692f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 276,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 11.538462f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 277,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.003077f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 278,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.003077f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 279,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.003077f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 280,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 281,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.769231f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 282,
-                            MapType = "Mix",
-                            ProductId = 30,
-                            QuantityRequired = 0.3846154f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 283,
+                            Id = 249,
                             MapType = "Mix",
                             ProductId = 30,
                             QuantityRequired = 0.02f,
@@ -4500,685 +3977,991 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
+                            Id = 250,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.385f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 251,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.508f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 252,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.319f,
+                            RawMaterialId = 26,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 253,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.0654f,
+                            RawMaterialId = 12,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 254,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 255,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 256,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 257,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 258,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 11.54f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 259,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 40,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 260,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.0038f,
+                            RawMaterialId = 14,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 261,
+                            MapType = "Mix",
+                            ProductId = 31,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 262,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.385f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 263,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.508f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 264,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.319f,
+                            RawMaterialId = 26,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 265,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.0654f,
+                            RawMaterialId = 12,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 266,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 267,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 268,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 269,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 270,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 11.54f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 271,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 40,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 272,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.0038f,
+                            RawMaterialId = 14,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 273,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 274,
+                            MapType = "Mix",
+                            ProductId = 33,
+                            QuantityRequired = 0.3f,
+                            RawMaterialId = 52,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 275,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.385f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 276,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.508f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 277,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.319f,
+                            RawMaterialId = 26,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 278,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.0654f,
+                            RawMaterialId = 12,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 279,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 280,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 281,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 282,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 283,
+                            MapType = "Mix",
+                            ProductId = 32,
+                            QuantityRequired = 11.54f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
                             Id = 284,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.1923078f,
-                            RawMaterialId = 1,
+                            ProductId = 32,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 40,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 285,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.2538462f,
-                            RawMaterialId = 2,
+                            ProductId = 32,
+                            QuantityRequired = 0.0038f,
+                            RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 286,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.1596154f,
-                            RawMaterialId = 26,
+                            ProductId = 32,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 287,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.0326923f,
-                            RawMaterialId = 12,
+                            ProductId = 32,
+                            QuantityRequired = 0.3f,
+                            RawMaterialId = 81,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 288,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.0153846f,
-                            RawMaterialId = 9,
+                            ProductId = 73,
+                            QuantityRequired = 0.385f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 289,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.0153846f,
-                            RawMaterialId = 7,
+                            ProductId = 73,
+                            QuantityRequired = 0.508f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 290,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 5.769231f,
-                            RawMaterialId = 6,
+                            ProductId = 73,
+                            QuantityRequired = 0.319f,
+                            RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 291,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.0015385f,
-                            RawMaterialId = 5,
+                            ProductId = 73,
+                            QuantityRequired = 0.0654f,
+                            RawMaterialId = 12,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 292,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.0015385f,
-                            RawMaterialId = 4,
+                            ProductId = 73,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 293,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.0015385f,
-                            RawMaterialId = 40,
+                            ProductId = 73,
+                            QuantityRequired = 0.308f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 294,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.0019231f,
-                            RawMaterialId = 14,
+                            ProductId = 73,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 295,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.3846154f,
-                            RawMaterialId = 58,
+                            ProductId = 73,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 296,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.1923077f,
-                            RawMaterialId = 48,
+                            ProductId = 73,
+                            QuantityRequired = 11.54f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 297,
                             MapType = "Mix",
-                            ProductId = 96,
-                            QuantityRequired = 0.01f,
-                            RawMaterialId = 39,
+                            ProductId = 73,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 40,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 298,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0961539f,
-                            RawMaterialId = 1,
+                            ProductId = 73,
+                            QuantityRequired = 0.0038f,
+                            RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 299,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.1269231f,
-                            RawMaterialId = 2,
+                            ProductId = 73,
+                            QuantityRequired = 0.0031f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 300,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0798077f,
-                            RawMaterialId = 26,
+                            ProductId = 73,
+                            QuantityRequired = 0.3f,
+                            RawMaterialId = 54,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 301,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0163462f,
-                            RawMaterialId = 12,
+                            ProductId = 74,
+                            QuantityRequired = 0.125f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 302,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0076923f,
-                            RawMaterialId = 9,
+                            ProductId = 74,
+                            QuantityRequired = 0.162f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 303,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0076923f,
-                            RawMaterialId = 7,
+                            ProductId = 74,
+                            QuantityRequired = 0.119f,
+                            RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 304,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 2.8846154f,
-                            RawMaterialId = 6,
+                            ProductId = 74,
+                            QuantityRequired = 0.0098f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 305,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0007693f,
-                            RawMaterialId = 5,
+                            ProductId = 74,
+                            QuantityRequired = 0.0098f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 306,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0007693f,
-                            RawMaterialId = 4,
+                            ProductId = 74,
+                            QuantityRequired = 0.0049f,
+                            RawMaterialId = 39,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 307,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0007693f,
-                            RawMaterialId = 40,
+                            ProductId = 74,
+                            QuantityRequired = 0.0049f,
+                            RawMaterialId = 8,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 308,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0009616f,
-                            RawMaterialId = 14,
+                            ProductId = 74,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 29,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 309,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.1923077f,
-                            RawMaterialId = 58,
+                            ProductId = 74,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 30,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 310,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.0961539f,
-                            RawMaterialId = 48,
+                            ProductId = 74,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 311,
                             MapType = "Mix",
-                            ProductId = 97,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 39,
+                            ProductId = 74,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 32,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 312,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.3846154f,
-                            RawMaterialId = 1,
+                            ProductId = 74,
+                            QuantityRequired = 0.0098f,
+                            RawMaterialId = 35,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 313,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.5076923f,
-                            RawMaterialId = 2,
+                            ProductId = 74,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 37,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 314,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.3192308f,
-                            RawMaterialId = 26,
+                            ProductId = 74,
+                            QuantityRequired = 3.659f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 315,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.0653846f,
-                            RawMaterialId = 12,
+                            ProductId = 74,
+                            QuantityRequired = 0.244f,
+                            RawMaterialId = 81,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 316,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.0307692f,
-                            RawMaterialId = 9,
+                            ProductId = 74,
+                            QuantityRequired = 0.0049f,
+                            RawMaterialId = 38,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 317,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.0307692f,
-                            RawMaterialId = 7,
+                            ProductId = 74,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 40,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 318,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 11.538462f,
-                            RawMaterialId = 6,
+                            ProductId = 74,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 319,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.003077f,
-                            RawMaterialId = 5,
+                            ProductId = 74,
+                            QuantityRequired = 0.00098f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 320,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.003077f,
-                            RawMaterialId = 4,
+                            ProductId = 74,
+                            QuantityRequired = 0.00098f,
+                            RawMaterialId = 31,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 321,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.003077f,
-                            RawMaterialId = 40,
+                            ProductId = 75,
+                            QuantityRequired = 0.0926f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 322,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 14,
+                            ProductId = 75,
+                            QuantityRequired = 0.123f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 323,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.769231f,
-                            RawMaterialId = 58,
+                            ProductId = 75,
+                            QuantityRequired = 0.0926f,
+                            RawMaterialId = 31,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 324,
                             MapType = "Mix",
-                            ProductId = 31,
-                            QuantityRequired = 0.3846154f,
-                            RawMaterialId = 48,
+                            ProductId = 75,
+                            QuantityRequired = 0.007f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 325,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.1923078f,
-                            RawMaterialId = 1,
+                            ProductId = 75,
+                            QuantityRequired = 0.007f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 326,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.2538462f,
-                            RawMaterialId = 2,
+                            ProductId = 75,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 39,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 327,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.1596154f,
-                            RawMaterialId = 26,
+                            ProductId = 75,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 8,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 328,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.0326923f,
-                            RawMaterialId = 12,
+                            ProductId = 75,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 29,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 329,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.0153846f,
-                            RawMaterialId = 9,
+                            ProductId = 75,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 30,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 330,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.0153846f,
-                            RawMaterialId = 7,
+                            ProductId = 75,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 331,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 5.769231f,
-                            RawMaterialId = 6,
+                            ProductId = 75,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 32,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 332,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.0015385f,
-                            RawMaterialId = 5,
+                            ProductId = 75,
+                            QuantityRequired = 0.007f,
+                            RawMaterialId = 35,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 333,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.0015385f,
-                            RawMaterialId = 4,
+                            ProductId = 75,
+                            QuantityRequired = 0.003f,
+                            RawMaterialId = 37,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 334,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.0015385f,
-                            RawMaterialId = 40,
+                            ProductId = 75,
+                            QuantityRequired = 2.78f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 335,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.0019231f,
-                            RawMaterialId = 14,
+                            ProductId = 75,
+                            QuantityRequired = 0.185f,
+                            RawMaterialId = 81,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 336,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.3846154f,
-                            RawMaterialId = 58,
+                            ProductId = 75,
+                            QuantityRequired = 0.004f,
+                            RawMaterialId = 38,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 337,
                             MapType = "Mix",
-                            ProductId = 98,
-                            QuantityRequired = 0.1923077f,
-                            RawMaterialId = 48,
+                            ProductId = 75,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 40,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 338,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0961539f,
-                            RawMaterialId = 1,
+                            ProductId = 75,
+                            QuantityRequired = 0.0012f,
+                            RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 339,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.1269231f,
-                            RawMaterialId = 2,
+                            ProductId = 75,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 340,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0798077f,
-                            RawMaterialId = 26,
+                            ProductId = 75,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 31,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 341,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0163462f,
-                            RawMaterialId = 12,
+                            ProductId = 76,
+                            QuantityRequired = 0.0463f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 342,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0076923f,
-                            RawMaterialId = 9,
+                            ProductId = 76,
+                            QuantityRequired = 0.0615f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 343,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0076923f,
-                            RawMaterialId = 7,
+                            ProductId = 76,
+                            QuantityRequired = 0.0463f,
+                            RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 344,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 2.8846154f,
-                            RawMaterialId = 6,
+                            ProductId = 76,
+                            QuantityRequired = 0.0035f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 345,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0007693f,
-                            RawMaterialId = 5,
+                            ProductId = 76,
+                            QuantityRequired = 0.0035f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 346,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0007693f,
-                            RawMaterialId = 4,
+                            ProductId = 76,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 39,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 347,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0007693f,
-                            RawMaterialId = 40,
+                            ProductId = 76,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 8,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 348,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0009616f,
-                            RawMaterialId = 14,
+                            ProductId = 76,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 29,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 349,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.1923077f,
-                            RawMaterialId = 58,
+                            ProductId = 76,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 30,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 350,
                             MapType = "Mix",
-                            ProductId = 99,
-                            QuantityRequired = 0.0961539f,
-                            RawMaterialId = 48,
+                            ProductId = 76,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 351,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 1,
+                            ProductId = 76,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 32,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 352,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.4275304f,
-                            RawMaterialId = 2,
+                            ProductId = 76,
+                            QuantityRequired = 0.0035f,
+                            RawMaterialId = 35,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 353,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.268826f,
-                            RawMaterialId = 26,
+                            ProductId = 76,
+                            QuantityRequired = 0.0015f,
+                            RawMaterialId = 37,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 354,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.055061f,
-                            RawMaterialId = 12,
+                            ProductId = 76,
+                            QuantityRequired = 1.39f,
+                            RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 355,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.025911f,
-                            RawMaterialId = 9,
+                            ProductId = 76,
+                            QuantityRequired = 0.0925f,
+                            RawMaterialId = 81,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 356,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.025911f,
-                            RawMaterialId = 7,
+                            ProductId = 76,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 38,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 357,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 9.716599f,
-                            RawMaterialId = 6,
+                            ProductId = 76,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 40,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 358,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 5,
+                            ProductId = 76,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 359,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.0025911f,
+                            ProductId = 76,
+                            QuantityRequired = 0.00035f,
                             RawMaterialId = 4,
                             ShowInReport = true
                         },
@@ -5186,1922 +4969,131 @@ namespace BMS.Data.Migrations
                         {
                             Id = 360,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 40,
+                            ProductId = 76,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 31,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 361,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.0032389f,
-                            RawMaterialId = 14,
+                            ProductId = 77,
+                            QuantityRequired = 0.313f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 362,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.6477733f,
-                            RawMaterialId = 58,
+                            ProductId = 77,
+                            QuantityRequired = 0.416f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 363,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 48,
+                            ProductId = 77,
+                            QuantityRequired = 0.313f,
+                            RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 364,
                             MapType = "Mix",
-                            ProductId = 33,
-                            QuantityRequired = 0.3f,
-                            RawMaterialId = 52,
+                            ProductId = 77,
+                            QuantityRequired = 0.025f,
+                            RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 365,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 1,
+                            ProductId = 77,
+                            QuantityRequired = 0.025f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 366,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.2137652f,
-                            RawMaterialId = 2,
+                            ProductId = 77,
+                            QuantityRequired = 0.0125f,
+                            RawMaterialId = 39,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 367,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.134413f,
-                            RawMaterialId = 26,
+                            ProductId = 77,
+                            QuantityRequired = 0.0125f,
+                            RawMaterialId = 8,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 368,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.0275305f,
-                            RawMaterialId = 12,
+                            ProductId = 77,
+                            QuantityRequired = 0.0025f,
+                            RawMaterialId = 29,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 369,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.0129555f,
-                            RawMaterialId = 9,
+                            ProductId = 77,
+                            QuantityRequired = 0.0025f,
+                            RawMaterialId = 30,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 370,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.0129555f,
-                            RawMaterialId = 7,
+                            ProductId = 77,
+                            QuantityRequired = 0.0025f,
+                            RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 371,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 4.8582997f,
-                            RawMaterialId = 6,
+                            ProductId = 77,
+                            QuantityRequired = 0.0025f,
+                            RawMaterialId = 32,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 372,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 5,
+                            ProductId = 77,
+                            QuantityRequired = 0.025f,
+                            RawMaterialId = 35,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 373,
                             MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 4,
+                            ProductId = 77,
+                            QuantityRequired = 0.0106f,
+                            RawMaterialId = 37,
                             ShowInReport = true
                         },
                         new
                         {
                             Id = 374,
-                            MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 375,
-                            MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.0016194f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 376,
-                            MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 377,
-                            MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 378,
-                            MapType = "Mix",
-                            ProductId = 100,
-                            QuantityRequired = 0.15f,
-                            RawMaterialId = 52,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 379,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0809717f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 380,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.1068826f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 381,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0672065f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 382,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0137653f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 383,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0064778f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 384,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0064778f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 385,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 2.4291499f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 386,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 387,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 388,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 389,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0008097f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 390,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 391,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.0809717f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 392,
-                            MapType = "Mix",
-                            ProductId = 101,
-                            QuantityRequired = 0.075f,
-                            RawMaterialId = 52,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 393,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 394,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.4275304f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 395,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.268826f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 396,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.055061f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 397,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.025911f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 398,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.025911f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 399,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 9.716599f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 400,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 401,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 402,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 403,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.0032389f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 404,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.6477733f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 405,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 406,
-                            MapType = "Mix",
-                            ProductId = 32,
-                            QuantityRequired = 0.3f,
-                            RawMaterialId = 81,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 407,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 408,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.2137652f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 409,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.134413f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 410,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.0275305f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 411,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.0129555f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 412,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.0129555f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 413,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 4.8582997f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 414,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 415,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 416,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 417,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.0016194f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 418,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 419,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 420,
-                            MapType = "Mix",
-                            ProductId = 102,
-                            QuantityRequired = 0.15f,
-                            RawMaterialId = 81,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 421,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0809717f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 422,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.1068826f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 423,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0672065f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 424,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0137653f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 425,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0064778f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 426,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0064778f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 427,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 2.4291499f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 428,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 429,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 430,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 431,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0008097f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 432,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 433,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.0809717f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 434,
-                            MapType = "Mix",
-                            ProductId = 103,
-                            QuantityRequired = 0.075f,
-                            RawMaterialId = 81,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 435,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 436,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.4275304f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 437,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.268826f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 438,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.055061f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 439,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.025911f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 440,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.025911f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 441,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 9.716599f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 442,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 443,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 444,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.0025911f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 445,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.0032389f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 446,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.6477733f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 447,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 448,
-                            MapType = "Mix",
-                            ProductId = 35,
-                            QuantityRequired = 0.3f,
-                            RawMaterialId = 54,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 449,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 450,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.2137652f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 451,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.134413f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 452,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.0275305f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 453,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.0129555f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 454,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.0129555f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 455,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 4.8582997f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 456,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 457,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 458,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.0012956f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 459,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.0016194f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 460,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.3238866f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 461,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 462,
-                            MapType = "Mix",
-                            ProductId = 104,
-                            QuantityRequired = 0.15f,
-                            RawMaterialId = 54,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 463,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0809717f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 464,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.1068826f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 465,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0672065f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 466,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0137653f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 467,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0064778f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 468,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0064778f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 469,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 2.4291499f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 470,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 471,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 472,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0006478f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 473,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0008097f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 474,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.1619433f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 475,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.0809717f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 476,
-                            MapType = "Mix",
-                            ProductId = 105,
-                            QuantityRequired = 0.075f,
-                            RawMaterialId = 54,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 477,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.125f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 478,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.16625f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 479,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.125f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 480,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.01f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 481,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.01f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 482,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.01f,
-                            RawMaterialId = 35,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 483,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 39,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 484,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 8,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 485,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 29,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 486,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 30,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 487,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 488,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 32,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 489,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 3.75f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 490,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.00425f,
-                            RawMaterialId = 37,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 491,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.25f,
-                            RawMaterialId = 81,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 492,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 38,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 493,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 494,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.00175f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 495,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 496,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 31,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 497,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.25f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 498,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.125f,
-                            RawMaterialId = 100,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 499,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 62,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 500,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 104,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 501,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 107,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 502,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 503,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 93,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 504,
-                            MapType = "Mix",
-                            ProductId = 74,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 106,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 505,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.093458f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 506,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.1242991f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 507,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.093458f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 508,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0074766f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 509,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0074766f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 510,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0074766f,
-                            RawMaterialId = 35,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 511,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0037383f,
-                            RawMaterialId = 39,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 512,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0037383f,
-                            RawMaterialId = 8,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 513,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0007477f,
-                            RawMaterialId = 29,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 514,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0007477f,
-                            RawMaterialId = 30,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 515,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0007477f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 516,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0007477f,
-                            RawMaterialId = 32,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 517,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 2.80374f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 518,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0031776f,
-                            RawMaterialId = 37,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 519,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.1869159f,
-                            RawMaterialId = 81,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 520,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0037383f,
-                            RawMaterialId = 38,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 521,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0074766f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 522,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.00131f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 523,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0007477f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 524,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.0007477f,
-                            RawMaterialId = 31,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 525,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.186916f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 526,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.093458f,
-                            RawMaterialId = 100,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 527,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.018692f,
-                            RawMaterialId = 62,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 528,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.018692f,
-                            RawMaterialId = 104,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 529,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.018692f,
-                            RawMaterialId = 107,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 530,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.018692f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 531,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.018692f,
-                            RawMaterialId = 93,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 532,
-                            MapType = "Mix",
-                            ProductId = 75,
-                            QuantityRequired = 0.018692f,
-                            RawMaterialId = 106,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 533,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.048077f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 534,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0639423f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 535,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.48077f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 536,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 537,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 538,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 35,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 539,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0019231f,
-                            RawMaterialId = 39,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 540,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0019231f,
-                            RawMaterialId = 8,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 541,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0003846f,
-                            RawMaterialId = 29,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 542,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0003846f,
-                            RawMaterialId = 30,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 543,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0003846f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 544,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0003846f,
-                            RawMaterialId = 32,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 545,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 1.4423077f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 546,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.001635f,
-                            RawMaterialId = 37,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 547,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.096154f,
-                            RawMaterialId = 81,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 548,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0019231f,
-                            RawMaterialId = 38,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 549,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0003846f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 550,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0006731f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 551,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0003846f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 552,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0003846f,
-                            RawMaterialId = 31,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 553,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.096154f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 554,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.048077f,
-                            RawMaterialId = 100,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 555,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0096154f,
-                            RawMaterialId = 62,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 556,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0096154f,
-                            RawMaterialId = 104,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 557,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0096154f,
-                            RawMaterialId = 107,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 558,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0096154f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 559,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0096154f,
-                            RawMaterialId = 93,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 560,
-                            MapType = "Mix",
-                            ProductId = 76,
-                            QuantityRequired = 0.0096154f,
-                            RawMaterialId = 106,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 561,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.3125f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 562,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.415625f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 563,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.3125f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 564,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 565,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 566,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.025f,
-                            RawMaterialId = 35,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 567,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0125f,
-                            RawMaterialId = 39,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 568,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0125f,
-                            RawMaterialId = 8,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 569,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0025f,
-                            RawMaterialId = 29,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 570,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0025f,
-                            RawMaterialId = 30,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 571,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0025f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 572,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0025f,
-                            RawMaterialId = 32,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 573,
                             MapType = "Mix",
                             ProductId = 77,
                             QuantityRequired = 9.375f,
@@ -7110,16 +5102,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 574,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.010625f,
-                            RawMaterialId = 37,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 575,
+                            Id = 375,
                             MapType = "Mix",
                             ProductId = 77,
                             QuantityRequired = 0.625f,
@@ -7128,7 +5111,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 576,
+                            Id = 376,
                             MapType = "Mix",
                             ProductId = 77,
                             QuantityRequired = 0.0125f,
@@ -7137,7 +5120,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 577,
+                            Id = 377,
                             MapType = "Mix",
                             ProductId = 77,
                             QuantityRequired = 0.0025f,
@@ -7146,16 +5129,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 578,
+                            Id = 378,
                             MapType = "Mix",
                             ProductId = 77,
-                            QuantityRequired = 0.004375f,
+                            QuantityRequired = 0.004f,
                             RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 579,
+                            Id = 379,
                             MapType = "Mix",
                             ProductId = 77,
                             QuantityRequired = 0.0025f,
@@ -7164,7 +5147,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 580,
+                            Id = 380,
                             MapType = "Mix",
                             ProductId = 77,
                             QuantityRequired = 0.0025f,
@@ -7173,655 +5156,781 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 581,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.625f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 582,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.3125f,
-                            RawMaterialId = 100,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 583,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0625f,
-                            RawMaterialId = 62,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 584,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0625f,
-                            RawMaterialId = 104,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 585,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0625f,
-                            RawMaterialId = 107,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 586,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0625f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 587,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0625f,
-                            RawMaterialId = 93,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 588,
-                            MapType = "Mix",
-                            ProductId = 77,
-                            QuantityRequired = 0.0625f,
-                            RawMaterialId = 106,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 589,
+                            Id = 381,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0037202f,
+                            QuantityRequired = 0.004f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 590,
+                            Id = 382,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0049479f,
+                            QuantityRequired = 0.005f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 591,
+                            Id = 383,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0037202f,
+                            QuantityRequired = 0.004f,
                             RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 592,
+                            Id = 384,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0002976f,
+                            QuantityRequired = 0.0003f,
                             RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 593,
+                            Id = 385,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0002976f,
+                            QuantityRequired = 0.0003f,
                             RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 594,
+                            Id = 386,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0002976f,
-                            RawMaterialId = 35,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 595,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.0001488f,
+                            QuantityRequired = 0.00011f,
                             RawMaterialId = 39,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 596,
+                            Id = 387,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0001488f,
+                            QuantityRequired = 0.00011f,
                             RawMaterialId = 8,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 597,
+                            Id = 388,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 2.98E-05f,
+                            QuantityRequired = 3E-05f,
                             RawMaterialId = 29,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 598,
+                            Id = 389,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 2.98E-05f,
+                            QuantityRequired = 3E-05f,
                             RawMaterialId = 30,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 599,
+                            Id = 390,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 2.98E-05f,
+                            QuantityRequired = 3E-05f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 600,
+                            Id = 391,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 2.98E-05f,
+                            QuantityRequired = 3E-05f,
                             RawMaterialId = 32,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 601,
+                            Id = 392,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.1116071f,
-                            RawMaterialId = 6,
+                            QuantityRequired = 0.0003f,
+                            RawMaterialId = 35,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 602,
+                            Id = 393,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0001265f,
+                            QuantityRequired = 0.0001f,
                             RawMaterialId = 37,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 603,
+                            Id = 394,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0074405f,
+                            QuantityRequired = 0.112f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 395,
+                            MapType = "Mix",
+                            ProductId = 78,
+                            QuantityRequired = 0.007f,
                             RawMaterialId = 81,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 604,
+                            Id = 396,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 0.0001488f,
+                            QuantityRequired = 0.0001f,
                             RawMaterialId = 38,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 605,
+                            Id = 397,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 2.98E-05f,
+                            QuantityRequired = 3E-05f,
                             RawMaterialId = 40,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 606,
+                            Id = 398,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 5.21E-05f,
+                            QuantityRequired = 5E-05f,
                             RawMaterialId = 14,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 607,
+                            Id = 399,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 2.98E-05f,
+                            QuantityRequired = 3E-05f,
                             RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 608,
+                            Id = 400,
                             MapType = "Mix",
                             ProductId = 78,
-                            QuantityRequired = 2.98E-05f,
+                            QuantityRequired = 3E-05f,
                             RawMaterialId = 31,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 609,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.0074405f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 610,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.0037202f,
-                            RawMaterialId = 100,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 611,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.000744f,
-                            RawMaterialId = 62,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 612,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.000744f,
-                            RawMaterialId = 104,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 613,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.000744f,
-                            RawMaterialId = 107,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 614,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.000744f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 615,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.000744f,
-                            RawMaterialId = 93,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 616,
-                            MapType = "Mix",
-                            ProductId = 78,
-                            QuantityRequired = 0.000744f,
-                            RawMaterialId = 106,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 617,
+                            Id = 401,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.3428572f,
+                            QuantityRequired = 0.343f,
                             RawMaterialId = 75,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 618,
+                            Id = 402,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.3428572f,
+                            QuantityRequired = 0.343f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 619,
+                            Id = 403,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.3428572f,
+                            QuantityRequired = 0.343f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 620,
+                            Id = 404,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.3428572f,
-                            RawMaterialId = 45,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 621,
-                            MapType = "Mix",
-                            ProductId = 79,
-                            QuantityRequired = 0.2571429f,
+                            QuantityRequired = 0.258f,
                             RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 622,
+                            Id = 405,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.0428572f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 623,
-                            MapType = "Mix",
-                            ProductId = 79,
-                            QuantityRequired = 0.0428572f,
+                            QuantityRequired = 0.043f,
                             RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 624,
+                            Id = 406,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.0428572f,
-                            RawMaterialId = 10,
+                            QuantityRequired = 0.043f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 625,
+                            Id = 407,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.0428572f,
-                            RawMaterialId = 36,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 626,
-                            MapType = "Mix",
-                            ProductId = 79,
-                            QuantityRequired = 0.0171429f,
-                            RawMaterialId = 33,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 627,
-                            MapType = "Mix",
-                            ProductId = 79,
-                            QuantityRequired = 8.571428f,
+                            QuantityRequired = 9.14f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 628,
+                            Id = 408,
                             MapType = "Mix",
                             ProductId = 79,
-                            QuantityRequired = 0.0085714f,
+                            QuantityRequired = 0.343f,
+                            RawMaterialId = 45,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 409,
+                            MapType = "Mix",
+                            ProductId = 79,
+                            QuantityRequired = 0.0086f,
                             RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 629,
+                            Id = 410,
+                            MapType = "Mix",
+                            ProductId = 79,
+                            QuantityRequired = 0.043f,
+                            RawMaterialId = 76,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 411,
+                            MapType = "Mix",
+                            ProductId = 79,
+                            QuantityRequired = 0.0086f,
+                            RawMaterialId = 38,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 412,
+                            MapType = "Mix",
+                            ProductId = 79,
+                            QuantityRequired = 0.043f,
+                            RawMaterialId = 36,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 413,
+                            MapType = "Mix",
+                            ProductId = 79,
+                            QuantityRequired = 0.017f,
+                            RawMaterialId = 33,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 414,
+                            MapType = "Mix",
+                            ProductId = 79,
+                            QuantityRequired = 0.043f,
+                            RawMaterialId = 10,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 415,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.1714286f,
+                            QuantityRequired = 0.1715f,
                             RawMaterialId = 75,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 630,
+                            Id = 416,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.1714286f,
+                            QuantityRequired = 0.1715f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 631,
+                            Id = 417,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.1714286f,
+                            QuantityRequired = 0.1715f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 632,
+                            Id = 418,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.1714286f,
-                            RawMaterialId = 45,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 633,
-                            MapType = "Mix",
-                            ProductId = 80,
-                            QuantityRequired = 0.1285714f,
+                            QuantityRequired = 0.129f,
                             RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 634,
+                            Id = 419,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.0214286f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 635,
-                            MapType = "Mix",
-                            ProductId = 80,
-                            QuantityRequired = 0.0214286f,
+                            QuantityRequired = 0.0215f,
                             RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 636,
+                            Id = 420,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.0214286f,
-                            RawMaterialId = 10,
+                            QuantityRequired = 0.0215f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 637,
+                            Id = 421,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.0214286f,
-                            RawMaterialId = 36,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 638,
-                            MapType = "Mix",
-                            ProductId = 80,
-                            QuantityRequired = 0.0085714f,
-                            RawMaterialId = 33,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 639,
-                            MapType = "Mix",
-                            ProductId = 80,
-                            QuantityRequired = 4.285714f,
+                            QuantityRequired = 4.57f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 640,
+                            Id = 422,
                             MapType = "Mix",
                             ProductId = 80,
-                            QuantityRequired = 0.0042857f,
+                            QuantityRequired = 0.1715f,
+                            RawMaterialId = 45,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 423,
+                            MapType = "Mix",
+                            ProductId = 80,
+                            QuantityRequired = 0.0043f,
                             RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 641,
+                            Id = 424,
+                            MapType = "Mix",
+                            ProductId = 80,
+                            QuantityRequired = 0.0215f,
+                            RawMaterialId = 76,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 425,
+                            MapType = "Mix",
+                            ProductId = 80,
+                            QuantityRequired = 0.0043f,
+                            RawMaterialId = 38,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 426,
+                            MapType = "Mix",
+                            ProductId = 80,
+                            QuantityRequired = 0.0215f,
+                            RawMaterialId = 36,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 427,
+                            MapType = "Mix",
+                            ProductId = 80,
+                            QuantityRequired = 0.0085f,
+                            RawMaterialId = 33,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 428,
+                            MapType = "Mix",
+                            ProductId = 80,
+                            QuantityRequired = 0.0215f,
+                            RawMaterialId = 10,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 429,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0857143f,
+                            QuantityRequired = 0.08575f,
                             RawMaterialId = 75,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 642,
+                            Id = 430,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0857143f,
+                            QuantityRequired = 0.08575f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 643,
+                            Id = 431,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0857143f,
+                            QuantityRequired = 0.08575f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 644,
+                            Id = 432,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0857143f,
-                            RawMaterialId = 45,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 645,
-                            MapType = "Mix",
-                            ProductId = 81,
-                            QuantityRequired = 0.0642857f,
+                            QuantityRequired = 0.0645f,
                             RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 646,
+                            Id = 433,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0107143f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 647,
-                            MapType = "Mix",
-                            ProductId = 81,
-                            QuantityRequired = 0.0107143f,
+                            QuantityRequired = 0.01075f,
                             RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 648,
+                            Id = 434,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0107143f,
-                            RawMaterialId = 10,
+                            QuantityRequired = 0.01075f,
+                            RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 649,
+                            Id = 435,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0107143f,
-                            RawMaterialId = 36,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 650,
-                            MapType = "Mix",
-                            ProductId = 81,
-                            QuantityRequired = 0.0042857f,
-                            RawMaterialId = 33,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 651,
-                            MapType = "Mix",
-                            ProductId = 81,
-                            QuantityRequired = 2.1428573f,
+                            QuantityRequired = 2.285f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 652,
+                            Id = 436,
                             MapType = "Mix",
                             ProductId = 81,
-                            QuantityRequired = 0.0021429f,
+                            QuantityRequired = 0.08575f,
+                            RawMaterialId = 45,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 437,
+                            MapType = "Mix",
+                            ProductId = 81,
+                            QuantityRequired = 0.00215f,
                             RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 653,
+                            Id = 438,
+                            MapType = "Mix",
+                            ProductId = 81,
+                            QuantityRequired = 0.01075f,
+                            RawMaterialId = 76,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 439,
+                            MapType = "Mix",
+                            ProductId = 81,
+                            QuantityRequired = 0.00215f,
+                            RawMaterialId = 38,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 440,
+                            MapType = "Mix",
+                            ProductId = 81,
+                            QuantityRequired = 0.01075f,
+                            RawMaterialId = 36,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 441,
+                            MapType = "Mix",
+                            ProductId = 81,
+                            QuantityRequired = 0.00425f,
+                            RawMaterialId = 33,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 442,
+                            MapType = "Mix",
+                            ProductId = 81,
+                            QuantityRequired = 0.01075f,
+                            RawMaterialId = 10,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 443,
+                            MapType = "Mix",
+                            ProductId = 82,
+                            QuantityRequired = 0.425f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 444,
+                            MapType = "Mix",
+                            ProductId = 82,
+                            QuantityRequired = 0.551f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 445,
+                            MapType = "Mix",
+                            ProductId = 82,
+                            QuantityRequired = 0.425f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 446,
+                            MapType = "Mix",
+                            ProductId = 82,
+                            QuantityRequired = 0.22f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 447,
+                            MapType = "Mix",
+                            ProductId = 82,
+                            QuantityRequired = 14.173f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 448,
+                            MapType = "Mix",
+                            ProductId = 82,
+                            QuantityRequired = 0.025f,
+                            RawMaterialId = 34,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 449,
+                            MapType = "Mix",
+                            ProductId = 83,
+                            QuantityRequired = 0.2125f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 450,
+                            MapType = "Mix",
+                            ProductId = 83,
+                            QuantityRequired = 0.2755f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 451,
+                            MapType = "Mix",
+                            ProductId = 83,
+                            QuantityRequired = 0.2125f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 452,
+                            MapType = "Mix",
+                            ProductId = 83,
+                            QuantityRequired = 0.11f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 453,
+                            MapType = "Mix",
+                            ProductId = 83,
+                            QuantityRequired = 7.0865f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 454,
+                            MapType = "Mix",
+                            ProductId = 83,
+                            QuantityRequired = 0.0125f,
+                            RawMaterialId = 34,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 455,
+                            MapType = "Mix",
+                            ProductId = 84,
+                            QuantityRequired = 0.10625f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 456,
+                            MapType = "Mix",
+                            ProductId = 84,
+                            QuantityRequired = 0.13775f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 457,
+                            MapType = "Mix",
+                            ProductId = 84,
+                            QuantityRequired = 0.10625f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 458,
+                            MapType = "Mix",
+                            ProductId = 84,
+                            QuantityRequired = 0.055f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 459,
+                            MapType = "Mix",
+                            ProductId = 84,
+                            QuantityRequired = 3.54325f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 460,
+                            MapType = "Mix",
+                            ProductId = 84,
+                            QuantityRequired = 0.00625f,
+                            RawMaterialId = 34,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 461,
+                            MapType = "Mix",
+                            ProductId = 85,
+                            QuantityRequired = 0.074375f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 462,
+                            MapType = "Mix",
+                            ProductId = 85,
+                            QuantityRequired = 0.096425f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 463,
+                            MapType = "Mix",
+                            ProductId = 85,
+                            QuantityRequired = 0.074375f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 464,
+                            MapType = "Mix",
+                            ProductId = 85,
+                            QuantityRequired = 0.0385f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 465,
+                            MapType = "Mix",
+                            ProductId = 85,
+                            QuantityRequired = 2.480275f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 466,
+                            MapType = "Mix",
+                            ProductId = 85,
+                            QuantityRequired = 0.004375f,
+                            RawMaterialId = 34,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 467,
                             MapType = "Mix",
                             ProductId = 43,
                             QuantityRequired = 0.275f,
@@ -7830,16 +5939,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 654,
-                            MapType = "Mix",
-                            ProductId = 43,
-                            QuantityRequired = 0.0275f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 655,
+                            Id = 468,
                             MapType = "Mix",
                             ProductId = 43,
                             QuantityRequired = 0.0275f,
@@ -7848,7 +5948,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 656,
+                            Id = 469,
                             MapType = "Mix",
                             ProductId = 43,
                             QuantityRequired = 0.004125f,
@@ -7857,25 +5957,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 657,
+                            Id = 470,
                             MapType = "Mix",
                             ProductId = 43,
-                            QuantityRequired = 0.0055f,
-                            RawMaterialId = 15,
+                            QuantityRequired = 0.0275f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 658,
-                            MapType = "Mix",
-                            ProductId = 43,
-                            QuantityRequired = 0.00275f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 659,
+                            Id = 471,
                             MapType = "Mix",
                             ProductId = 43,
                             QuantityRequired = 0.001375f,
@@ -7884,7 +5975,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 660,
+                            Id = 472,
+                            MapType = "Mix",
+                            ProductId = 43,
+                            QuantityRequired = 0.00275f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 473,
+                            MapType = "Mix",
+                            ProductId = 43,
+                            QuantityRequired = 0.0055f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 474,
+                            MapType = "Mix",
+                            ProductId = 43,
+                            QuantityRequired = 0.00275f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 475,
                             MapType = "Mix",
                             ProductId = 43,
                             QuantityRequired = 0.275f,
@@ -7893,313 +6011,178 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 661,
+                            Id = 476,
                             MapType = "Mix",
-                            ProductId = 43,
-                            QuantityRequired = 0.17875f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 662,
-                            MapType = "Mix",
-                            ProductId = 43,
-                            QuantityRequired = 0.004675f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 663,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.15714f,
+                            ProductId = 44,
+                            QuantityRequired = 0.157f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 664,
+                            Id = 477,
                             MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.015714f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 665,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.015714f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 666,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.0023571f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 667,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.00375f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 668,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.0015714f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 669,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.0007857f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 670,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.15714f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 671,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.14857f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 672,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.003886f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 673,
-                            MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.071429f,
+                            ProductId = 44,
+                            QuantityRequired = 0.07150003f,
                             RawMaterialId = 20,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 674,
+                            Id = 478,
                             MapType = "Mix",
-                            ProductId = 106,
-                            QuantityRequired = 0.001429f,
-                            RawMaterialId = 38,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 675,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.12f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 676,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.012f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 677,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.012f,
+                            ProductId = 44,
+                            QuantityRequired = 0.015714293f,
                             RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 678,
+                            Id = 479,
                             MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.0018f,
+                            ProductId = 44,
+                            QuantityRequired = 0.002357144f,
                             RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 679,
+                            Id = 480,
                             MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.0024f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 680,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.0012f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 681,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.0006f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 682,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.012f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 683,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.078f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 684,
-                            MapType = "Mix",
-                            ProductId = 45,
-                            QuantityRequired = 0.00204f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 685,
-                            MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.125f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 686,
-                            MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.0125f,
+                            ProductId = 44,
+                            QuantityRequired = 0.015714293f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 687,
+                            Id = 481,
                             MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.0125f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 688,
-                            MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.001875f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 689,
-                            MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.0025f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 690,
-                            MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.00125f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 691,
-                            MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.000625f,
+                            ProductId = 44,
+                            QuantityRequired = 0.0007857146f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 692,
+                            Id = 482,
                             MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.125f,
-                            RawMaterialId = 6,
+                            ProductId = 44,
+                            QuantityRequired = 0.0015714292f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 693,
+                            Id = 483,
                             MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.08125f,
-                            RawMaterialId = 68,
+                            ProductId = 44,
+                            QuantityRequired = 0.0031428584f,
+                            RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 694,
+                            Id = 484,
                             MapType = "Mix",
-                            ProductId = 107,
-                            QuantityRequired = 0.002125f,
+                            ProductId = 44,
+                            QuantityRequired = 0.0015714292f,
                             RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 695,
+                            Id = 485,
+                            MapType = "Mix",
+                            ProductId = 44,
+                            QuantityRequired = 0.15714292f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 486,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.02f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 487,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 488,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.0003f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 489,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.002f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 490,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.0001f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 491,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 492,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 493,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 494,
+                            MapType = "Mix",
+                            ProductId = 45,
+                            QuantityRequired = 0.02f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 495,
                             MapType = "Mix",
                             ProductId = 46,
                             QuantityRequired = 0.025f,
@@ -8208,16 +6191,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 696,
-                            MapType = "Mix",
-                            ProductId = 46,
-                            QuantityRequired = 0.0025f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 697,
+                            Id = 496,
                             MapType = "Mix",
                             ProductId = 46,
                             QuantityRequired = 0.0025f,
@@ -8226,7 +6200,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 698,
+                            Id = 497,
                             MapType = "Mix",
                             ProductId = 46,
                             QuantityRequired = 0.000375f,
@@ -8235,25 +6209,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 699,
+                            Id = 498,
                             MapType = "Mix",
                             ProductId = 46,
-                            QuantityRequired = 0.0005f,
-                            RawMaterialId = 15,
+                            QuantityRequired = 0.0025f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 700,
-                            MapType = "Mix",
-                            ProductId = 46,
-                            QuantityRequired = 0.00025f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 701,
+                            Id = 499,
                             MapType = "Mix",
                             ProductId = 46,
                             QuantityRequired = 0.000125f,
@@ -8262,7 +6227,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 702,
+                            Id = 500,
+                            MapType = "Mix",
+                            ProductId = 46,
+                            QuantityRequired = 0.00025f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 501,
+                            MapType = "Mix",
+                            ProductId = 46,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 502,
+                            MapType = "Mix",
+                            ProductId = 46,
+                            QuantityRequired = 0.00025f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 503,
                             MapType = "Mix",
                             ProductId = 46,
                             QuantityRequired = 0.025f,
@@ -8271,115 +6263,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 703,
-                            MapType = "Mix",
-                            ProductId = 46,
-                            QuantityRequired = 0.01625f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 704,
-                            MapType = "Mix",
-                            ProductId = 46,
-                            QuantityRequired = 0.000425f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 705,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 706,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 707,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 708,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.000525f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 709,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.0007f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 710,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 711,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 712,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 713,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 714,
-                            MapType = "Mix",
-                            ProductId = 48,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 715,
+                            Id = 504,
                             MapType = "Mix",
                             ProductId = 47,
                             QuantityRequired = 0.035f,
@@ -8388,16 +6272,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 716,
-                            MapType = "Mix",
-                            ProductId = 47,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 717,
+                            Id = 505,
                             MapType = "Mix",
                             ProductId = 47,
                             QuantityRequired = 0.0035f,
@@ -8406,7 +6281,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 718,
+                            Id = 506,
                             MapType = "Mix",
                             ProductId = 47,
                             QuantityRequired = 0.000525f,
@@ -8415,25 +6290,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 719,
+                            Id = 507,
                             MapType = "Mix",
                             ProductId = 47,
-                            QuantityRequired = 0.0007f,
-                            RawMaterialId = 15,
+                            QuantityRequired = 0.0035f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 720,
-                            MapType = "Mix",
-                            ProductId = 47,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 721,
+                            Id = 508,
                             MapType = "Mix",
                             ProductId = 47,
                             QuantityRequired = 0.000175f,
@@ -8442,7 +6308,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 722,
+                            Id = 509,
+                            MapType = "Mix",
+                            ProductId = 47,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 510,
+                            MapType = "Mix",
+                            ProductId = 47,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 511,
+                            MapType = "Mix",
+                            ProductId = 47,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 512,
                             MapType = "Mix",
                             ProductId = 47,
                             QuantityRequired = 0.035f,
@@ -8451,565 +6344,574 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 723,
+                            Id = 513,
                             MapType = "Mix",
-                            ProductId = 47,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 724,
-                            MapType = "Mix",
-                            ProductId = 47,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 725,
-                            MapType = "Mix",
-                            ProductId = 50,
+                            ProductId = 48,
                             QuantityRequired = 0.035f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 726,
+                            Id = 514,
                             MapType = "Mix",
-                            ProductId = 50,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 727,
-                            MapType = "Mix",
-                            ProductId = 50,
+                            ProductId = 48,
                             QuantityRequired = 0.0035f,
                             RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 728,
+                            Id = 515,
                             MapType = "Mix",
-                            ProductId = 50,
+                            ProductId = 48,
                             QuantityRequired = 0.000525f,
                             RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 729,
+                            Id = 516,
                             MapType = "Mix",
-                            ProductId = 50,
-                            QuantityRequired = 0.0007f,
-                            RawMaterialId = 15,
+                            ProductId = 48,
+                            QuantityRequired = 0.00525f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 730,
+                            Id = 517,
                             MapType = "Mix",
-                            ProductId = 50,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 731,
-                            MapType = "Mix",
-                            ProductId = 50,
+                            ProductId = 48,
                             QuantityRequired = 0.000175f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 732,
+                            Id = 518,
                             MapType = "Mix",
-                            ProductId = 50,
+                            ProductId = 48,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 519,
+                            MapType = "Mix",
+                            ProductId = 48,
+                            QuantityRequired = 0.0007f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 520,
+                            MapType = "Mix",
+                            ProductId = 48,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 521,
+                            MapType = "Mix",
+                            ProductId = 48,
                             QuantityRequired = 0.035f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 733,
+                            Id = 522,
                             MapType = "Mix",
-                            ProductId = 50,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
+                            ProductId = 49,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 734,
+                            Id = 523,
                             MapType = "Mix",
-                            ProductId = 50,
-                            QuantityRequired = 0.000595f,
+                            ProductId = 49,
+                            QuantityRequired = 0.0036f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 524,
+                            MapType = "Mix",
+                            ProductId = 49,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 525,
+                            MapType = "Mix",
+                            ProductId = 49,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 526,
+                            MapType = "Mix",
+                            ProductId = 49,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 527,
+                            MapType = "Mix",
+                            ProductId = 49,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 528,
+                            MapType = "Mix",
+                            ProductId = 49,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 529,
+                            MapType = "Mix",
+                            ProductId = 49,
+                            QuantityRequired = 0.0004f,
                             RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 735,
+                            Id = 530,
+                            MapType = "Mix",
+                            ProductId = 49,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 531,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 532,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.0036f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 533,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 534,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 535,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 536,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 537,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 538,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 539,
+                            MapType = "Mix",
+                            ProductId = 50,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 540,
                             MapType = "Mix",
                             ProductId = 51,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 541,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.0036f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 542,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 543,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 544,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 545,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 546,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 547,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 548,
+                            MapType = "Mix",
+                            ProductId = 51,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 549,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 550,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.0036f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 551,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 552,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 553,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 554,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 555,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 556,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 557,
+                            MapType = "Mix",
+                            ProductId = 52,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 558,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 559,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.0036f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 560,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.0006f,
+                            RawMaterialId = 3,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 561,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.006f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 562,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.0002f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 563,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 564,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.0008f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 565,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.0004f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 566,
+                            MapType = "Mix",
+                            ProductId = 53,
+                            QuantityRequired = 0.04f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 567,
+                            MapType = "Mix",
+                            ProductId = 54,
                             QuantityRequired = 0.035f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 736,
+                            Id = 568,
                             MapType = "Mix",
-                            ProductId = 51,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 737,
-                            MapType = "Mix",
-                            ProductId = 51,
+                            ProductId = 54,
                             QuantityRequired = 0.0035f,
                             RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 738,
+                            Id = 569,
                             MapType = "Mix",
-                            ProductId = 51,
+                            ProductId = 54,
                             QuantityRequired = 0.000525f,
                             RawMaterialId = 3,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 739,
+                            Id = 570,
                             MapType = "Mix",
-                            ProductId = 51,
-                            QuantityRequired = 0.0007f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 740,
-                            MapType = "Mix",
-                            ProductId = 51,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 741,
-                            MapType = "Mix",
-                            ProductId = 51,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 742,
-                            MapType = "Mix",
-                            ProductId = 51,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 743,
-                            MapType = "Mix",
-                            ProductId = 51,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 744,
-                            MapType = "Mix",
-                            ProductId = 51,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 745,
-                            MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 746,
-                            MapType = "Mix",
-                            ProductId = 52,
+                            ProductId = 54,
                             QuantityRequired = 0.0035f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 747,
+                            Id = 571,
                             MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 748,
-                            MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.000525f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 749,
-                            MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.0007f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 750,
-                            MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 751,
-                            MapType = "Mix",
-                            ProductId = 52,
+                            ProductId = 54,
                             QuantityRequired = 0.000175f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 752,
+                            Id = 572,
                             MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 6,
+                            ProductId = 54,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 753,
+                            Id = 573,
                             MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 754,
-                            MapType = "Mix",
-                            ProductId = 52,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 755,
-                            MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 756,
-                            MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 757,
-                            MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 758,
-                            MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.000525f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 759,
-                            MapType = "Mix",
-                            ProductId = 53,
+                            ProductId = 54,
                             QuantityRequired = 0.0007f,
                             RawMaterialId = 15,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 760,
+                            Id = 574,
                             MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
+                            ProductId = 54,
+                            QuantityRequired = 0.00035f,
+                            RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 761,
+                            Id = 575,
                             MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 762,
-                            MapType = "Mix",
-                            ProductId = 53,
+                            ProductId = 54,
                             QuantityRequired = 0.035f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 763,
-                            MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 764,
-                            MapType = "Mix",
-                            ProductId = 53,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 765,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 766,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 767,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 768,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.000525f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 769,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.0007f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 770,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 771,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 772,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 773,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 774,
-                            MapType = "Mix",
-                            ProductId = 108,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 775,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 776,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 777,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.0035f,
-                            RawMaterialId = 23,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 778,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.000525f,
-                            RawMaterialId = 3,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 779,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.0007f,
-                            RawMaterialId = 15,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 780,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.0003f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 781,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.000175f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 782,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.035f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 783,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.02275f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 784,
-                            MapType = "Mix",
-                            ProductId = 109,
-                            QuantityRequired = 0.000595f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 785,
+                            Id = 576,
                             MapType = "Mix",
                             ProductId = 55,
                             QuantityRequired = 0.05f,
@@ -9018,25 +6920,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 786,
+                            Id = 577,
                             MapType = "Mix",
                             ProductId = 55,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 787,
-                            MapType = "Mix",
-                            ProductId = 55,
-                            QuantityRequired = 0.005f,
+                            QuantityRequired = 0.0045f,
                             RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 788,
+                            Id = 578,
                             MapType = "Mix",
                             ProductId = 55,
                             QuantityRequired = 0.00075f,
@@ -9045,25 +6938,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 789,
+                            Id = 579,
                             MapType = "Mix",
                             ProductId = 55,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 15,
+                            QuantityRequired = 0.0075f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 790,
-                            MapType = "Mix",
-                            ProductId = 55,
-                            QuantityRequired = 0.0005f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 791,
+                            Id = 580,
                             MapType = "Mix",
                             ProductId = 55,
                             QuantityRequired = 0.00025f,
@@ -9072,7 +6956,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 792,
+                            Id = 581,
+                            MapType = "Mix",
+                            ProductId = 55,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 582,
+                            MapType = "Mix",
+                            ProductId = 55,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 583,
+                            MapType = "Mix",
+                            ProductId = 55,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 584,
                             MapType = "Mix",
                             ProductId = 55,
                             QuantityRequired = 0.05f,
@@ -9081,25 +6992,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 793,
-                            MapType = "Mix",
-                            ProductId = 55,
-                            QuantityRequired = 0.0325f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 794,
-                            MapType = "Mix",
-                            ProductId = 55,
-                            QuantityRequired = 0.00085f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 795,
+                            Id = 585,
                             MapType = "Mix",
                             ProductId = 56,
                             QuantityRequired = 0.05f,
@@ -9108,25 +7001,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 796,
+                            Id = 586,
                             MapType = "Mix",
                             ProductId = 56,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 797,
-                            MapType = "Mix",
-                            ProductId = 56,
-                            QuantityRequired = 0.005f,
+                            QuantityRequired = 0.0045f,
                             RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 798,
+                            Id = 587,
                             MapType = "Mix",
                             ProductId = 56,
                             QuantityRequired = 0.00075f,
@@ -9135,25 +7019,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 799,
+                            Id = 588,
                             MapType = "Mix",
                             ProductId = 56,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 15,
+                            QuantityRequired = 0.0075f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 800,
-                            MapType = "Mix",
-                            ProductId = 56,
-                            QuantityRequired = 0.0005f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 801,
+                            Id = 589,
                             MapType = "Mix",
                             ProductId = 56,
                             QuantityRequired = 0.00025f,
@@ -9162,7 +7037,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 802,
+                            Id = 590,
+                            MapType = "Mix",
+                            ProductId = 56,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 591,
+                            MapType = "Mix",
+                            ProductId = 56,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 592,
+                            MapType = "Mix",
+                            ProductId = 56,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 593,
                             MapType = "Mix",
                             ProductId = 56,
                             QuantityRequired = 0.05f,
@@ -9171,25 +7073,7 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 803,
-                            MapType = "Mix",
-                            ProductId = 56,
-                            QuantityRequired = 0.0325f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 804,
-                            MapType = "Mix",
-                            ProductId = 56,
-                            QuantityRequired = 0.00085f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 805,
+                            Id = 594,
                             MapType = "Mix",
                             ProductId = 57,
                             QuantityRequired = 0.05f,
@@ -9198,25 +7082,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 806,
+                            Id = 595,
                             MapType = "Mix",
                             ProductId = 57,
-                            QuantityRequired = 0.005f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 807,
-                            MapType = "Mix",
-                            ProductId = 57,
-                            QuantityRequired = 0.005f,
+                            QuantityRequired = 0.0045f,
                             RawMaterialId = 23,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 808,
+                            Id = 596,
                             MapType = "Mix",
                             ProductId = 57,
                             QuantityRequired = 0.00075f,
@@ -9225,25 +7100,16 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 809,
+                            Id = 597,
                             MapType = "Mix",
                             ProductId = 57,
-                            QuantityRequired = 0.001f,
-                            RawMaterialId = 15,
+                            QuantityRequired = 0.0075f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 810,
-                            MapType = "Mix",
-                            ProductId = 57,
-                            QuantityRequired = 0.0005f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 811,
+                            Id = 598,
                             MapType = "Mix",
                             ProductId = 57,
                             QuantityRequired = 0.00025f,
@@ -9252,7 +7118,34 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 812,
+                            Id = 599,
+                            MapType = "Mix",
+                            ProductId = 57,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 600,
+                            MapType = "Mix",
+                            ProductId = 57,
+                            QuantityRequired = 0.001f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 601,
+                            MapType = "Mix",
+                            ProductId = 57,
+                            QuantityRequired = 0.0005f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 602,
                             MapType = "Mix",
                             ProductId = 57,
                             QuantityRequired = 0.05f,
@@ -9261,1068 +7154,687 @@ namespace BMS.Data.Migrations
                         },
                         new
                         {
-                            Id = 813,
+                            Id = 603,
                             MapType = "Mix",
-                            ProductId = 57,
-                            QuantityRequired = 0.0325f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 814,
-                            MapType = "Mix",
-                            ProductId = 57,
-                            QuantityRequired = 0.00085f,
-                            RawMaterialId = 16,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 815,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.0045788f,
+                            ProductId = 86,
+                            QuantityRequired = 7f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 816,
+                            Id = 604,
                             MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.006044f,
+                            ProductId = 86,
+                            QuantityRequired = 6.0004f,
                             RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 817,
+                            Id = 605,
                             MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.0038004f,
+                            ProductId = 86,
+                            QuantityRequired = 4.501f,
                             RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 818,
+                            Id = 606,
                             MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.0007784f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 819,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.0003663f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 820,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.0003663f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 821,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.137363f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 822,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 3.66E-05f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 823,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 3.66E-05f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 824,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 3.66E-05f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 825,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 4.58E-05f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 826,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.0091575f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 827,
-                            MapType = "Mix",
-                            ProductId = 110,
-                            QuantityRequired = 0.0045788f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 828,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0038558f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 829,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0050897f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 830,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0032003f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 831,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0006555f,
-                            RawMaterialId = 12,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 832,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0003085f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 833,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0003085f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 834,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.1156738f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 835,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 3.09E-05f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 836,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 3.09E-05f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 837,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 3.09E-05f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 838,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 3.86E-05f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 839,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0077116f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 840,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0038558f,
-                            RawMaterialId = 48,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 841,
-                            MapType = "Mix",
-                            ProductId = 111,
-                            QuantityRequired = 0.0030075f,
-                            RawMaterialId = 54,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 842,
-                            MapType = "Mix",
-                            ProductId = 112,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 101,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 843,
-                            MapType = "Mix",
-                            ProductId = 112,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 844,
-                            MapType = "Mix",
-                            ProductId = 112,
-                            QuantityRequired = 0.1071429f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 845,
-                            MapType = "Mix",
-                            ProductId = 112,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 17,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 846,
-                            MapType = "Mix",
-                            ProductId = 112,
-                            QuantityRequired = 0.0035714f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 847,
-                            MapType = "Mix",
-                            ProductId = 112,
-                            QuantityRequired = 0.002381f,
-                            RawMaterialId = 54,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 848,
-                            MapType = "Mix",
-                            ProductId = 112,
-                            QuantityRequired = 0.0238095f,
-                            RawMaterialId = 102,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 849,
-                            MapType = "Mix",
-                            ProductId = 113,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 101,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 850,
-                            MapType = "Mix",
-                            ProductId = 113,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 851,
-                            MapType = "Mix",
-                            ProductId = 113,
-                            QuantityRequired = 0.1071429f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 852,
-                            MapType = "Mix",
-                            ProductId = 113,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 17,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 853,
-                            MapType = "Mix",
-                            ProductId = 113,
-                            QuantityRequired = 0.0035714f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 854,
-                            MapType = "Mix",
-                            ProductId = 113,
-                            QuantityRequired = 0.00238f,
-                            RawMaterialId = 52,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 855,
-                            MapType = "Mix",
-                            ProductId = 113,
-                            QuantityRequired = 0.0238095f,
-                            RawMaterialId = 96,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 856,
-                            MapType = "Mix",
-                            ProductId = 114,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 101,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 857,
-                            MapType = "Mix",
-                            ProductId = 114,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 858,
-                            MapType = "Mix",
-                            ProductId = 114,
-                            QuantityRequired = 0.1071429f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 859,
-                            MapType = "Mix",
-                            ProductId = 114,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 17,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 860,
-                            MapType = "Mix",
-                            ProductId = 114,
-                            QuantityRequired = 0.0035714f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 861,
-                            MapType = "Mix",
-                            ProductId = 114,
-                            QuantityRequired = 0.0238095f,
-                            RawMaterialId = 95,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 862,
-                            MapType = "Mix",
-                            ProductId = 115,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 101,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 863,
-                            MapType = "Mix",
-                            ProductId = 115,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 864,
-                            MapType = "Mix",
-                            ProductId = 115,
-                            QuantityRequired = 0.1071429f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 865,
-                            MapType = "Mix",
-                            ProductId = 115,
-                            QuantityRequired = 0.0059524f,
-                            RawMaterialId = 17,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 866,
-                            MapType = "Mix",
-                            ProductId = 115,
-                            QuantityRequired = 0.0035714f,
-                            RawMaterialId = 68,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 867,
-                            MapType = "Mix",
-                            ProductId = 115,
-                            QuantityRequired = 0.0238095f,
-                            RawMaterialId = 94,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 868,
-                            MapType = "Mix",
-                            ProductId = 115,
-                            QuantityRequired = 0.000234f,
-                            RawMaterialId = 92,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 869,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.0853659f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 870,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.073171f,
-                            RawMaterialId = 2,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 871,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.05488f,
-                            RawMaterialId = 26,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 872,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 1.463415f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 873,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.00244f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 874,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.00244f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 875,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.000488f,
-                            RawMaterialId = 98,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 876,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.000488f,
-                            RawMaterialId = 31,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 877,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.000488f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 878,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.000488f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 879,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.000488f,
-                            RawMaterialId = 40,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 880,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.000488f,
-                            RawMaterialId = 14,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 881,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.0060976f,
+                            ProductId = 86,
+                            QuantityRequired = 0.5005f,
                             RawMaterialId = 89,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 882,
+                            Id = 607,
                             MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.0488f,
-                            RawMaterialId = 103,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 883,
-                            MapType = "Mix",
-                            ProductId = 58,
-                            QuantityRequired = 0.060976f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 884,
-                            MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0769231f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 885,
-                            MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 18,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 886,
-                            MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 887,
-                            MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0038462f,
+                            ProductId = 86,
+                            QuantityRequired = 0.203f,
                             RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 888,
+                            Id = 608,
                             MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.1538462f,
-                            RawMaterialId = 6,
+                            ProductId = 86,
+                            QuantityRequired = 0.0399f,
+                            RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 889,
+                            Id = 609,
                             MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.00071f,
+                            ProductId = 86,
+                            QuantityRequired = 0.0399f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 890,
+                            Id = 610,
                             MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0019231f,
+                            ProductId = 86,
+                            QuantityRequired = 0.0399f,
                             RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 891,
+                            Id = 611,
                             MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0769231f,
+                            ProductId = 86,
+                            QuantityRequired = 0.0399f,
+                            RawMaterialId = 32,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 612,
+                            MapType = "Mix",
+                            ProductId = 86,
+                            QuantityRequired = 120.001f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 613,
+                            MapType = "Mix",
+                            ProductId = 86,
+                            QuantityRequired = 0.0399f,
+                            RawMaterialId = 14,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 614,
+                            MapType = "Mix",
+                            ProductId = 86,
+                            QuantityRequired = 0.0245f,
                             RawMaterialId = 58,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 892,
+                            Id = 615,
                             MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 108,
+                            ProductId = 86,
+                            QuantityRequired = 0.0098f,
+                            RawMaterialId = 48,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 893,
+                            Id = 616,
                             MapType = "Mix",
-                            ProductId = 65,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 24,
+                            ProductId = 86,
+                            QuantityRequired = 0.0098f,
+                            RawMaterialId = 60,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 894,
+                            Id = 617,
                             MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.0769231f,
-                            RawMaterialId = 1,
+                            ProductId = 86,
+                            QuantityRequired = 0.0098f,
+                            RawMaterialId = 12,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 895,
+                            Id = 618,
                             MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 18,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 896,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.0038462f,
+                            ProductId = 86,
+                            QuantityRequired = 0.203f,
                             RawMaterialId = 9,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 897,
+                            Id = 619,
                             MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 898,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.1538462f,
-                            RawMaterialId = 6,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 899,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.00071f,
-                            RawMaterialId = 5,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 900,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.0019231f,
-                            RawMaterialId = 4,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 901,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.0769231f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 902,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.00577f,
-                            RawMaterialId = 10,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 903,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 24,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 904,
-                            MapType = "Mix",
-                            ProductId = 64,
-                            QuantityRequired = 0.1153846f,
-                            RawMaterialId = 105,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 905,
-                            MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.0769231f,
+                            ProductId = 87,
+                            QuantityRequired = 0.088f,
                             RawMaterialId = 1,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 906,
+                            Id = 620,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 18,
+                            ProductId = 87,
+                            QuantityRequired = 0.0754336f,
+                            RawMaterialId = 2,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 907,
+                            Id = 621,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 9,
+                            ProductId = 87,
+                            QuantityRequired = 0.056584f,
+                            RawMaterialId = 26,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 908,
+                            Id = 622,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.0038462f,
+                            ProductId = 87,
+                            QuantityRequired = 0.006292f,
+                            RawMaterialId = 89,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 623,
+                            MapType = "Mix",
+                            ProductId = 87,
+                            QuantityRequired = 0.002552f,
                             RawMaterialId = 7,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 909,
+                            Id = 624,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.1538462f,
-                            RawMaterialId = 6,
+                            ProductId = 87,
+                            QuantityRequired = 0.0005016f,
+                            RawMaterialId = 19,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 910,
+                            Id = 625,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.00071f,
+                            ProductId = 87,
+                            QuantityRequired = 0.0005016f,
                             RawMaterialId = 5,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 911,
+                            Id = 626,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.0019231f,
+                            ProductId = 87,
+                            QuantityRequired = 0.0005016f,
                             RawMaterialId = 4,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 912,
+                            Id = 627,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.0769231f,
+                            ProductId = 87,
+                            QuantityRequired = 0.0005016f,
+                            RawMaterialId = 32,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 628,
+                            MapType = "Mix",
+                            ProductId = 87,
+                            QuantityRequired = 1.508584f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 629,
+                            MapType = "Mix",
+                            ProductId = 87,
+                            QuantityRequired = 0.0005016f,
+                            RawMaterialId = 14,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 630,
+                            MapType = "Mix",
+                            ProductId = 87,
+                            QuantityRequired = 0.000308f,
                             RawMaterialId = 58,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 913,
+                            Id = 631,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.000962f,
+                            ProductId = 87,
+                            QuantityRequired = 0.0001232f,
+                            RawMaterialId = 48,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 632,
+                            MapType = "Mix",
+                            ProductId = 87,
+                            QuantityRequired = 0.0001232f,
+                            RawMaterialId = 60,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 633,
+                            MapType = "Mix",
+                            ProductId = 87,
+                            QuantityRequired = 0.0001232f,
+                            RawMaterialId = 12,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 634,
+                            MapType = "Mix",
+                            ProductId = 87,
+                            QuantityRequired = 0.002552f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 635,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 6f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 636,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 1.1997f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 637,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.6f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 638,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.12f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 639,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0996f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 640,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0996f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 641,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0318f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 642,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0318f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 643,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.5004f,
+                            RawMaterialId = 90,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 644,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0318f,
+                            RawMaterialId = 32,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 645,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.3f,
+                            RawMaterialId = 53,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 646,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0318f,
+                            RawMaterialId = 91,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 647,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0198f,
+                            RawMaterialId = 29,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 648,
+                            MapType = "Mix",
+                            ProductId = 88,
+                            QuantityRequired = 0.0318f,
+                            RawMaterialId = 19,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 649,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.146f,
+                            RawMaterialId = 1,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 650,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0291927f,
+                            RawMaterialId = 2,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 651,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0146f,
+                            RawMaterialId = 23,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 652,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.00292f,
+                            RawMaterialId = 15,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 653,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0024236f,
+                            RawMaterialId = 7,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 654,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0024236f,
+                            RawMaterialId = 9,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 655,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0007738f,
+                            RawMaterialId = 5,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 656,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0007738f,
+                            RawMaterialId = 4,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 657,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0121764f,
+                            RawMaterialId = 90,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 658,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0007738f,
+                            RawMaterialId = 32,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 659,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0073f,
+                            RawMaterialId = 53,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 660,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0007738f,
+                            RawMaterialId = 91,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 661,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0004818f,
+                            RawMaterialId = 29,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 662,
+                            MapType = "Mix",
+                            ProductId = 89,
+                            QuantityRequired = 0.0007738f,
+                            RawMaterialId = 19,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 663,
+                            MapType = "Mix",
+                            ProductId = 90,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 70,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 664,
+                            MapType = "Mix",
+                            ProductId = 90,
+                            QuantityRequired = 0.607f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 665,
+                            MapType = "Mix",
+                            ProductId = 90,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 666,
+                            MapType = "Mix",
+                            ProductId = 90,
+                            QuantityRequired = 0.014f,
+                            RawMaterialId = 60,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 667,
+                            MapType = "Mix",
+                            ProductId = 91,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 70,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 668,
+                            MapType = "Mix",
+                            ProductId = 91,
+                            QuantityRequired = 0.607f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 669,
+                            MapType = "Mix",
+                            ProductId = 91,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 670,
+                            MapType = "Mix",
+                            ProductId = 91,
+                            QuantityRequired = 0.014f,
+                            RawMaterialId = 52,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 671,
+                            MapType = "Mix",
+                            ProductId = 92,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 70,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 672,
+                            MapType = "Mix",
+                            ProductId = 92,
+                            QuantityRequired = 0.607f,
+                            RawMaterialId = 6,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 673,
+                            MapType = "Mix",
+                            ProductId = 92,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 16,
+                            ShowInReport = true
+                        },
+                        new
+                        {
+                            Id = 674,
+                            MapType = "Mix",
+                            ProductId = 92,
+                            QuantityRequired = 0.002f,
                             RawMaterialId = 92,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 914,
+                            Id = 675,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 24,
+                            ProductId = 93,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 70,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 915,
+                            Id = 676,
                             MapType = "Mix",
-                            ProductId = 63,
-                            QuantityRequired = 0.1153846f,
-                            RawMaterialId = 109,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 916,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.0769231f,
-                            RawMaterialId = 1,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 917,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 18,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 918,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 9,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 919,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.0038462f,
-                            RawMaterialId = 7,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 920,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.1538462f,
+                            ProductId = 93,
+                            QuantityRequired = 0.607f,
                             RawMaterialId = 6,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 921,
+                            Id = 677,
                             MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.00071f,
-                            RawMaterialId = 5,
+                            ProductId = 93,
+                            QuantityRequired = 0.036f,
+                            RawMaterialId = 16,
                             ShowInReport = true
                         },
                         new
                         {
-                            Id = 922,
+                            Id = 678,
                             MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.0019231f,
-                            RawMaterialId = 4,
+                            ProductId = 93,
+                            QuantityRequired = 0.014f,
+                            RawMaterialId = 51,
                             ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 923,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.0769231f,
-                            RawMaterialId = 58,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 924,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.000962f,
-                            RawMaterialId = 92,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 925,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.0384615f,
-                            RawMaterialId = 24,
-                            ShowInReport = true
-                        },
-                        new
-                        {
-                            Id = 926,
-                            MapType = "Mix",
-                            ProductId = 61,
-                            QuantityRequired = 0.1153846f,
-                            RawMaterialId = 103,
-                            ShowInReport = true
-                        });
-                });
-
-            modelBuilder.Entity("BMS.Data.Models.ProductRawMaterialMapType", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<string>("MapTypeName")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("ProductRawMaterialMapType");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            MapTypeName = "Mix"
-                        },
-                        new
-                        {
-                            Id = 2,
-                            MapTypeName = "Masala"
-                        },
-                        new
-                        {
-                            Id = 3,
-                            MapTypeName = "Masala 1"
-                        },
-                        new
-                        {
-                            Id = 4,
-                            MapTypeName = "Masala 2"
                         });
                 });
 
@@ -10671,7 +8183,7 @@ namespace BMS.Data.Migrations
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
-                            Name = "White Chocolate",
+                            Name = "WhiteChocolate",
                             StockQuantity = 0.56f,
                             Unit = "kg"
                         },
@@ -11001,7 +8513,7 @@ namespace BMS.Data.Migrations
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
-                            Name = "Vanila Essence",
+                            Name = "Vanila",
                             StockQuantity = 20f,
                             Unit = "kg"
                         },
@@ -11045,7 +8557,7 @@ namespace BMS.Data.Migrations
                             CreatedById = "Initial Creation",
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
-                            Name = "Lemon Essence",
+                            Name = "Lemon",
                             StockQuantity = 20f,
                             Unit = "kg"
                         },
@@ -11376,204 +8888,6 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Ellau",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 93,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Almond Essence",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 94,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Colorome mango",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 95,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Colorome orange",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 96,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Colorome strawberry",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 97,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Dark bar",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 98,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Elachi",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 99,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Fresh Coconut",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 100,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Ice cream Essence",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 101,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Muffin Mix",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 102,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Natural color pine",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 103,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Pineapple Colorme",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 104,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Pineapple Essence",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 105,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Pista Colorme",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 106,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Plum Essence",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 107,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Rum Essence",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 108,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Semia",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 109,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "Strawberry Colorme",
-                            StockQuantity = 0.01f,
-                            Unit = "kg"
-                        },
-                        new
-                        {
-                            RawMaterialId = 110,
-                            CP = 1m,
-                            CreatedById = "Initial Creation",
-                            CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
-                            IsDeleted = false,
-                            Name = "White bar",
                             StockQuantity = 0.01f,
                             Unit = "kg"
                         });

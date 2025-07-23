@@ -1,0 +1,16 @@
+@model IEnumerable<BMS.Data.Models.ProductRawMaterial>
+@foreach (var pi in Model)
+{
+    <tr>
+        <td>@pi.Id</td>
+        <td>@pi.Product?.Name</td>
+        <td>@pi.RawMaterial?.Name</td>
+        <td>@pi.MapType</td>
+        <td>@pi.QuantityRequired</td>
+        <td>@(pi.ShowInReport ? "Yes" : "No")</td>
+        <td>
+            <a asp-page="./ProductIngredients" asp-route-id="@pi.Id" class="btn btn-outline-primary btn-sm"><i class='bx bx-edit me-0'></i></a>
+            <button type="button" class="btn btn-outline-danger btn-sm ms-1" onclick="confirmDeleteIngredient(@pi.Id)"><i class='bx bx-trash me-0'></i></button>
+        </td>
+    </tr>
+}

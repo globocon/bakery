@@ -59,7 +59,8 @@
     });
 
     function renderInvoiceHtml(invoice) {
-        // Render a simple invoice summary (customize as needed)
+		// Render a simple invoice summary (customize as needed)
+		var i = 1;
         var html = `<div class="card">
 	<div class="card-body">
 		<div id="invoice">
@@ -120,15 +121,21 @@
 							</thead>
 							<tbody>`;
 							invoice.items.forEach(function (item) {
+			
 								html += `<tr>
-													<td class="no">01</td>
+													<td class="no">${i++}</td>
 													<td class="text-left">
 														<h3>${item.productName}</h3>Filled with special organic egg
 													</td>
 													<td class="unit">₹${item.price}</td>
 													<td class="qty">${item.quantity}</td>
 													<td class="unit">₹0.00</td>
-													<td class="total">₹${item.total}</td>
+													<td class="total">
+														₹${Number(item.total).toLocaleString('en-IN', {
+															minimumFractionDigits: 2,
+															maximumFractionDigits: 2
+														})}
+													</td>
 												</tr>`;
 							});
 							html += `</tbody>
@@ -136,7 +143,12 @@
 													<tr>
 														<td colspan="2"></td>
 														<td colspan="2">SUBTOTAL</td>
-														<td>₹${invoice.totalAmount}</td>
+														<td>
+														  ₹${Number(invoice.totalAmount).toLocaleString('en-IN', {
+															  minimumFractionDigits: 2,
+															  maximumFractionDigits: 2
+														  })}
+														</td>
 													</tr>
 													<tr>
 														<td colspan="2"></td>

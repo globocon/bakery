@@ -7,7 +7,7 @@ namespace BMS.Data.Models
     {
         [Key]
         public int InvoiceId { get; set; }
-        public string InvoiceNumber { get; set; }
+        public string? InvoiceNumber { get; set; }
         public int CustomerId { get; set; }
         public DateTime InvoiceDate { get; set; }
         public decimal DiscountAmount { get; set; }

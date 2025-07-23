@@ -12,6 +12,9 @@ namespace BMS.Data.Providers
         Task AddProductRawMaterialMappingAsync(ProductRawMaterial ingredient);
         Task UpdateProductRawMaterialMappingAsync(ProductRawMaterial ingredient);
         Task DeleteProductRawMaterialMappingAsync(int Id);
+
+        Task<List<ProductRawMaterialMapType>> GetAllProductRawMaterialMapTypeListAsync();
+        Task<ProductRawMaterialMapType?> GetProductRawMaterialMapTypeByIdAsync(int id);
     }
 
     public class ProductIngredientsDataProvider : IProductIngredientsDataProvider
@@ -46,7 +49,7 @@ namespace BMS.Data.Providers
         public async Task AddProductRawMaterialMappingAsync(ProductRawMaterial ingredient)
         {
             // Check if mapping already exists
-            var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialId(ingredient.ProductId, ingredient.RawMaterialId);
+            var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(ingredient.ProductId, ingredient.RawMaterialId, ingredient.MapType);
             if (r != null) { throw new Exception($"Product and ingredient mapping already exists."); }
             await _dbService.AddProductRawMaterialMapping(ingredient);
         }
@@ -75,6 +78,16 @@ namespace BMS.Data.Providers
         {
             await _dbService.DeleteProductRawMaterialMapping(Id);
             return;
+        }
+
+        public async Task<List<ProductRawMaterialMapType>> GetAllProductRawMaterialMapTypeListAsync()
+        {
+            return await _dbService.GetProductRawMaterialMapType();
+        }
+
+        public async Task<ProductRawMaterialMapType?> GetProductRawMaterialMapTypeByIdAsync(int id)
+        {
+            return await _dbService.GetProductRawMaterialMapTypeById(id);
         }
     }
 }

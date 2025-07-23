@@ -44,10 +44,25 @@ namespace BMS.Data.Services
         Task<List<ProductRawMaterial>> GetProductRawMaterialsMappingByProductId(int ProductId);
         Task<ProductRawMaterial> GetProductRawMaterialMappingById(int Id);
         Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialId(int ProductId, int RawMaterialId);
+        Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(int ProductId, int RawMaterialId, string MapType);
         Task AddProductRawMaterialMapping(ProductRawMaterial ingredient);
         Task UpdateProductRawMaterialMapping(ProductRawMaterial ingredient);
         Task DeleteProductRawMaterialMapping(int Id);
+        Task<List<ProductRawMaterialMapType>> GetProductRawMaterialMapType();
+        Task<ProductRawMaterialMapType> GetProductRawMaterialMapTypeById(int Id);
         #endregion "ProductRawMaterials"
+
+        #region "Invoices"
+        Task<List<Invoice>> GetInvoicesAsync();
+        Task<Invoice?> GetInvoiceByIdAsync(int id);
+        Task<Invoice?> GetInvoiceByInvoiceNumberAsync(string invoiceNumber);
+        Task<Invoice?> GetInvoiceByCustomerIdAndDateAsync(int customerId, DateTime date);
+        Task AddInvoiceAsync(Invoice invoice);
+        Task AddInvoiceListAsync(List<Invoice> invoices);
+        Task UpdateInvoiceAsync();
+        Task DeleteInvoiceAsync(int id);      
+        
+        #endregion "Invoices"
 
         #region "Orders"
         Task<Order> CreateNewOrderAsync(Order NewOrder);
@@ -205,6 +220,14 @@ namespace BMS.Data.Services
                 .FirstOrDefaultAsync(c => c.ProductId == ProductId && c.RawMaterialId == RawMaterialId);
         }
 
+        public async Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(int ProductId, int RawMaterialId, string MapType)
+        {
+            return await _context.ProductRawMaterials
+                .Include(p => p.RawMaterial)
+                .Include(p => p.Product)
+                .FirstOrDefaultAsync(c => c.ProductId == ProductId && c.RawMaterialId == RawMaterialId && c.MapType == MapType);
+        }
+
         public async Task<ProductRawMaterial> GetProductRawMaterialMappingById(int Id)
         {
             return await _context.ProductRawMaterials
@@ -240,7 +263,15 @@ namespace BMS.Data.Services
             }
             return;
         }
+        public async Task<List<ProductRawMaterialMapType>> GetProductRawMaterialMapType()
+        {
+            return await _context.ProductRawMaterialMapType.ToListAsync();
+        }
 
+        public async Task<ProductRawMaterialMapType> GetProductRawMaterialMapTypeById(int Id)
+        {
+            return await _context.ProductRawMaterialMapType.FirstOrDefaultAsync(x => x.Id == Id);
+        }
         #endregion "ProductRawMaterials"
 
         #region "Categories"
@@ -318,5 +349,68 @@ namespace BMS.Data.Services
         }
         #endregion "SubCategories"
 
+        #region "Invoices"
+        
+        public async Task AddInvoiceAsync(Invoice invoice)
+        {
+            _context.Invoices.Add(invoice);
+            await _context.SaveChangesAsync();
+            invoice.InvoiceNumber = $"INV-{invoice.InvoiceId:D6}-{DateTime.UtcNow.Year}";
+            await _context.SaveChangesAsync();
+            return;
+        }
+        public async Task AddInvoiceListAsync(List<Invoice> invoices)
+        {
+            _context.Invoices.AddRange(invoices);
+            await _context.SaveChangesAsync();
+
+            foreach (var invoice in invoices)
+            {
+                invoice.InvoiceNumber = $"INV-{invoice.InvoiceId:D6}-{DateTime.UtcNow.Year}";                
+            }
+            await _context.SaveChangesAsync();
+            return;
+        }
+
+        public async Task<List<Invoice>> GetInvoicesAsync()
+        {
+            return await _context.Invoices.ToListAsync();
+        }
+
+        public async Task<Invoice?> GetInvoiceByIdAsync(int id)
+        {
+            return await _context.Invoices.FirstOrDefaultAsync(i => i.InvoiceId == id);
+        }
+                        
+        public async Task<Invoice?> GetInvoiceByCustomerIdAndDateAsync(int customerId, DateTime date)
+        {
+            return await _context.Invoices
+                .Include(i => i.Customer)
+                .Include(i => i.InvoiceItems).ThenInclude(ii => ii.Product)
+                .FirstOrDefaultAsync(i => i.CustomerId == customerId && i.InvoiceDate.Date == date.Date);
+        }
+
+        public async Task<Invoice?> GetInvoiceByInvoiceNumberAsync(string invoiceNumber)
+        {
+            return await _context.Invoices.FirstOrDefaultAsync(i => i.InvoiceNumber == invoiceNumber);
+        }
+
+        public async Task UpdateInvoiceAsync()
+        {
+            //_context.Invoices.Update(invoice);
+            await _context.SaveChangesAsync();
+        }
+
+        public async Task DeleteInvoiceAsync(int id)
+        {
+            var invoice = await _context.Invoices.FirstOrDefaultAsync(i => i.InvoiceId == id);
+            if (invoice != null)
+            {
+                invoice.IsDeleted = true; // Soft delete 
+                await _context.SaveChangesAsync();
+            }
+        }        
+
+        #endregion "Invoices"
     }
 }
