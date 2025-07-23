@@ -34,6 +34,7 @@ namespace WebPortal.Pages
                 return new JsonResult(new { success = false, message = "Failed to generate invoice." });
 
             invoice.Customer.Orders = null;
+            invoice.Customer.Invoices = null;
 
             return new JsonResult(new { success = true, invoice });
         }

@@ -234,6 +234,8 @@ namespace BMS.Data.Providers
                     InvoiceItems = new List<InvoiceItem>()
                 };
 
+                decimal InvTotalAmount = 0;
+
                 // Add each item from order to the invoice
                 foreach (var item in order.OrderItems)
                 {
@@ -245,13 +247,15 @@ namespace BMS.Data.Providers
                         Discount = 0, // Set discount logic if needed
                     };
                     newinvoice.InvoiceItems.Add(newItem);
-                    newinvoice.TotalAmount = Math.Round(item.Quantity * item.Product.MRP, 2); ;
+                    InvTotalAmount += Math.Round(item.Quantity * item.Product.MRP, 2); ;
                 }
+                newinvoice.TotalAmount = InvTotalAmount;
                 invoiceItems.Add(newinvoice);
             }
 
             else
             {
+                decimal InvTotalAmount = 0;
                 // Update existing invoice with new items
                 foreach (var item in order.OrderItems)
                 {
@@ -267,8 +271,9 @@ namespace BMS.Data.Providers
                         existingInvoice.InvoiceItems = new List<InvoiceItem>();
                     }
                     existingInvoice.InvoiceItems.Add(newItem);
-                    existingInvoice.TotalAmount += Math.Round(item.Quantity * item.Product.MRP, 2);
+                    InvTotalAmount += Math.Round(item.Quantity * item.Product.MRP, 2);
                 }
+                existingInvoice.TotalAmount += InvTotalAmount;
             }
         }
 

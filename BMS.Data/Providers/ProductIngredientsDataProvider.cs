@@ -12,6 +12,9 @@ namespace BMS.Data.Providers
         Task AddProductRawMaterialMappingAsync(ProductRawMaterial ingredient);
         Task UpdateProductRawMaterialMappingAsync(ProductRawMaterial ingredient);
         Task DeleteProductRawMaterialMappingAsync(int Id);
+
+        Task<List<ProductRawMaterialMapType>> GetAllProductRawMaterialMapTypeListAsync();
+        Task<ProductRawMaterialMapType?> GetProductRawMaterialMapTypeByIdAsync(int id);
     }
 
     public class ProductIngredientsDataProvider : IProductIngredientsDataProvider
@@ -75,6 +78,16 @@ namespace BMS.Data.Providers
         {
             await _dbService.DeleteProductRawMaterialMapping(Id);
             return;
+        }
+
+        public async Task<List<ProductRawMaterialMapType>> GetAllProductRawMaterialMapTypeListAsync()
+        {
+            return await _dbService.GetProductRawMaterialMapType();
+        }
+
+        public async Task<ProductRawMaterialMapType?> GetProductRawMaterialMapTypeByIdAsync(int id)
+        {
+            return await _dbService.GetProductRawMaterialMapTypeById(id);
         }
     }
 }

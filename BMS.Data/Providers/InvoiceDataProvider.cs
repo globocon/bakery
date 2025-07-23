@@ -27,14 +27,14 @@ namespace BMS.Data.Providers
             if (customer == null) return null;
 
             // Get all orders for this customer for the given date (customize as needed)
-            var orders = await _dbService.GetOrderByCustomerIdAndOrderDate(customerId, invoiceDate);            
-            if (!orders.Any()) return null;
+            var invoices = await _dbService.GetInvoiceByCustomerIdAndDateAsync(customerId, invoiceDate);            
+            if (invoices == null) return null;
 
             var items = new List<InvoiceItemResultModel>();
             decimal total = 0;
-            foreach (var order in orders)
-            {
-                foreach (var item in order.OrderItems)
+            //foreach (var inv in invoices)
+            //{
+                foreach (var item in invoices.InvoiceItems)
                 {
                     var lineTotal = item.Quantity * item.Product.MRP;
                     items.Add(new InvoiceItemResultModel
@@ -46,13 +46,13 @@ namespace BMS.Data.Providers
                     });
                     total += lineTotal;
                 }
-            }
+            //}
 
             // Example: No discount logic, but you can add as needed
             var discount = 0m;
 
             // Generate invoice number (simple example)
-            var invoiceNumber = $"INV-{DateTime.Now:yyyyMMddHHmmss}";
+            var invoiceNumber = invoices?.InvoiceNumber ?? "N/A";
 
             // Optionally, save the invoice to DB here
 

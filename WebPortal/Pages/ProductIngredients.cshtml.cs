@@ -26,6 +26,9 @@ namespace WebPortal.Pages
         public List<ProductRawMaterial> ProductIngredients { get; set; } = new();
 
         [BindProperty]
+        public List<ProductRawMaterialMapType> ProductRawMaterial_MapType { get; set; } = new();
+
+        [BindProperty]
         public ProductRawMaterial Ingredient { get; set; } = new();
 
         public List<Product> Products { get; set; } = new();
@@ -36,6 +39,7 @@ namespace WebPortal.Pages
             ProductIngredients = await _productIngredientsDataProvider.GetAllProductRawMaterialsMappingListAsync();
             Products = await _productsDataProvider.GetProducts();
             RawMaterials = await _rawMaterialsDataProvider.GetRawMaterials();
+            ProductRawMaterial_MapType = await _productIngredientsDataProvider.GetAllProductRawMaterialMapTypeListAsync();
 
             if (id.HasValue)
             {

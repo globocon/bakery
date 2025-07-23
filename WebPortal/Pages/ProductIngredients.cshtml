@@ -65,10 +65,13 @@
                     <div class="col-md-6">
                         <label asp-for="Ingredient.MapType" class="form-label">Mapping Type</label>
                         <select asp-for="Ingredient.MapType" class="form-select" required>
-                            <option value="">Select Mapping Type</option>
-                            <option value="Mix" selected="@(Model.Ingredient.MapType == "Mix")">Mix</option>
-                            <option value="Masala" selected="@(Model.Ingredient.MapType == "Masala")">Masala</option>
-                            <option value="Fillings" selected="@(Model.Ingredient.MapType == "Fillings")">Fillings</option>
+                            <option value="">Select Mapping Type</option>                            
+                            @foreach (var mapType in Model.ProductRawMaterial_MapType)
+                            {
+                                <option value="@mapType.MapTypeName" selected="@(Model.Ingredient.MapType == mapType.MapTypeName)">
+                                    @mapType.MapTypeName
+                                </option>
+                            }
                         </select>
                     </div>
                     <div class="col-md-6">
