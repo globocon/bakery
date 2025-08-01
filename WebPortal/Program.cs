@@ -1,12 +1,9 @@
-using AutoMapper;
 using BMS.Data;
-using BMS.Data.Models;
+using BMS.Data.ProfileMapper;
 using BMS.Data.Providers;
 using BMS.Data.Services;
 using Microsoft.AspNetCore.Authentication.Cookies;
-using Microsoft.AspNetCore.Authentication.Negotiate;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.DependencyInjection;
 using QuestPDF.Infrastructure;
 
 QuestPDF.Settings.License = LicenseType.Community;

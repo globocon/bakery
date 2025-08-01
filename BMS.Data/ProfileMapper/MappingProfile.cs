@@ -1,7 +1,7 @@
 using AutoMapper;
 using BMS.Data.Models;
 
-namespace BMS.Data.Models
+namespace BMS.Data.ProfileMapper
 {
     public class MappingProfile : Profile
     {
@@ -13,6 +13,11 @@ namespace BMS.Data.Models
             CreateMap<OrderItemNewEdit, OrderItem>()
                 .ForMember(dest => dest.OrderItemId, opt => opt.Ignore()) // Usually ignored for new entities
                 .ForMember(dest => dest.Order, opt => opt.Ignore()); // Prevent circular reference
+            CreateMap<ProductAddEditModal, Product>()
+                .ForMember(dest => dest.Category, opt => opt.Ignore()) // Prevent circular reference
+                .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.CategoryId))
+                .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ProductName))
+                .ForMember(dest => dest.MRP, opt => opt.MapFrom(src => src.MRP));
         }
     }
 }
