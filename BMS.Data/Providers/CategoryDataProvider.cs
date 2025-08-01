@@ -10,8 +10,9 @@ namespace BMS.Data.Providers
     {
         Task<List<Category>> GetCategories();
         Task<Category?> GetCategoryById(int id);
-        Task AddCategory(Category category);
-        Task UpdateCategory(Category category);
+        Task<CategoryAddEditModal?> GetCategoryAddEditModalById(int id);
+        Task AddCategory(CategoryAddEditModal category);
+        Task UpdateCategory(CategoryAddEditModal category);
         Task DeleteCategory(int id);
     }
 
@@ -38,15 +39,28 @@ namespace BMS.Data.Providers
             return await _dbService.GetCategoryById(id);
         }
 
-        public async Task AddCategory(Category category)
+        public async Task<CategoryAddEditModal?> GetCategoryAddEditModalById(int id)
         {
-            category.CreatedById = UserContextHelper.GetCurrentUserId(_httpContextAccessor) ?? "";
-            category.CreatedOn = DateTime.UtcNow;
-            category.IsDeleted = false;
-            await _dbService.AddCategory(category);
+            var r = await _dbService.GetCategoryById(id);
+            if (r == null)
+                return null;
+
+            return _mapper.Map<CategoryAddEditModal>(r);
         }
 
-        public async Task UpdateCategory(Category category)
+        public async Task AddCategory(CategoryAddEditModal category)
+        {
+            if (category == null)
+                throw new ArgumentNullException(nameof(category));
+
+            Category newCategory = _mapper.Map<Category>(category);
+            newCategory.CreatedById = UserContextHelper.GetCurrentUserId(_httpContextAccessor) ?? "";
+            newCategory.CreatedOn = DateTime.UtcNow;
+            newCategory.IsDeleted = false;
+            await _dbService.AddCategory(newCategory);
+        }
+
+        public async Task UpdateCategory(CategoryAddEditModal category)
         {
             var existing = await _dbService.GetCategoryById(category.Id);
             if (existing != null)
