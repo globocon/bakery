@@ -1,12 +1,15 @@
 @page
 @model WebPortal.Pages.ProductsModel
+
 @{
     ViewData["Title"] = "Products";
     Layout = "_Layout";
 }
 
+@Html.AntiForgeryToken()
+
 @section PageHeaders {
-   @*  <link href="~/assets/plugins/datatable/css/dataTables.bootstrap5.min.css" rel="stylesheet" asp-append-version="true" /> *@
+   
 }
 
 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
@@ -32,38 +35,13 @@
                         <i class="bx bx-right-arrow-alt me-1 font-22 text-primary"></i>
                     </div>
                     <h5 class="mb-0 text-primary">Products List</h5>
+                    <button id="btn_add_product" type="button" class="btn btn-success btn-sm ms-auto"><i class="bx bx-plus me-0"></i>Add Product</button>
                 </div>
                 <hr>
                 <div class="table-responsive">
                     <table id="productsTable" class="table table-striped table-bordered" style="width:100%">
-                        <thead class="table-primary">
-                            <tr>
-                                <th>#</th>
-                                <th hidden>Id</th>
-                                <th>Name</th>
-                                <th>Category</th>
-                                <th>Sub Category</th>
-                                <th>MRP</th>
-                            </tr>
+                        <thead class="table-primary">                            
                         </thead>
-                        <tbody>
-                            @if (Model.Products != null && Model.Products.Count > 0)
-                            {
-                                int i = 1;
-                                foreach (var product in Model.Products.OrderBy(c=> c.Category.Name))
-                                {
-                                    <tr>
-                                        <td>@i</td>
-                                        <td hidden>@product.Id</td>
-                                        <td>@product.Name</td>
-                                        <td>@product.Category?.Name</td>
-                                        <td>@product.SubCategory?.Name</td>
-                                        <td>@product.MRP.ToString("C")</td>
-                                    </tr>
-                                    i++;
-                                }
-                            }
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -71,12 +49,56 @@
     </div>
 </div>
 
+<!-- Add Edit Product modal -->
+<div class="modal fade" id="EditProductModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <i class="bx bxs-cube me-1 font-22 text-primary"></i>
+                </div>
+                <h5 class="modal-title" id="addEditModalTitle"><i class="fa fa-bar-chart text-primary"></i> Edit Product</h5>
+                <button id="btn-modal-editproduct-menu-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="frmMdlEditProduct" name="frmMdlEditProduct" class="needs-validation" novalidate>
+                    <input id="ProductAddEditModal_Id" name="ProductAddEditModal.Id" hidden />
+                    <div class="form-group row m-0 mb-2 g-3">
+                        <div class="col-sm-12">
+                            <label for="txbx_modal_editproduct_Name" class="ml-3 col-form-label">Product</label>
+                            <input class="form-control" type="text" id="ProductAddEditModal_ProductName" name="ProductAddEditModal.ProductName" placeholder="Product Name" required />
+                            <div class="invalid-feedback">Product Name is required.</div>
+                        </div>
+                        <div class="col-md-12">
+                            <input id="ProductAddEditModal_CategoryId" name="ProductAddEditModal.CategoryId" hidden />
+                            <label for="select_modal_editproduct_category" class="form-label">Category</label>
+                            <select id="select_modal_editproduct_category" class="single-select-editproduct form-select" required>
+                                <option value="">-- Select Category --</option>
+                                @foreach (var category in Model.Categories)
+                                {
+                                    <option value="@category.Id.ToString()">@category.Name</option>
+                                }
+                            </select>
+                            <div class="invalid-feedback">Category is required.</div>
+                        </div>
+                        <div class="col-sm-6">
+                            <label for="txbx_modal_editproduct_mrp" class="ml-3 col-form-label">Mrp</label>
+                            <input class="form-control" type="number" id="ProductAddEditModal_MRP" name="ProductAddEditModal.MRP" placeholder="Enter Mrp" required />
+                            <div class="invalid-feedback">MRP is required.</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" id="ProductAddEditModal_Operation" value="ADD" />
+                <button id="btn_modal_editproduct_save" type="button" class="btn btn-success btn-sm btn-validate">Save</button>
+                <button id="btn_modal_editproduct_close" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 @section Scripts {
-    @* <script src="~/assets/plugins/datatable/js/jquery.dataTables.min.js" asp-append-version="true"></script>
-    <script src="~/assets/plugins/datatable/js/dataTables.bootstrap5.min.js" asp-append-version="true"></script> *@
-    <script>
-        $(document).ready(function () {
-            $('#productsTable').DataTable();
-        });
-    </script>
+
+    <script src="~/assets/js/product.js" asp-append-version="true"></script>
 }

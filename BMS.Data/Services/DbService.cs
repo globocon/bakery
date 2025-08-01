@@ -13,6 +13,11 @@ namespace BMS.Data.Services
 
         #region "Products"
         Task<List<Product>> GetProducts();
+        Task<Product?> GetProductById(int id);
+        Task<Product?> GetProductByName(string pname);
+        Task AddProduct(Product product);
+        Task UpdateProduct(Product product);
+        Task DeleteProduct(int id);
         #endregion "Products"
 
         #region "Teams"
@@ -110,6 +115,38 @@ namespace BMS.Data.Services
                 .Where(p => !p.IsDeleted)
                 .OrderBy(p => p.Name)
                 .ToListAsync();
+        }
+        public async Task<Product?> GetProductById(int id)
+        {
+            return await _context.Products
+                .Include(c => c.Category)
+                .Include(s => s.SubCategory)
+                .FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+        }
+        public async Task<Product?> GetProductByName(string pname)
+        {
+            return await _context.Products
+                .Include(c => c.Category)
+                .Include(s => s.SubCategory)
+                .FirstOrDefaultAsync(c => c.Name.Trim().ToLower() == pname.Trim().ToLower() && !c.IsDeleted);
+        }
+        public async Task AddProduct(Product product)
+        {
+            _context.Products.Add(product);
+            await _context.SaveChangesAsync();
+        }
+        public async Task UpdateProduct(Product product)
+        {
+            await _context.SaveChangesAsync();
+        }
+        public async Task DeleteProduct(int id)
+        {
+            var product = await _context.Products.FirstOrDefaultAsync(c => c.Id == id && !c.IsDeleted);
+            if (product != null)
+            {
+                product.IsDeleted = true;
+                await _context.SaveChangesAsync();
+            }
         }
         #endregion "Products"
 
