@@ -2,9 +2,6 @@ using BMS.Data.Models;
 using BMS.Data.Providers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace WebPortal.Pages
 {
@@ -18,52 +15,108 @@ namespace WebPortal.Pages
             _categoryDataProvider = categoryDataProvider;
             _teamsDataProvider = teamsDataProvider;
         }
-
-        [BindProperty]
+               
         public List<Category> Categories { get; set; } = new();
-
-        [BindProperty]
-        public Category EditCategory { get; set; } = new();
-
         public List<PreparationTeam> Teams { get; set; } = new();
 
         public async Task OnGet(int? id)
         {
             Categories = await _categoryDataProvider.GetCategories();
             Teams = await _teamsDataProvider.GetTeams();
-
-            if (id.HasValue)
-            {
-                var cat = await _categoryDataProvider.GetCategoryById(id.Value);
-                EditCategory = cat ?? new Category();
-            }
-            else
-            {
-                EditCategory = new Category();
-            }
         }
 
-        public async Task<IActionResult> OnPostAddOrEditAsync()
+        public async Task<IActionResult> OnGetShowAllCategoriesAsync()
         {
-            if (!ModelState.IsValid)
+            var result = await _categoryDataProvider.GetCategories();
+            //Code to avoid recrussive json result
+            if (result != null)
             {
-                Categories = await _categoryDataProvider.GetCategories();
-                Teams = await _teamsDataProvider.GetTeams();
-                return Page();
+                result.ForEach(p =>
+                {
+                    p.Products = null;
+                    p.PreparationTeam.Categories = null;
+                });
+            }
+            return new JsonResult(result);
+        }
+
+        public async Task<JsonResult> OnPostUpdateCategoryAsync(CategoryAddEditModal categoryAddEditModal)
+        {
+            var status = true;
+            var msg = "Category Updated Successfully.";
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    //var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => string.Join(',', $"{x.Value.Errors.Select(y => y.ErrorMessage).ToString().Replace(".","")} for {x.Value.(x=> x. )}."));
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .Select(x => $"{string.Join(", ", x.Value.Errors.Select(y => y.ErrorMessage))} for {x.Key}")
+                        .ToList();
+
+                    return new JsonResult(new { status = false, message = errors });
+                }
+
+                await _categoryDataProvider.UpdateCategory(categoryAddEditModal); 
+
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                msg = $"Error {ex.Message}";
             }
 
-            if (EditCategory.Id == 0)
-                await _categoryDataProvider.AddCategory(EditCategory);
-            else
-                await _categoryDataProvider.UpdateCategory(EditCategory);
-
-            return RedirectToPage();
+            return new JsonResult(new { status, message = msg });
         }
 
-        public async Task<IActionResult> OnPostDeleteAsync(int id)
+        public async Task<JsonResult> OnPostSaveCategoryAsync(CategoryAddEditModal categoryAddEditModal)
         {
-            await _categoryDataProvider.DeleteCategory(id);
-            return RedirectToPage();
+            var status = true;
+            var msg = "Category Added Successfully.";
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    //var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => string.Join(',', $"{x.Value.Errors.Select(y => y.ErrorMessage).ToString().Replace(".","")} for {x.Value.(x=> x. )}."));
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .Select(x => $"{string.Join(", ", x.Value.Errors.Select(y => y.ErrorMessage))} for {x.Key}")
+                        .ToList();
+
+                    return new JsonResult(new { status = false, message = errors });
+                }
+
+                await _categoryDataProvider.AddCategory(categoryAddEditModal);
+
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                msg = $"Error {ex.Message}";
+            }
+
+            return new JsonResult(new { status, message = msg });
         }
+        public async Task<JsonResult> OnPostDeleteCategoryAsync(int id)
+        {
+            var status = true;
+            var msg = "Category Deleted Successfully.";
+
+            try
+            {
+                await _categoryDataProvider.DeleteCategory(id);
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                msg = $"Error {ex.Message}";
+            }
+
+            return new JsonResult(new { status, message = msg });
+        }
+               
+                
     }
 }
