@@ -66,6 +66,8 @@ namespace BMS.Data.Providers
                 toupdate.ProductId = ingredient.ProductId;
                 toupdate.RawMaterialId = ingredient.RawMaterialId;
                 toupdate.QuantityRequired = ingredient.QuantityRequired;
+                toupdate.MapType = ingredient.MapType;
+                toupdate.ShowInReport = ingredient.ShowInReport;
                 await _dbService.UpdateProductRawMaterialMapping(toupdate);
             }
             else
