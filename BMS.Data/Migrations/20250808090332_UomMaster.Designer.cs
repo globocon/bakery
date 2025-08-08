@@ -4,6 +4,7 @@ using BMS.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 #nullable disable
@@ -11,9 +12,11 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BMS.Data.Migrations
 {
     [DbContext(typeof(BMSDbContext))]
-    partial class BMSDbContextModelSnapshot : ModelSnapshot
+    [Migration("20250808090332_UomMaster")]
+    partial class UomMaster
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -601,9 +604,6 @@ namespace BMS.Data.Migrations
 
                     b.Property<float>("ProductOrderQuantity")
                         .HasColumnType("real");
-
-                    b.Property<int>("ProductSortOrder")
-                        .HasColumnType("int");
 
                     b.Property<string>("ProductUom")
                         .IsRequired()

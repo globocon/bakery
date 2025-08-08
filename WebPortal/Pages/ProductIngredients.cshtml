@@ -1,10 +1,14 @@
-@page "{id?}"
+@page
 @model WebPortal.Pages.ProductIngredientsModel
 @{
     ViewData["Title"] = "Product Ingredients";
-    var isEdit = Model.Ingredient?.Id > 0;
+    Layout = "_Layout";
 }
+@Html.AntiForgeryToken()
 
+@section PageHeaders {
+
+}
 <!--breadcrumb-->
 <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
     <div class="breadcrumb-title pe-3">BMS</div>
@@ -22,117 +26,112 @@
 <!--end breadcrumb-->
 
 <div class="row">
-    <div class="col-xl-7 mx-auto">
+    <div class="col-xl-12 mx-auto">
         <div class="card border-top border-0 border-4 border-primary">
-            <div class="card-body p-4">
+            <div class="card-body p-5">
                 <div class="card-title d-flex align-items-center">
                     <div>
-                        <i class="bx bxs-cube me-1 font-22 text-primary"></i>
+                        <i class="bx bx-right-arrow-alt me-1 font-22 text-primary"></i>
                     </div>
-                    <h5 class="mb-0 text-primary">@((isEdit ? "Edit" : "Add New") + " Ingredient")</h5>
+                    <h5 class="mb-0 text-primary">Product Ingredients Mapping List</h5>
+                    <button id="btn_add_Product_Ingredient" type="button" class="btn btn-success btn-sm ms-auto"><i class="bx bx-plus me-0"></i>Add Product Ingredients</button>
                 </div>
                 <hr>
-                <form method="post" asp-page-handler="AddOrEdit" class="row g-3">
-                    <input type="hidden" asp-for="Ingredient.Id" />
-                    <div class="col-md-6">
-                        <label asp-for="Ingredient.ProductId" class="form-label">Product</label>
-                        <select asp-for="Ingredient.ProductId" class="form-select single-select" required>
-                            <option value="">Select Product</option>
-                            @foreach (var product in Model.Products)
-                            {
-                                <option value="@product.Id" selected="@(Model.Ingredient.ProductId == product.Id)">
-                                    @product.Name
-                                </option>
-                            }
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label asp-for="Ingredient.RawMaterialId" class="form-label">Raw Material</label>
-                        <select asp-for="Ingredient.RawMaterialId" class="form-select single-select" required>
-                            <option value="">Select Raw Material</option>
-                            @foreach (var rm in Model.RawMaterials)
-                            {
-                                <option value="@rm.RawMaterialId" selected="@(Model.Ingredient.RawMaterialId == rm.RawMaterialId)">
-                                    @rm.Name
-                                </option>
-                            }
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label asp-for="Ingredient.QuantityRequired" class="form-label">Quantity Required</label>
-                        <input asp-for="Ingredient.QuantityRequired" class="form-control" type="number" step="0.0000001" min="0" required />
-                    </div>
-                    <div class="col-md-6">
-                        <label asp-for="Ingredient.MapType" class="form-label">Mapping Type</label>
-                        <select asp-for="Ingredient.MapType" class="form-select" required>
-                            <option value="">Select Mapping Type</option>                            
-                            @foreach (var mapType in Model.ProductRawMaterial_MapType)
-                            {
-                                <option value="@mapType.MapTypeName" selected="@(Model.Ingredient.MapType == mapType.MapTypeName)">
-                                    @mapType.MapTypeName
-                                </option>
-                            }
-                        </select>
-                    </div>
-                    <div class="col-md-6">
-                        <label asp-for="Ingredient.ShowInReport" class="form-label">Show In Report</label>
-                        <div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Ingredient.ShowInReport" value="true" checked="@(Model.Ingredient.ShowInReport == true)" required />
-                                <label class="form-check-label" for="Ingredient_ShowInReport">Yes</label>
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="radio" asp-for="Ingredient.ShowInReport" value="false" checked="@(Model.Ingredient.ShowInReport == false)" required />
-                                <label class="form-check-label" for="Ingredient_ShowInReport">No</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-12 text-end">
-                        <button type="submit" class="btn btn-primary px-5">@((isEdit ? "Update" : "Add"))</button>
-                        @if (isEdit)
-                        {
-                            <a asp-page="/ProductIngredients" asp-route-id="" class="btn btn-primary px-5">New</a>
-                        }
-                    </div>
-                </form>
+                <div class="table-responsive">
+                    <table id="productingredientTable" class="table table-striped table-bordered" style="width:100%">
+                        <thead class="table-primary">
+                        </thead>
+                    </table>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<h6 class="mb-0 text-uppercase">All Product Ingredients</h6>
-<hr />
 
-<div class="row">
-    <div class="card">
-        <div class="card-body">
-            <div class="mb-3">
-                <label for="productFilter" class="form-label mb-0">Filter by Product:</label>
-                <select id="productFilter" class="form-select single-select" style="max-width:300px;">
-                    <option value="">Select Product</option>
-                    @foreach (var product in Model.Products)
-                    {
-                        <option value="@product.Id">@product.Name</option>
-                    }
-                </select>
+<!-- Add Product Ingredients modal -->
+<div class="modal fade" id="AddProductIngredientModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <i class="bx bxs-cube me-1 font-22 text-primary"></i>
+                </div>
+                <h5 class="modal-title" id="addProductIngredientModalTitle"><i class="fa fa-bar-chart text-primary"></i>Add Product Ingredient</h5>
+                <button id="btn-modal-addproductingredient-menu-close" type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="table-responsive">
-                <table class="table table-striped table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Id</th>
-                            <th>Product</th>
-                            <th>Raw Material</th>
-                            <th>Mapping Type</th>
-                            <th>Quantity Required</th>
-                            <th>Show In Report</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="ingredientsTableBody">
-                        @await Html.PartialAsync("_ProductIngredientsTableBody", Model.ProductIngredients)
-                    </tbody>
-                </table>
+            <div class="modal-body">
+                <form id="frmMdlAddProductIngredient" name="frmMdlAddProductIngredient" class="needs-validation" novalidate>
+                    <input id="ProductIngredientAddModal_Id" name="ProductIngredientAddModal.Id" hidden />
+                    <div class="form-group row m-0 mb-2 g-1">
+                        <div class="col-md-6">                            
+                            <input id="ProductIngredientAddModal_ProductId" name="ProductIngredientAddModal.ProductId" hidden />
+                            <label for="select_modal_addproductingredient_Product" class="form-label">Product</label>
+                            <select id="select_modal_addproductingredient_Product" class="single-select-addproductingredient form-select" required>
+                                <option value="">Select Product</option>
+                                @foreach (var product in Model.Products)
+                                {
+                                    <option value="@product.Id">
+                                        @product.Name
+                                    </option>
+                                }
+                            </select>
+                            <div class="invalid-feedback">Product Ingredient Name is required.</div>
+                        </div>
+                        <div class="col-md-6">                           
+                            <input id="ProductIngredientAddModal_RawMaterialId" name="ProductIngredientAddModal.RawMaterialId" hidden />
+                            <label for="select_modal_addproductingredient_RawMaterial" class="form-label">Ingredient</label>
+                            <select id="select_modal_addproductingredient_RawMaterial" class="single-select-addproductingredient form-select" required>
+                                <option value="">Select Ingredient</option>
+                                @foreach (var rm in Model.RawMaterials)
+                                {
+                                    <option value="@rm.RawMaterialId">
+                                        @rm.Name
+                                    </option>
+                                }
+                            </select>
+                            <div class="invalid-feedback">Product Ingredient Name is required.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="ProductRawMaterialAddModal_QuantityRequired" class="form-label">Quantity Required</label>
+                            <input id="ProductIngredientAddModal_QuantityRequired" name="ProductIngredientAddModal.QuantityRequired" class="form-control" type="number" step="0.0000001" min="0" required />
+                            <div class="invalid-feedback">Product Ingredient Name is required.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <input id="ProductIngredientAddModal_MapTypeId" name="ProductIngredientAddModal.MapTypeId" hidden />
+                            <label for="select_modal_addproductingredient_MapType" class="form-label">Mapping Type</label>
+                            <select id="select_modal_addproductingredient_MapType" class="single-select-addproductingredient form-select" required>
+                                <option value="">--Select Mapping Type--</option>
+                                @foreach (var mapType in Model.ProductRawMaterial_MapType)
+                                {
+                                    <option value="@mapType.MapTypeName">
+                                        @mapType.MapTypeName
+                                    </option>
+                                }
+                            </select>
+                            <div class="invalid-feedback">Product Ingredient Name is required.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <label asp-for="ProductRawMaterialAddModal.ShowInReport" class="form-label">Show In Report</label>
+                            <div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="ProductRawMaterialAddModal.ShowInReport" value="true" checked required />
+                                    <label class="form-check-label" for="Ingredient_ShowInReport">Yes</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" asp-for="ProductRawMaterialAddModal.ShowInReport" value="false" required />
+                                    <label class="form-check-label" for="Ingredient_ShowInReport">No</label>
+                                </div>
+                                <div class="invalid-feedback">Show In Report is required.</div>
+                            </div>
+                        </div>                        
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <input type="hidden" id="ProductIngredientAddEditModal_Operation" value="ADD" />
+                <button id="btn_modal_editproductingredient_save" type="button" class="btn btn-success btn-sm btn-validate">Save</button>
+                <button id="btn_modal_editproductingredient_close" type="button" class="btn btn-danger btn-sm" data-bs-dismiss="modal">Close</button>
             </div>
         </div>
     </div>

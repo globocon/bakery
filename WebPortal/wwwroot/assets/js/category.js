@@ -1,7 +1,6 @@
 // AJAX filter for product selection
 let category_Table;
-$(document).ready(function () {
-    
+$(function () {    
     category_Table = $('#categoryTable').DataTable({
         lengthMenu: [[5, 10, 25, 50, 100, 1000], [5, 10, 25, 50, 100, 1000]],
         paging: true,
@@ -137,7 +136,7 @@ var addCategory = function () {
        
 var deleteCategory = function (t) {
     var rwid = $(t).data('id');
-    var row = products_Table.row($(t).closest('tr')).data(); // Use the existing instance
+    var row = category_Table.row($(t).closest('tr')).data(); // Use the existing instance
     if (row) {
         Lobibox.confirm({
             msg: "Are you sure you want to delete " + row.name + " ?",

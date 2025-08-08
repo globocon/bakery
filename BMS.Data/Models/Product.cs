@@ -17,6 +17,9 @@ namespace BMS.Data.Models
         public string CreatedById { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
         public bool IsDeleted { get; set; } = false;
+        public int Sort_Order { get; set; } = 0;
+        public string UOM { get; set; } = "Nos";
+
 
         public Category Category { get; set; }
         public SubCategory? SubCategory { get; set; }

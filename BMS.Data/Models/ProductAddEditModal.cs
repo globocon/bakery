@@ -18,6 +18,9 @@ namespace BMS.Data.Models
         [Required(ErrorMessage = "Mrp of the product is required.")]   
         [DisplayName("MRP")]
         public decimal MRP { get; set; }
+        public int Sort_Order { get; set; } = 0;
+        public string UOM { get; set; } = "Nos";
+
         //public string? ImgFileExtn { get; set; }    
     }
 }

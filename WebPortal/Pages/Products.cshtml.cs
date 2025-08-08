@@ -12,33 +12,42 @@ namespace WebPortal.Pages
     {
         private readonly IProductsDataProvider _productsDataProvider;
         private readonly ICategoryDataProvider _categoryDataProvider;
+        private readonly IUomDataProvider _uomDataProvider;
 
-        public ProductsModel(IProductsDataProvider productsDataProvider, ICategoryDataProvider categoryDataProvider)
+        public ProductsModel(IProductsDataProvider productsDataProvider, ICategoryDataProvider categoryDataProvider, IUomDataProvider uomDataProvider)
         {
             _productsDataProvider = productsDataProvider;
             _categoryDataProvider = categoryDataProvider;
+            _uomDataProvider = uomDataProvider;
         }
 
         public List<Product> Products { get; set; } = new();
         public List<Category> Categories { get; set; } = new();
+        public List<UomMaster> UomMasters { get; set; } = new();
 
         public async Task OnGet()
         {
             Products = await _productsDataProvider.GetProducts();
             Categories = await _categoryDataProvider.GetCategories();
+            UomMasters = await _uomDataProvider.GetUoms();
         }
 
         public async Task<IActionResult> OnGetShowAllProductsAsync()
         {
             var result = await _productsDataProvider.GetProducts();
+                        
             //Code to avoid recrussive json result
             if (result != null)
             {
+                var resultOrdered = result.OrderBy(x => x.Category.Name).ThenBy(x => x.Sort_Order).ThenBy(x => x.Name).ToList();
+                result = resultOrdered;
+
                 result.ForEach(p =>
                 {
                     p.Category.Products = null;
                 });
             }
+            
             return new JsonResult(result);
         }
 

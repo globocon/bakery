@@ -79,6 +79,9 @@ namespace BMS.Data.Services
         Task<List<OrderConfirmData>> GetOrderConfirmDataByDateAndStatus(DateTime orderDate);
         #endregion "Orders"
 
+        #region "Uom"
+        Task<List<UomMaster>> GetUoms();
+        #endregion "Uom"
     }
     public class DbService : IDbService
     {
@@ -446,8 +449,15 @@ namespace BMS.Data.Services
                 invoice.IsDeleted = true; // Soft delete 
                 await _context.SaveChangesAsync();
             }
-        }        
+        }
 
         #endregion "Invoices"
+
+        #region "Uom"
+        public async Task<List<UomMaster>> GetUoms()
+        {
+            return await _context.UomMaster.ToListAsync();
+        }
+        #endregion "Uom"
     }
 }

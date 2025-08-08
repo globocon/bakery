@@ -13,11 +13,15 @@ namespace BMS.Data.ProfileMapper
             CreateMap<OrderItemNewEdit, OrderItem>()
                 .ForMember(dest => dest.OrderItemId, opt => opt.Ignore()) // Usually ignored for new entities
                 .ForMember(dest => dest.Order, opt => opt.Ignore()); // Prevent circular reference
+
             CreateMap<ProductAddEditModal, Product>()
                 .ForMember(dest => dest.Category, opt => opt.Ignore()) // Prevent circular reference
                 .ForMember(dest => dest.CategoryId, opt => opt.MapFrom(src => src.CategoryId))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.ProductName))
-                .ForMember(dest => dest.MRP, opt => opt.MapFrom(src => src.MRP));
+                .ForMember(dest => dest.MRP, opt => opt.MapFrom(src => src.MRP))
+                .ForMember(dest => dest.Sort_Order, opt => opt.MapFrom(src => src.Sort_Order))
+                .ForMember(dest => dest.UOM, opt => opt.MapFrom(src => src.UOM));
+
             CreateMap<CategoryAddEditModal, Category>()
                 .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
                 .ForMember(dest => dest.Name, opt => opt.MapFrom(src => src.Name))
@@ -28,6 +32,14 @@ namespace BMS.Data.ProfileMapper
                 .ForMember(dest => dest.IsDeleted, opt => opt.Ignore())
                 .ForMember(dest => dest.Products, opt => opt.Ignore())
                 .ForMember(dest => dest.SubCategories, opt => opt.Ignore());
+
+            CreateMap<ProductRawMaterialAddModal, ProductRawMaterial>()
+               .ForMember(dest => dest.Id, opt => opt.MapFrom(src => src.Id))
+               .ForMember(dest => dest.ProductId, opt => opt.MapFrom(src => src.ProductId))
+               .ForMember(dest => dest.RawMaterialId, opt => opt.MapFrom(src => src.RawMaterialId))
+               .ForMember(dest => dest.MapType, opt => opt.MapFrom(src => src.MapType))
+               .ForMember(dest => dest.Product, opt => opt.Ignore())
+               .ForMember(dest => dest.RawMaterial, opt => opt.Ignore());
         }
     }
 }

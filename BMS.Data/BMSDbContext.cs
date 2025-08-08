@@ -122,6 +122,7 @@ namespace BMS.Data
         public DbSet<InvoiceItem> InvoiceItems { get; set; }
         public DbSet<OrderConfirmData> OrderConfirmData { get; set; }
         public DbSet<ProductRawMaterialMapType> ProductRawMaterialMapType { get; set; }
+        public DbSet<UomMaster> UomMaster { get; set; }
 
     }
    
