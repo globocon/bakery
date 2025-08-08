@@ -22,7 +22,7 @@ namespace BMS.Data.Models
         public string ProductName { get; set; }
         public decimal ProductMRP { get; set; }
         public string? ImgFileExtn { get; set; }
-        public int ProductOrderQuantity { get; set; }
+        public float ProductOrderQuantity { get; set; }
         public DateTime? OrderDeliveryDateTime { get; set; }
         public int RawMaterialId { get; set; }
         public string RawMaterialName { get; set; }
@@ -34,6 +34,8 @@ namespace BMS.Data.Models
         public bool ShowInReport { get; set; }
         public string CreatedById { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
+        public string ProductUom { get; set; }
+        public int ProductSortOrder { get; set; } = 0;
 
     }
 }

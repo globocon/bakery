@@ -36,15 +36,15 @@ namespace BMS.Data.Providers
             //{
                 foreach (var item in invoices.InvoiceItems)
                 {
-                    var lineTotal = item.Quantity * item.Product.MRP;
+                    var lineTotal = item.Quantity * (float)item.Product.MRP;
                     items.Add(new InvoiceItemResultModel
                     {
                         ProductName = item.Product.Name,
                         Quantity = item.Quantity,
                         Price = item.Product.MRP,
-                        Total = lineTotal
+                        Total = (decimal)lineTotal
                     });
-                    total += lineTotal;
+                    total += (decimal)lineTotal;
                 }
             //}
 

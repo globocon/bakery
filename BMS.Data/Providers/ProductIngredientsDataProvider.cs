@@ -1,3 +1,5 @@
+using AutoMapper;
+using BMS.Data.Helpers;
 using BMS.Data.Models;
 using BMS.Data.Services;
 
@@ -9,8 +11,8 @@ namespace BMS.Data.Providers
         Task<List<ProductRawMaterial>> GetAllProductRawMaterialsMappingByProductIdAsync(int ProductId);
         Task<ProductRawMaterial?> GetProductRawMaterialMappingByIdAsync(int id);
         Task<ProductRawMaterial?> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAsync(int ProductId, int RawMaterialId);
-        Task AddProductRawMaterialMappingAsync(ProductRawMaterial ingredient);
-        Task UpdateProductRawMaterialMappingAsync(ProductRawMaterial ingredient);
+        Task AddProductRawMaterialMappingAsync(ProductRawMaterialAddModal ingredient);
+        Task UpdateProductRawMaterialMappingAsync(ProductRawMaterialAddModal ingredient);
         Task DeleteProductRawMaterialMappingAsync(int Id);
 
         Task<List<ProductRawMaterialMapType>> GetAllProductRawMaterialMapTypeListAsync();
@@ -20,10 +22,12 @@ namespace BMS.Data.Providers
     public class ProductIngredientsDataProvider : IProductIngredientsDataProvider
     {
         private readonly IDbService _dbService;
+        private readonly IMapper _mapper;
 
-        public ProductIngredientsDataProvider(IDbService dbService)
+        public ProductIngredientsDataProvider(IDbService dbService, IMapper mapper)
         {
             _dbService = dbService ?? throw new ArgumentNullException(nameof(dbService));
+            _mapper = mapper ?? throw new ArgumentNullException(nameof(mapper));
         }
 
         public async Task<List<ProductRawMaterial>> GetAllProductRawMaterialsMappingListAsync()
@@ -46,15 +50,20 @@ namespace BMS.Data.Providers
             return await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialId(ProductId, RawMaterialId);
         }
 
-        public async Task AddProductRawMaterialMappingAsync(ProductRawMaterial ingredient)
+        public async Task AddProductRawMaterialMappingAsync(ProductRawMaterialAddModal ingredient)
         {
+
+            if (ingredient == null)
+                throw new ArgumentNullException(nameof(ingredient));
+                        
             // Check if mapping already exists
             var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(ingredient.ProductId, ingredient.RawMaterialId, ingredient.MapType);
             if (r != null) { throw new Exception($"Product and ingredient mapping already exists."); }
-            await _dbService.AddProductRawMaterialMapping(ingredient);
+            ProductRawMaterial newMapping = _mapper.Map<ProductRawMaterial>(ingredient);
+            await _dbService.AddProductRawMaterialMapping(newMapping);
         }
 
-        public async Task UpdateProductRawMaterialMappingAsync(ProductRawMaterial ingredient)
+        public async Task UpdateProductRawMaterialMappingAsync(ProductRawMaterialAddModal ingredient)
         {
             // Check if mapping already exists
             var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialId(ingredient.ProductId, ingredient.RawMaterialId);

@@ -79,12 +79,29 @@
                                     <option value="@category.Id.ToString()">@category.Name</option>
                                 }
                             </select>
-                            <div class="invalid-feedback">Category is required.</div>
+                            <div class="invalid-feedback">Category name is required.</div>
                         </div>
-                        <div class="col-sm-6">
+                        <div class="col-md-3">
                             <label for="txbx_modal_editproduct_mrp" class="ml-3 col-form-label">Mrp</label>
                             <input class="form-control" type="number" id="ProductAddEditModal_MRP" name="ProductAddEditModal.MRP" placeholder="Enter Mrp" required />
                             <div class="invalid-feedback">MRP is required.</div>
+                        </div>
+                        <div class="col-md-6">
+                            <input id="ProductAddEditModal_UOM" name="ProductAddEditModal.UOM" hidden />
+                            <label for="select_modal_editproduct_uom" class="form-label">UOM</label>
+                            <select id="select_modal_editproduct_uom" class="single-select-editproduct form-select" required>
+                                <option value="">-- Select Uom --</option>
+                                @foreach (var uom in Model.UomMasters)
+                                {
+                                    <option value="@uom.UOMName">@uom.UOMName</option>
+                                }
+                            </select>
+                            <div class="invalid-feedback">UOM is required.</div>
+                        </div>
+                        <div class="col-md-3">
+                            <label for="ProductAddEditModal_Sort_Order" class="ml-3 col-form-label">Sort Order</label>
+                            <input class="form-control" type="number" id="ProductAddEditModal_Sort_Order" name="ProductAddEditModal.Sort_Order" placeholder="Enter Sort Order" required />
+                            <div class="invalid-feedback">Sort Order is required.</div>
                         </div>
                     </div>
                 </form>

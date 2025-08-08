@@ -43,7 +43,7 @@ namespace WebPortal.Pages
         public async Task<JsonResult> OnPostUpdateCategoryAsync(CategoryAddEditModal categoryAddEditModal)
         {
             var status = true;
-            var msg = "Category Updated Successfully.";
+            var msg = "Category updated successfully.";
 
             try
             {
@@ -73,7 +73,7 @@ namespace WebPortal.Pages
         public async Task<JsonResult> OnPostSaveCategoryAsync(CategoryAddEditModal categoryAddEditModal)
         {
             var status = true;
-            var msg = "Category Added Successfully.";
+            var msg = "Category added successfully.";
 
             try
             {
@@ -102,7 +102,7 @@ namespace WebPortal.Pages
         public async Task<JsonResult> OnPostDeleteCategoryAsync(int id)
         {
             var status = true;
-            var msg = "Category Deleted Successfully.";
+            var msg = "Category deleted successfully.";
 
             try
             {

@@ -21,115 +21,110 @@ namespace WebPortal.Pages
             _rawMaterialsDataProvider = rawMaterialsDataProvider;
             _productIngredientsDataProvider = productIngredientsDataProvider;
         }
-
-        [BindProperty]
-        public List<ProductRawMaterial> ProductIngredients { get; set; } = new();
-
-        [BindProperty]
-        public List<ProductRawMaterialMapType> ProductRawMaterial_MapType { get; set; } = new();
-
-        [BindProperty]
-        public ProductRawMaterial Ingredient { get; set; } = new();
-
+                          
+        public ProductRawMaterialAddModal ProductRawMaterialAddModal { get; set; } = new();
         public List<Product> Products { get; set; } = new();
         public List<RawMaterial> RawMaterials { get; set; } = new();
+        public List<ProductRawMaterialMapType> ProductRawMaterial_MapType { get; set; } = new();
 
         public async Task OnGet(int? id, string? notify)
-        {
-            ProductIngredients = await _productIngredientsDataProvider.GetAllProductRawMaterialsMappingListAsync();
+        {            
             Products = await _productsDataProvider.GetProducts();
             RawMaterials = await _rawMaterialsDataProvider.GetRawMaterials();
-            ProductRawMaterial_MapType = await _productIngredientsDataProvider.GetAllProductRawMaterialMapTypeListAsync();
-
-            if (id.HasValue)
-            {
-                Ingredient = await _productIngredientsDataProvider.GetProductRawMaterialMappingByIdAsync(id.Value) ?? new ProductRawMaterial();
-            }
-
-            // Set notification message if needed
-            if (!string.IsNullOrEmpty(notify))
-            {
-                switch (notify)
-                {
-                    case "added":
-                        TempData["NotifyMsg"] = "Ingredient added successfully.";
-                        TempData["NotifyType"] = "success";
-                        break;
-                    case "updated":
-                        TempData["NotifyMsg"] = "Ingredient updated successfully.";
-                        TempData["NotifyType"] = "success";
-                        break;
-                    case "deleted":
-                        TempData["NotifyMsg"] = "Ingredient deleted successfully.";
-                        TempData["NotifyType"] = "success";
-                        break;
-                }
-            }
+            ProductRawMaterial_MapType = await _productIngredientsDataProvider.GetAllProductRawMaterialMapTypeListAsync();                        
         }
 
-        public async Task<IActionResult> OnPostAddOrEditAsync()
+        public async Task<IActionResult> OnGetShowAllProductIngredientsMappingAsync()
         {
-            if (!ModelState.IsValid)
+            var result = await _productIngredientsDataProvider.GetAllProductRawMaterialsMappingListAsync();
+            //Code to avoid recrussive json result
+            if (result != null)
             {
-                await OnGet(null, null);
-                return Page();
+                result.ForEach(p =>
+                {
+                    p.Product.ProductRawMaterials = null;
+                    p.RawMaterial.ProductRawMaterials = null;
+                });
             }
-
-            bool Isadd = Ingredient.Id == 0;
-
-            if (Ingredient.Id == 0)
-            {
-                try
-                {
-                    await _productIngredientsDataProvider.AddProductRawMaterialMappingAsync(Ingredient);
-                    TempData["NotifyMsg"] = "Ingredient added successfully.";
-                    TempData["NotifyType"] = "success";
-                }
-                catch (Exception ex)
-                {
-                    TempData["NotifyMsg"] = $"Error adding ingredient: {ex.Message}";
-                    TempData["NotifyType"] = "error";
-                    return Page();
-                }
-                
-            }
-            else
-            {
-                try
-                {
-                    await _productIngredientsDataProvider.UpdateProductRawMaterialMappingAsync(Ingredient);
-                    TempData["NotifyMsg"] = "Ingredient updated successfully.";
-                    TempData["NotifyType"] = "success";
-                }
-                catch (Exception ex)
-                {
-                    TempData["NotifyMsg"] = $"Error updating ingredient: {ex.Message}";
-                    TempData["NotifyType"] = "error";
-                    return Page();
-                }
-
-            }
-            
-            TempData["NotifyType"] = "success"; 
-            return RedirectToPage(new { notify = Isadd ? "added" : "updated" });
+            return new JsonResult(result);
         }
 
-        public async Task<IActionResult> OnGetDeleteAsync(int id)
+        public async Task<JsonResult> OnPostUpdateProductIngredientMappingAsync(ProductRawMaterialAddModal productIngredientAddModal)
         {
-            await _productIngredientsDataProvider.DeleteProductRawMaterialMappingAsync(id);
-            TempData["NotifyMsg"] = "Ingredient deleted successfully.";
-            TempData["NotifyType"] = "success";
-            return RedirectToPage(new { notify = "deleted" });
+            var status = true;
+            var msg = "Product ingredient mapping updated successfully.";
+
+            try
+            {
+                if (!ModelState.IsValid)
+                {
+                    //var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => string.Join(',', $"{x.Value.Errors.Select(y => y.ErrorMessage).ToString().Replace(".","")} for {x.Value.(x=> x. )}."));
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .Select(x => $"{string.Join(", ", x.Value.Errors.Select(y => y.ErrorMessage))} for {x.Key}")
+                        .ToList();
+
+                    return new JsonResult(new { status = false, message = errors });
+                }
+
+                await _productIngredientsDataProvider.UpdateProductRawMaterialMappingAsync(productIngredientAddModal);
+
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                msg = $"Error {ex.Message}";
+            }
+
+            return new JsonResult(new { status, message = msg });
         }
 
-        public async Task<IActionResult> OnGetProductIngredientsPartial(int? productId)
+        public async Task<JsonResult> OnPostSaveProductIngredientMappingAsync(ProductRawMaterialAddModal productIngredientAddModal)
         {
-            List<ProductRawMaterial> ingredients = new List<ProductRawMaterial>();
-            if (productId.HasValue)
+            var status = true;
+            var msg = "Product ingredient mapping added successfully.";
+
+            try
             {
-                ingredients = await _productIngredientsDataProvider.GetAllProductRawMaterialsMappingByProductIdAsync((int)productId);                
+                if (!ModelState.IsValid)
+                {
+                    //var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => string.Join(',', $"{x.Value.Errors.Select(y => y.ErrorMessage).ToString().Replace(".","")} for {x.Value.(x=> x. )}."));
+                    var errors = ModelState
+                        .Where(x => x.Value.Errors.Count > 0)
+                        .Select(x => $"{string.Join(", ", x.Value.Errors.Select(y => y.ErrorMessage))} for {x.Key}")
+                        .ToList();
+
+                    return new JsonResult(new { status = false, message = errors });
+                }
+
+                await _productIngredientsDataProvider.AddProductRawMaterialMappingAsync(productIngredientAddModal);
+
             }
-            return Partial("./_ProductIngredientsTableBody", ingredients.OrderBy(o=> o.RawMaterial.Name));
+            catch (Exception ex)
+            {
+                status = false;
+                msg = $"Error {ex.Message}";
+            }
+
+            return new JsonResult(new { status, message = msg });
         }
+        public async Task<JsonResult> OnPostDeleteProductIngredientMappingAsync(int id)
+        {
+            var status = true;
+            var msg = "Product ingredient mapping deleted successfully.";
+
+            try
+            {
+                await _productIngredientsDataProvider.DeleteProductRawMaterialMappingAsync(id);
+            }
+            catch (Exception ex)
+            {
+                status = false;
+                msg = $"Error {ex.Message}";
+            }
+
+            return new JsonResult(new { status, message = msg });
+        }
+                        
     }
 }

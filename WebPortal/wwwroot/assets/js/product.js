@@ -3,13 +3,13 @@ let products_Table;
 $(document).ready(function () {
     
     products_Table = $('#productsTable').DataTable({
-        lengthMenu: [[5, 10, 25, 50, 100, 1000], [5, 10, 25, 50, 100, 1000]],
+        lengthMenu: [[10, 25, 50, 100, 1000], [10, 25, 50, 100, 1000]],
         paging: true,
         pagingType: "full_numbers",
         ordering: true,
         scrollCollapse: true,
         fixedHeader: true,
-        order: [[0, "desc"]],
+        order: [[3, "asc"], [6, "asc"], [2, "asc"]],
         info: false,
         scrollX: true,
         searching: true,
@@ -26,6 +26,8 @@ $(document).ready(function () {
             { data: 'name', width: '50%', title: "Product Name" },
             { data: 'category.name', width: '30%', title: "Category" },
             { data: 'mrp', width: '10%', className: "text-center", title: "Mrp" },
+            { data: 'uom', width: '10%', className: "text-center", title: "UOM" },
+            { data: 'sort_Order', width: '10%', className: "text-center", title: "Sort Order" },
             { data: 'id' } // Placeholder for actions, real config below
         ],
         columnDefs: [
@@ -57,7 +59,7 @@ $(document).ready(function () {
     $('#btn_modal_editproduct_save').on('click', function (e) {       
         e.preventDefault();
         $('#ProductAddEditModal_CategoryId').val($('#select_modal_editproduct_category :selected').val());
-
+        $('#ProductAddEditModal_UOM').val($('#select_modal_editproduct_uom :selected').val());
 
         var result = false;
         result = validateBootstrapForm('frmMdlEditProduct');
@@ -117,6 +119,10 @@ var editProduct = function (t) {
         $('#select_modal_editproduct_category').val(null).trigger('change');
         $('#select_modal_editproduct_category').val(row.categoryId).trigger('change'); // Or row.categoryId based on your data
         $('#ProductAddEditModal_CategoryId').val(row.categoryId);
+        $('#select_modal_editproduct_uom').val(null).trigger('change');
+        $('#select_modal_editproduct_uom').val(row.uom).trigger('change'); // Or row.uom based on your data
+        $('#ProductAddEditModal_UOM').val(row.uom);
+        $('#ProductAddEditModal_Sort_Order').val(row.sort_Order);
         $('#ProductAddEditModal_ProductName').val(row.name);
         $('#ProductAddEditModal_MRP').val(row.mrp);
         $('#ProductAddEditModal_Operation').val('EDIT');
@@ -134,6 +140,9 @@ var addProduct = function () {
     $('#ProductAddEditModal_Id').val('0');
     $('#ProductAddEditModal_CategoryId').val('');
     $('#select_modal_editproduct_category').val(null).trigger('change');
+    $('#ProductAddEditModal_UOM').val('');
+    $('#ProductAddEditModal_Sort_Order').val('0');
+    $('#select_modal_editproduct_uom').val(null).trigger('change');
     $('#ProductAddEditModal_ProductName').val('');
     $('#ProductAddEditModal_MRP').val('');
     $('#ProductAddEditModal_Operation').val('ADD');

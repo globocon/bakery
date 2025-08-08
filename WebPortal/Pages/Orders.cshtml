@@ -67,7 +67,7 @@
                         {
                             <div class="row mb-3">
                                 <h4 class="text-primary">Category: @group.Key.Name</h4> <!-- Category Name Header -->
-                                @foreach (var product in group.OrderBy(x=> x.Name))
+                                @foreach (var product in group.OrderBy(x=> x.Sort_Order).ThenBy(x=> x.Name))
                                 {
                                     <div class="col-md-3">
                                         <div class="card bg-primary bg-gradient text-center">
@@ -75,7 +75,7 @@
                                                 <label class="form-label text-white rounded">@product.Name</label>
                                                 <div class="input-group text-white rounded">
                                                     <input type="number" class="form-control" data-productid="@product.Id" id="inputOrderQty_@product.Id" placeholder="Enter Qty" />
-                                                    <span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom_@product.Id">Nos</span>
+                                                    <span class="input-group-text bg-transparent text-white" id="inputOrderQtyUom_@product.Id">@product.UOM</span>
                                                 </div>
                                             </div>
                                         </div>

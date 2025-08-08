@@ -74,6 +74,11 @@ namespace WebPortal.Pages
                 .OrderBy(g => g.Key)
                 .ToList();
 
+            var groupedByMapType = reportData
+               .GroupBy(x => x.RawMaterialMapType)
+               .OrderBy(g => g.Key)
+               .ToList();
+
             var pdfBytes = Document.Create(container =>
             {
                 container.Page(page =>
@@ -221,11 +226,13 @@ namespace WebPortal.Pages
                                         Index = index + 1,
                                         ProductName = g.Key,
                                         ProductId = g.FirstOrDefault()?.ProductId ?? 0,
+                                        ProductSortOrder = g.FirstOrDefault()?.ProductSortOrder ?? 0,
                                         TotalRequired = g
                                             .Select(x => x.ProductOrderQuantity)
                                             .Distinct()
                                             .First()
                                     })
+                                    .OrderBy(o => o.ProductSortOrder).ThenBy(o => o.ProductName)
                                     .ToList();
 
                             col.Item().Text($"Required Products List").FontSize(14).Bold().AlignLeft().Underline().FontColor(Color.FromHex("#31adec"));
@@ -267,47 +274,43 @@ namespace WebPortal.Pages
                         }
                     });
 
-                    page.Footer().AlignCenter().Text(FooterNote);
+                    page.Footer().AlignRight().Text(FooterNote).FontSize(8);
                 })
                 .Page(page =>
                 {
                     page.Size(PageSizes.A4);
                     page.Margin(20);
                     page.DefaultTextStyle(x => x.FontSize(12));
-                    page.Header().PaddingBottom(5).Text($"Customer Wise Packing List").FontSize(18).Bold().AlignCenter().Underline().FontColor(Color.FromHex("#31adec"));
-
+                    page.Header().PaddingBottom(5).Text($"Mix wise").FontSize(18).Bold().AlignCenter().Underline().FontColor(Color.FromHex("#31adec"));
                     page.Content().Column(col =>
                     {
-                        for (int i = 0; i < groupedByCustomer.Count; i++)
+
+
+                        foreach (var mixGroup in groupedByMapType)
                         {
-                            var customerGroup = groupedByCustomer[i];
-                            var orderDate = customerGroup.FirstOrDefault()?.OrderDate.ToString("dd-MMM-yyyy") ?? "";
+                            var orderDate = mixGroup.FirstOrDefault()?.OrderDate.ToString("dd-MMM-yyyy") ?? "";
                             col.Item().PaddingBottom(3);
                             col.Item().Row(row =>
                             {
                                 row.RelativeItem().Column(c =>
                                 {
-                                    c.Item().Text($"Customer: {customerGroup.Key}").Bold();
+                                    c.Item().Text($"Mix Type: {mixGroup.Key}").Bold();
                                     c.Item().Text($"Order Date: {orderDate}").Bold();
                                 });
                             });
                             col.Item().PaddingBottom(3);
 
                             // Group by RawMaterialName
-                            var rawMaterialData = customerGroup
-                                .GroupBy(r => new { r.ProductName, r.OrderDeliveryDateTime })
+                            var rawMaterialData = mixGroup.Where(r => r.ShowInReport == true)
+                                .GroupBy(r => new { r.RawMaterialName, r.RawMaterialMapType, r.ShowInReport })
                                 .Select((g, index) => new
                                 {
                                     Index = index + 1,
-                                    _ProductName = g.Key.ProductName,
-                                    DeliveryTime = g.Key.OrderDeliveryDateTime,
-                                    TotalRequired = g
-                                        .Select(x => x.ProductOrderQuantity)
-                                        .Distinct()
-                                        .First()
+                                    RawMaterialName = g.Key.RawMaterialName,
+                                    TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity),
+                                    ShowInReport = g.Key.ShowInReport,
+                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? "kg"
                                 })
-                                .OrderByDescending(o => o.DeliveryTime ?? DateTime.MinValue)
-                                .ThenBy(o => o._ProductName)
                                 .ToList();
 
                             // Table
@@ -316,52 +319,246 @@ namespace WebPortal.Pages
                                 table.ColumnsDefinition(columns =>
                                 {
                                     columns.ConstantColumn(30); // #
-                                    columns.RelativeColumn(2);  // Product Name
-                                    columns.RelativeColumn(2);  // Required Qty
-                                    columns.RelativeColumn(2);  // Delivery Time
+                                    columns.RelativeColumn(2);   // RawMaterialName
+                                    columns.RelativeColumn(2);   // Calculated Quantity
                                 });
 
                                 // Header
                                 table.Header(header =>
                                 {
                                     header.Cell().Text("#").Bold();
-                                    header.Cell().Text("Product Name").Bold();
+                                    header.Cell().Text("Ingrident Name").Bold();
                                     header.Cell().Text("Required Qty").Bold();
-                                    header.Cell().Text("Delivery Time").Bold();
                                 });
 
-                                int SNo = 1;
-
+                                // Rows
                                 foreach (var item in rawMaterialData)
                                 {
-                                    var firstTime = item?.DeliveryTime;
-                                    string dlvtm = firstTime.HasValue ? firstTime.Value.ToString("hh:mm tt") : "";
-                                    bool highlight = !string.IsNullOrEmpty(dlvtm);
-
-                                    Color bgColor = highlight ? Colors.Grey.Lighten3 : Colors.White;
-
-                                    table.Cell().Background(bgColor).Padding(2).Text(SNo.ToString());
-                                    table.Cell().Background(bgColor).Padding(2).Text(item._ProductName);
-                                    table.Cell().Background(bgColor).Padding(2).Text(item.TotalRequired.ToString("0.### nos"));
-                                    table.Cell().Background(bgColor).Padding(2).Text(dlvtm);
-
-                                    SNo++;
+                                    table.Cell().Padding(2).Text(item.Index.ToString());
+                                    table.Cell().Padding(2).Text(item.RawMaterialName);
+                                    table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("0.###")} {item.RawMaterialUOM}");
                                 }
                             });
+                        }                       
 
-                            // Add page break only if this is NOT the last group
-                            if (i < groupedByCustomer.Count - 1)
+                    });
+
+                    page.Footer().AlignRight().Text(FooterNote).FontSize(8);
+                })
+                //.Page(page =>
+                //{
+                //    page.Size(PageSizes.A4);
+                //    page.Margin(20);
+                //    page.DefaultTextStyle(x => x.FontSize(12));
+                //    page.Header().PaddingBottom(5).Text($"Customer Wise Packing List New").FontSize(18).Bold().AlignCenter().Underline().FontColor(Color.FromHex("#31adec"));
+
+                //    page.Content().Column(col =>
+                //    {
+                //        for (int i = 0; i < groupedByCustomer.Count; i++)
+                //        {
+                //            var customerGroup = groupedByCustomer[i];
+                //            var orderDate = customerGroup.FirstOrDefault()?.OrderDate.ToString("dd-MMM-yyyy") ?? "";
+                //            col.Item().PaddingBottom(3);
+                //            col.Item().Row(row =>
+                //            {
+                //                row.RelativeItem().Column(c =>
+                //                {
+                //                    c.Item().Text($"Customer: {customerGroup.Key}").Bold();
+                //                    c.Item().Text($"Order Date: {orderDate}").Bold();
+                //                });
+                //            });
+                //            col.Item().PaddingBottom(3);
+
+                //            // Group by Product
+                //            var rawMaterialData = customerGroup
+                //                .GroupBy(r => new { r.ProductSortOrder, r.ProductName, r.OrderDeliveryDateTime,r.CategoryName })
+                //                .Select((g, index) => new
+                //                {
+                //                    Index = index + 1,
+                //                    _ProductName = g.Key.ProductName,
+                //                    _CategoryName = g.Key.CategoryName,
+                //                    _ProductSortOrder = g.Key.ProductSortOrder,
+                //                    DeliveryTime = g.Key.OrderDeliveryDateTime,
+                //                    TotalRequired = g
+                //                        .Select(x => x.ProductOrderQuantity)
+                //                        .Distinct()
+                //                        .First()
+                //                })
+                //                .OrderByDescending(o => o.DeliveryTime ?? DateTime.MinValue)
+                //                .ThenBy(o => o._CategoryName).ThenBy(o => o._ProductSortOrder).ThenBy(o => o._ProductName)
+                //                .ToList();
+
+                //            // Table
+                //            col.Item().Table(table =>
+                //            {
+                //                table.ColumnsDefinition(columns =>
+                //                {
+                //                    columns.ConstantColumn(30); // #
+                //                    columns.RelativeColumn(2);  // Product Name
+                //                    columns.RelativeColumn(2);  // Required Qty
+                //                    columns.RelativeColumn(2);  // Delivery Time
+                //                });
+
+                //                // Header
+                //                table.Header(header =>
+                //                {
+                //                    header.Cell().Text("#").Bold();
+                //                    header.Cell().Text("Product Name").Bold();
+                //                    header.Cell().Text("Required Qty").Bold();
+                //                    header.Cell().Text("Delivery Time").Bold();
+                //                });
+
+                //                int SNo = 1;
+
+                //                foreach (var item in rawMaterialData)
+                //                {
+                //                    var firstTime = item?.DeliveryTime;
+                //                    string dlvtm = firstTime.HasValue ? firstTime.Value.ToString("hh:mm tt") : "";
+                //                    bool highlight = !string.IsNullOrEmpty(dlvtm);
+
+                //                    Color bgColor = highlight ? Colors.Grey.Lighten3 : Colors.White;
+
+                //                    table.Cell().Background(bgColor).Padding(2).Text(SNo.ToString());
+                //                    table.Cell().Background(bgColor).Padding(2).Text(item._ProductName);
+                //                    table.Cell().Background(bgColor).Padding(2).Text(item.TotalRequired.ToString("0.### nos"));
+                //                    table.Cell().Background(bgColor).Padding(2).Text(dlvtm);
+
+                //                    SNo++;
+                //                }
+                //            });
+
+                //            // Add page break only if this is NOT the last group
+                //            if (i < groupedByCustomer.Count - 1)
+                //            {
+                //                col.Item().PageBreak();
+                //            }
+                //        }
+                //    });
+
+                //    page.Footer().AlignRight().Text(FooterNote).FontSize(8);
+                //})
+                .Page(page =>
+                {
+                    page.Size(PageSizes.A4);
+                    page.Margin(20);
+                    page.DefaultTextStyle(x => x.FontSize(12));
+                    page.Header().PaddingBottom(5)
+                        .Text($"Customer Wise Packing List")
+                        .FontSize(18).Bold().AlignCenter().Underline()
+                        .FontColor(Color.FromHex("#31adec"));
+
+                    page.Content().Column(mainCol =>
+                    {
+                        // Process customers in pairs
+                        for (int i = 0; i < groupedByCustomer.Count; i += 2)
+                        {
+                            var leftCustomer = groupedByCustomer[i];
+                            var rightCustomer = (i + 1 < groupedByCustomer.Count) ? groupedByCustomer[i + 1] : null;
+
+                            mainCol.Item().Row(row =>
                             {
-                                col.Item().PageBreak();
+                                // LEFT COLUMN
+                                row.RelativeItem().Column(col =>
+                                {
+                                    if (leftCustomer != null)
+                                    {
+                                        RenderCustomer(col, leftCustomer);
+                                    }
+                                });
+
+                                // RIGHT COLUMN
+                                row.RelativeItem().Column(col =>
+                                {
+                                    if (rightCustomer != null)
+                                    {
+                                        RenderCustomer(col, rightCustomer);
+                                    }
+                                });
+                            });
+
+                            // Page break after each row of two customers, except last
+                            if (i + 2 < groupedByCustomer.Count)
+                            {
+                                mainCol.Item().PageBreak();
                             }
                         }
                     });
 
-                    page.Footer().AlignCenter().Text(FooterNote);
-                });
+                    page.Footer().AlignRight().Text(FooterNote).FontSize(8);
+                });                
             }).GeneratePdf();
 
             return File(pdfBytes, "application/pdf", $"TeamWisePrepList_{selectedOrderDate:yyyyMMdd}.pdf");
+        }
+
+        // Method to render one customer's details in a column
+        void RenderCustomer(ColumnDescriptor col, IGrouping<string, OrderConfirmData> customerGroup)
+        {
+            var orderDate = customerGroup.FirstOrDefault()?.OrderDate.ToString("dd-MMM-yyyy") ?? "";
+
+            col.Item().PaddingBottom(3);
+            col.Item().Row(row =>
+            {
+                row.RelativeItem().Column(c =>
+                {
+                    c.Item().Text($"Customer: {customerGroup.Key}").Bold();
+                    c.Item().Text($"Order Date: {orderDate}").Bold();
+                });
+            });
+            col.Item().PaddingBottom(3);
+
+            // Build rawMaterialData (same logic you had)
+            var rawMaterialData = customerGroup
+                .GroupBy(r => new { r.ProductSortOrder, r.ProductName, r.OrderDeliveryDateTime, r.CategoryName })
+                .Select((g, index) => new
+                {
+                    Index = index + 1,
+                    _ProductName = g.Key.ProductName,
+                    _CategoryName = g.Key.CategoryName,
+                    _ProductSortOrder = g.Key.ProductSortOrder,
+                    DeliveryTime = g.Key.OrderDeliveryDateTime,
+                    TotalRequired = g.Select(x => x.ProductOrderQuantity).Distinct().First()
+                })
+                .OrderByDescending(o => o.DeliveryTime ?? DateTime.MinValue)
+                .ThenBy(o => o._CategoryName)
+                .ThenBy(o => o._ProductSortOrder)
+                .ThenBy(o => o._ProductName)
+                .ToList();
+
+            col.Item().Table(table =>
+            {
+                table.ColumnsDefinition(columns =>
+                {
+                    columns.ConstantColumn(30);
+                    columns.RelativeColumn(2);
+                    columns.RelativeColumn(2);
+                    columns.RelativeColumn(2);
+                });
+
+                table.Header(header =>
+                {
+                    header.Cell().Text("#").Bold();
+                    header.Cell().Text("Product Name").FontSize(10).Bold();
+                    header.Cell().Text("Required Qty").FontSize(10).Bold();
+                    header.Cell().Text("Delivery Time").FontSize(10).Bold();
+                });
+
+                int SNo = 1;
+                foreach (var item in rawMaterialData)
+                {
+                    var firstTime = item?.DeliveryTime;
+                    string dlvtm = firstTime.HasValue ? firstTime.Value.ToString("hh:mm tt") : "";
+                    bool highlight = !string.IsNullOrEmpty(dlvtm);
+                    Color bgColor = highlight ? Colors.Grey.Lighten3 : Colors.White;
+
+                    table.Cell().Background(bgColor).Padding(2).Text(SNo.ToString()).FontSize(10);
+                    table.Cell().Background(bgColor).Padding(2).Text(item._ProductName).FontSize(10);
+                    table.Cell().Background(bgColor).Padding(2).Text(item.TotalRequired.ToString("0.### nos")).FontSize(10);
+                    table.Cell().Background(bgColor).Padding(2).Text(dlvtm).FontSize(10);
+
+                    SNo++;
+                }
+            });
         }
 
     }
