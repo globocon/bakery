@@ -62,8 +62,12 @@ $(function () {
         e.preventDefault();                
         $('#ProductIngredientAddModal_ProductId').val($('#select_modal_addproductingredient_Product :selected').val());
         $('#ProductIngredientAddModal_RawMaterialId').val($('#select_modal_addproductingredient_RawMaterial :selected').val());
-        $('#ProductIngredientAddModal_MapTypeId').val($('#select_modal_addproductingredient_MapType :selected').val());
-               
+        
+        var selected = $('#select_modal_addproductingredient_MapType').select2('data')[0];
+        $('#ProductIngredientAddModal_MapType').val(selected.id);
+        //console.log({ value: selected.id, text: selected.text });
+        //alert('MapType Value (selected):' + selected.id);
+        //alert('MapType Text:' + selected.text);
 
         var result = false;
         result = validateBootstrapForm('frmMdlAddProductIngredient');
@@ -120,11 +124,9 @@ var editProductIngredient = function (t) {
         $('#ProductIngredientAddModal_Id').val(row.id);
         $('#ProductIngredientAddModal_ProductId').val(row.productId);
         $('#ProductIngredientAddModal_RawMaterialId').val(row.rawMaterialId);
-        $('#ProductIngredientAddModal_MapTypeId').val(row.mapType);
-        $('#ProductIngredientAddModal_QuantityRequired').val(row.quantityRequired);
-
-        $('#ProductIngredientAddModal_QuantityRequired').val(row.quantityRequired);
-        //$('#ProductRawMaterialAddModal_ShowInReport').val(row.showInReport);
+        $('#ProductIngredientAddModal_MapType').val(row.mapType);
+        $('#ProductIngredientAddModal_QuantityRequired').val(row.quantityRequired);        
+        
         setShowInReport(row.showInReport);
 
         $('#select_modal_addproductingredient_Product').val(row.productId).trigger('change');
@@ -148,7 +150,7 @@ var addProductIngredient = function () {
     $('#ProductIngredientAddModal_Id').val('0');
     $('#ProductIngredientAddModal_ProductId').val('0');
     $('#ProductIngredientAddModal_RawMaterialId').val('0');
-    $('#ProductIngredientAddModal_MapTypeId').val('1');
+    $('#ProductIngredientAddModal_MapType').val();
     $('#ProductIngredientAddModal_QuantityRequired').val('0.0000001');
 
 

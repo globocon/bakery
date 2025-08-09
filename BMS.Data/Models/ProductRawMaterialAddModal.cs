@@ -9,7 +9,7 @@ namespace BMS.Data.Models
         public int ProductId { get; set; }
         public int RawMaterialId { get; set; }
         public float QuantityRequired { get; set; }
-        public string MapType { get; set; } = "Mix"; // Default type is Mix
+        public string MapType { get; set; } // Default type is Mix
         public bool ShowInReport { get; set; } = true;
                               
     }
