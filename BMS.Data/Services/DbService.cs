@@ -48,8 +48,8 @@ namespace BMS.Data.Services
         Task<List<ProductRawMaterial>> GetAllProductRawMaterialsMappingList();
         Task<List<ProductRawMaterial>> GetProductRawMaterialsMappingByProductId(int ProductId);
         Task<ProductRawMaterial> GetProductRawMaterialMappingById(int Id);
-        Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialId(int ProductId, int RawMaterialId);
-        Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(int ProductId, int RawMaterialId, string MapType);
+        Task<ProductRawMaterial?> GetProductRawMaterialMappingByProductIdAndRawMaterialId(int ProductId, int RawMaterialId);
+        Task<ProductRawMaterial?> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(int ProductId, int RawMaterialId, string MapType);
         Task AddProductRawMaterialMapping(ProductRawMaterial ingredient);
         Task UpdateProductRawMaterialMapping(ProductRawMaterial ingredient);
         Task DeleteProductRawMaterialMapping(int Id);
@@ -252,7 +252,7 @@ namespace BMS.Data.Services
                 ?? throw new KeyNotFoundException($"ProductRawMaterial with Product Id {ProductId} not found or is deleted.");
         }
 
-        public async Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialId(int ProductId, int RawMaterialId)
+        public async Task<ProductRawMaterial?> GetProductRawMaterialMappingByProductIdAndRawMaterialId(int ProductId, int RawMaterialId)
         {
             return await _context.ProductRawMaterials
                 .Include(p => p.RawMaterial)
@@ -260,7 +260,7 @@ namespace BMS.Data.Services
                 .FirstOrDefaultAsync(c => c.ProductId == ProductId && c.RawMaterialId == RawMaterialId);
         }
 
-        public async Task<ProductRawMaterial> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(int ProductId, int RawMaterialId, string MapType)
+        public async Task<ProductRawMaterial?> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(int ProductId, int RawMaterialId, string MapType)
         {
             return await _context.ProductRawMaterials
                 .Include(p => p.RawMaterial)

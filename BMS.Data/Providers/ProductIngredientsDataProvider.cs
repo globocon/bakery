@@ -66,8 +66,8 @@ namespace BMS.Data.Providers
         public async Task UpdateProductRawMaterialMappingAsync(ProductRawMaterialAddModal ingredient)
         {
             // Check if mapping already exists
-            var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialId(ingredient.ProductId, ingredient.RawMaterialId);
-            if (r != null && r.Id != ingredient.Id) { throw new Exception($"Another Product and ingredient mapping already exists."); }
+            var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(ingredient.ProductId, ingredient.RawMaterialId, ingredient.MapType);
+            if (r != null && r.Id != ingredient.Id) { throw new Exception($"Same Product and ingredient mapping already exists."); }
 
             var toupdate = await _dbService.GetProductRawMaterialMappingById(ingredient.Id);
             if (toupdate != null)
