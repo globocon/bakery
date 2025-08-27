@@ -1,3 +1,4 @@
+using BMS.Data.Entity;
 using BMS.Data.Models;
 using BMS.Data.Providers;
 using Microsoft.AspNetCore.Mvc;
@@ -21,17 +22,23 @@ namespace WebPortal.Pages
             _rawMaterialsDataProvider = rawMaterialsDataProvider;
             _productIngredientsDataProvider = productIngredientsDataProvider;
         }
-                          
+
         public ProductRawMaterialAddModal ProductRawMaterialAddModal { get; set; } = new();
         public List<Product> Products { get; set; } = new();
         public List<RawMaterial> RawMaterials { get; set; } = new();
         public List<ProductRawMaterialMapType> ProductRawMaterial_MapType { get; set; } = new();
 
         public async Task OnGet(int? id, string? notify)
-        {            
+        {
             Products = await _productsDataProvider.GetProducts();
             RawMaterials = await _rawMaterialsDataProvider.GetRawMaterials();
-            ProductRawMaterial_MapType = await _productIngredientsDataProvider.GetAllProductRawMaterialMapTypeListAsync();                        
+            ProductRawMaterial_MapType = await _productIngredientsDataProvider.GetAllProductRawMaterialMapTypeListAsync();
+        }
+
+        public async Task<IActionResult> OnGetFetchMappingTypesAsync()
+        {
+            var result = await _productIngredientsDataProvider.GetAllProductRawMaterialMapTypeListAsync();
+            return new JsonResult(result);
         }
 
         public async Task<IActionResult> OnGetShowAllProductIngredientsMappingAsync()
@@ -49,7 +56,53 @@ namespace WebPortal.Pages
             return new JsonResult(result);
         }
 
-        public async Task<JsonResult> OnPostUpdateProductIngredientMappingAsync(ProductRawMaterialAddModal productIngredientAddModal)
+        public async Task<IActionResult> OnGetShowAllIngredientsMappingOfProductForBulkEditAsync(int ProductId)
+        {
+            var result = await _productIngredientsDataProvider.GetAllProductRawMaterialsMappingByProductIdAsync(ProductId);
+            //Code to avoid recrussive json result
+            if (result != null)
+            {
+                result.ForEach(p =>
+                {
+                    p.Product.ProductRawMaterials = null;
+                    p.RawMaterial.ProductRawMaterials = null;
+                });
+                result = result.OrderBy(x => x.RawMaterial.Name).ToList();
+            }
+            return new JsonResult(result);
+        }
+
+        //public async Task<JsonResult> OnPostUpdateProductIngredientMappingAsync(ProductRawMaterialAddModal productIngredientAddModal)
+        //{
+        //    var status = true;
+        //    var msg = "Product ingredient mapping updated successfully.";
+
+        //    try
+        //    {
+        //        if (!ModelState.IsValid)
+        //        {
+        //            //var errors = ModelState.Where(x => x.Value.Errors.Count > 0).Select(x => string.Join(',', $"{x.Value.Errors.Select(y => y.ErrorMessage).ToString().Replace(".","")} for {x.Value.(x=> x. )}."));
+        //            var errors = ModelState
+        //                .Where(x => x.Value.Errors.Count > 0)
+        //                .Select(x => $"{string.Join(", ", x.Value.Errors.Select(y => y.ErrorMessage))} for {x.Key}")
+        //                .ToList();
+
+        //            return new JsonResult(new { status = false, message = errors });
+        //        }
+
+        //        await _productIngredientsDataProvider.UpdateProductRawMaterialMappingAsync(productIngredientAddModal);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        status = false;
+        //        msg = $"Error {ex.Message}";
+        //    }
+
+        //    return new JsonResult(new { status, message = msg });
+        //}
+
+        public async Task<JsonResult> OnPostBulkUpdateProductIngredientMappingAsync([FromBody] List<ProductRawMaterialAddModal> productIngredientAddModal)
         {
             var status = true;
             var msg = "Product ingredient mapping updated successfully.";
@@ -67,13 +120,13 @@ namespace WebPortal.Pages
                     return new JsonResult(new { status = false, message = errors });
                 }
 
-                await _productIngredientsDataProvider.UpdateProductRawMaterialMappingAsync(productIngredientAddModal);
+                await _productIngredientsDataProvider.BulkUpdateProductRawMaterialMappingAsync(productIngredientAddModal);
 
             }
             catch (Exception ex)
             {
                 status = false;
-                msg = $"Error {ex.Message}";
+                msg = $"Error: {ex.Message}";
             }
 
             return new JsonResult(new { status, message = msg });
@@ -103,7 +156,7 @@ namespace WebPortal.Pages
             catch (Exception ex)
             {
                 status = false;
-                msg = $"Error {ex.Message}";
+                msg = $"Error: {ex.Message}";
             }
 
             return new JsonResult(new { status, message = msg });
@@ -125,6 +178,6 @@ namespace WebPortal.Pages
 
             return new JsonResult(new { status, message = msg });
         }
-                        
+
     }
 }

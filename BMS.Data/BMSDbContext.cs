@@ -1,4 +1,4 @@
-﻿using BMS.Data.Models;
+﻿using BMS.Data.Entity;
 using Microsoft.EntityFrameworkCore;
 
 #nullable disable
@@ -40,6 +40,7 @@ namespace BMS.Data
             modelBuilder.Entity<Customer>().Property(o => o.IsDeleted).HasDefaultValue(false);            
             
             modelBuilder.Entity<Category>().Property(o => o.IsDeleted).HasDefaultValue(false);
+            modelBuilder.Entity<Category>().Property(o => o.Sort_Order).HasDefaultValue(0);
             modelBuilder.Entity<Category>()
                 .HasOne(c => c.PreparationTeam)
                 .WithMany(t => t.Categories)
@@ -123,7 +124,8 @@ namespace BMS.Data
         public DbSet<OrderConfirmData> OrderConfirmData { get; set; }
         public DbSet<ProductRawMaterialMapType> ProductRawMaterialMapType { get; set; }
         public DbSet<UomMaster> UomMaster { get; set; }
+        public DbSet<TranHist> TranHist { get; set; }
 
     }
-   
+
 }

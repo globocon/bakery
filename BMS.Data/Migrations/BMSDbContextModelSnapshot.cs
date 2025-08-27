@@ -22,7 +22,7 @@ namespace BMS.Data.Migrations
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
 
-            modelBuilder.Entity("BMS.Data.Models.Category", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Category", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -49,6 +49,11 @@ namespace BMS.Data.Migrations
                     b.Property<int>("PreparationTeamId")
                         .HasColumnType("int");
 
+                    b.Property<int>("Sort_Order")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasDefaultValue(0);
+
                     b.HasKey("Id");
 
                     b.HasIndex("PreparationTeamId");
@@ -63,7 +68,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Puffs_Sweetna",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -72,7 +78,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Bread_Bun",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -81,7 +88,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Fruit_ButterBread_Donut",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -90,7 +98,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Tea_Cake",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -99,7 +108,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Plum_Cake",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -108,7 +118,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Pineapple_Cake",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -117,7 +128,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Carrot_Dates_Cake",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -126,7 +138,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Spunge_Cake",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -135,7 +148,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Cream",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -144,7 +158,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Black_Forest",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -153,7 +168,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "White_Forest",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -162,7 +178,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Red_Velvet",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -171,7 +188,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Ghee_Cake",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -180,7 +198,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Sandwitch_Pizza",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -189,7 +208,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Tea_Rusk",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -198,7 +218,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "White_Rusk",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -207,7 +228,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Beans_Biscuit",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -216,7 +238,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Pineapple_Cookies",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -225,7 +248,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Orange_Cookies",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -234,7 +258,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Strawberry_Cookies",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -243,7 +268,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Pista_Cookies",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -252,7 +278,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Semia_Cookies",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -261,7 +288,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Coconut_Cookies",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -270,7 +298,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Masala_Cookies",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -279,7 +308,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Muffins",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -288,7 +318,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Choc Muffin",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -297,7 +328,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Cherry Cake",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -306,7 +338,8 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Samosa",
-                            PreparationTeamId = 1
+                            PreparationTeamId = 1,
+                            Sort_Order = 0
                         },
                         new
                         {
@@ -315,11 +348,12 @@ namespace BMS.Data.Migrations
                             CreatedOn = new DateTime(2025, 7, 2, 5, 47, 50, 922, DateTimeKind.Utc).AddTicks(9602),
                             IsDeleted = false,
                             Name = "Nadan",
-                            PreparationTeamId = 2
+                            PreparationTeamId = 2,
+                            Sort_Order = 0
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Customer", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Customer", b =>
                 {
                     b.Property<int>("CustomerId")
                         .ValueGeneratedOnAdd()
@@ -422,7 +456,7 @@ namespace BMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Invoice", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Invoice", b =>
                 {
                     b.Property<int>("InvoiceId")
                         .ValueGeneratedOnAdd()
@@ -466,7 +500,7 @@ namespace BMS.Data.Migrations
                     b.ToTable("Invoices");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.InvoiceItem", b =>
+            modelBuilder.Entity("BMS.Data.Entity.InvoiceItem", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -498,7 +532,7 @@ namespace BMS.Data.Migrations
                     b.ToTable("InvoiceItems");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Order", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Order", b =>
                 {
                     b.Property<int>("OrderId")
                         .ValueGeneratedOnAdd()
@@ -545,7 +579,7 @@ namespace BMS.Data.Migrations
                     b.ToTable("Orders");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.OrderConfirmData", b =>
+            modelBuilder.Entity("BMS.Data.Entity.OrderConfirmData", b =>
                 {
                     b.Property<int>("ReportId")
                         .ValueGeneratedOnAdd()
@@ -559,6 +593,9 @@ namespace BMS.Data.Migrations
                     b.Property<string>("CategoryName")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<int>("CategorySortOrder")
+                        .HasColumnType("int");
 
                     b.Property<string>("CreatedById")
                         .IsRequired()
@@ -653,7 +690,7 @@ namespace BMS.Data.Migrations
                     b.ToTable("OrderConfirmData");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.OrderItem", b =>
+            modelBuilder.Entity("BMS.Data.Entity.OrderItem", b =>
                 {
                     b.Property<int>("OrderItemId")
                         .ValueGeneratedOnAdd()
@@ -682,7 +719,7 @@ namespace BMS.Data.Migrations
                     b.ToTable("OrderItems");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.PreparationTeam", b =>
+            modelBuilder.Entity("BMS.Data.Entity.PreparationTeam", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -729,7 +766,7 @@ namespace BMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Product", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Product", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -2283,7 +2320,7 @@ namespace BMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.ProductRawMaterial", b =>
+            modelBuilder.Entity("BMS.Data.Entity.ProductRawMaterial", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -11830,7 +11867,7 @@ namespace BMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.ProductRawMaterialMapType", b =>
+            modelBuilder.Entity("BMS.Data.Entity.ProductRawMaterialMapType", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -11869,7 +11906,7 @@ namespace BMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.RawMaterial", b =>
+            modelBuilder.Entity("BMS.Data.Entity.RawMaterial", b =>
                 {
                     b.Property<int>("RawMaterialId")
                         .ValueGeneratedOnAdd()
@@ -13221,7 +13258,7 @@ namespace BMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.SubCategory", b =>
+            modelBuilder.Entity("BMS.Data.Entity.SubCategory", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -13293,7 +13330,40 @@ namespace BMS.Data.Migrations
                         });
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.USR_Users", b =>
+            modelBuilder.Entity("BMS.Data.Entity.TranHist", b =>
+                {
+                    b.Property<long>("TranHistId")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("TranHistId"));
+
+                    b.Property<decimal>("CP")
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<string>("CreatedById")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<DateTime>("CreatedOn")
+                        .HasColumnType("datetime2");
+
+                    b.Property<float>("Quantity")
+                        .HasColumnType("real");
+
+                    b.Property<int>("TranTypeId")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Unit")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("TranHistId");
+
+                    b.ToTable("TranHist");
+                });
+
+            modelBuilder.Entity("BMS.Data.Entity.USR_Users", b =>
                 {
                     b.Property<string>("Id")
                         .HasColumnType("nvarchar(450)");
@@ -13326,7 +13396,7 @@ namespace BMS.Data.Migrations
                     b.ToTable("USR_Users");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.UomMaster", b =>
+            modelBuilder.Entity("BMS.Data.Entity.UomMaster", b =>
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
@@ -13343,9 +13413,9 @@ namespace BMS.Data.Migrations
                     b.ToTable("UomMaster");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Category", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Category", b =>
                 {
-                    b.HasOne("BMS.Data.Models.PreparationTeam", "PreparationTeam")
+                    b.HasOne("BMS.Data.Entity.PreparationTeam", "PreparationTeam")
                         .WithMany("Categories")
                         .HasForeignKey("PreparationTeamId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -13354,9 +13424,9 @@ namespace BMS.Data.Migrations
                     b.Navigation("PreparationTeam");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Invoice", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Invoice", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Customer", "Customer")
+                    b.HasOne("BMS.Data.Entity.Customer", "Customer")
                         .WithMany("Invoices")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -13365,15 +13435,15 @@ namespace BMS.Data.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.InvoiceItem", b =>
+            modelBuilder.Entity("BMS.Data.Entity.InvoiceItem", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Invoice", "Invoice")
+                    b.HasOne("BMS.Data.Entity.Invoice", "Invoice")
                         .WithMany("InvoiceItems")
                         .HasForeignKey("InvoiceId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BMS.Data.Models.Product", "Product")
+                    b.HasOne("BMS.Data.Entity.Product", "Product")
                         .WithMany("InvoiceItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -13384,9 +13454,9 @@ namespace BMS.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Order", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Order", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Customer", "Customer")
+                    b.HasOne("BMS.Data.Entity.Customer", "Customer")
                         .WithMany("Orders")
                         .HasForeignKey("CustomerId")
                         .OnDelete(DeleteBehavior.NoAction)
@@ -13395,15 +13465,15 @@ namespace BMS.Data.Migrations
                     b.Navigation("Customer");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.OrderItem", b =>
+            modelBuilder.Entity("BMS.Data.Entity.OrderItem", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Order", "Order")
+                    b.HasOne("BMS.Data.Entity.Order", "Order")
                         .WithMany("OrderItems")
                         .HasForeignKey("OrderId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BMS.Data.Models.Product", "Product")
+                    b.HasOne("BMS.Data.Entity.Product", "Product")
                         .WithMany("OrderItems")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -13414,15 +13484,15 @@ namespace BMS.Data.Migrations
                     b.Navigation("Product");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Product", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Product", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Category", "Category")
+                    b.HasOne("BMS.Data.Entity.Category", "Category")
                         .WithMany("Products")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BMS.Data.Models.SubCategory", "SubCategory")
+                    b.HasOne("BMS.Data.Entity.SubCategory", "SubCategory")
                         .WithMany()
                         .HasForeignKey("SubCategoryId");
 
@@ -13431,15 +13501,15 @@ namespace BMS.Data.Migrations
                     b.Navigation("SubCategory");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.ProductRawMaterial", b =>
+            modelBuilder.Entity("BMS.Data.Entity.ProductRawMaterial", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Product", "Product")
+                    b.HasOne("BMS.Data.Entity.Product", "Product")
                         .WithMany("ProductRawMaterials")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("BMS.Data.Models.RawMaterial", "RawMaterial")
+                    b.HasOne("BMS.Data.Entity.RawMaterial", "RawMaterial")
                         .WithMany("ProductRawMaterials")
                         .HasForeignKey("RawMaterialId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -13450,9 +13520,9 @@ namespace BMS.Data.Migrations
                     b.Navigation("RawMaterial");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.SubCategory", b =>
+            modelBuilder.Entity("BMS.Data.Entity.SubCategory", b =>
                 {
-                    b.HasOne("BMS.Data.Models.Category", "Category")
+                    b.HasOne("BMS.Data.Entity.Category", "Category")
                         .WithMany("SubCategories")
                         .HasForeignKey("CategoryId")
                         .OnDelete(DeleteBehavior.Cascade)
@@ -13461,36 +13531,36 @@ namespace BMS.Data.Migrations
                     b.Navigation("Category");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Category", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Category", b =>
                 {
                     b.Navigation("Products");
 
                     b.Navigation("SubCategories");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Customer", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Customer", b =>
                 {
                     b.Navigation("Invoices");
 
                     b.Navigation("Orders");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Invoice", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Invoice", b =>
                 {
                     b.Navigation("InvoiceItems");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Order", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Order", b =>
                 {
                     b.Navigation("OrderItems");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.PreparationTeam", b =>
+            modelBuilder.Entity("BMS.Data.Entity.PreparationTeam", b =>
                 {
                     b.Navigation("Categories");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.Product", b =>
+            modelBuilder.Entity("BMS.Data.Entity.Product", b =>
                 {
                     b.Navigation("InvoiceItems");
 
@@ -13499,7 +13569,7 @@ namespace BMS.Data.Migrations
                     b.Navigation("ProductRawMaterials");
                 });
 
-            modelBuilder.Entity("BMS.Data.Models.RawMaterial", b =>
+            modelBuilder.Entity("BMS.Data.Entity.RawMaterial", b =>
                 {
                     b.Navigation("ProductRawMaterials");
                 });

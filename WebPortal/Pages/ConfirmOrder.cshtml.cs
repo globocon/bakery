@@ -1,3 +1,4 @@
+using BMS.Data.Entity;
 using BMS.Data.Models;
 using BMS.Data.Providers;
 using Microsoft.AspNetCore.Mvc;
@@ -75,6 +76,7 @@ namespace WebPortal.Pages
                 .ToList();
 
             var groupedByMapType = reportData
+                .Where(x=> !x.RawMaterialMapType.Equals("mix", StringComparison.CurrentCultureIgnoreCase))
                .GroupBy(x => x.RawMaterialMapType)
                .OrderBy(g => g.Key)
                .ToList();
@@ -114,7 +116,7 @@ namespace WebPortal.Pages
                                     TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity),
                                     MapType = g.Key.RawMaterialMapType,
                                     ShowInReport = g.Key.ShowInReport,
-                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? "kg"
+                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? " "
                                 }) 
                                 .ToList();
 
@@ -135,7 +137,7 @@ namespace WebPortal.Pages
                                     header.Cell().Text("#").Bold();
                                     header.Cell().Text("Ingrident Name").Bold();
                                     header.Cell().Text("Required For").Bold();
-                                    header.Cell().Text("Required Qty").Bold();
+                                    header.Cell().Text("Required Qty").Bold().AlignEnd();
                                 });
 
                                 // Rows
@@ -144,7 +146,7 @@ namespace WebPortal.Pages
                                     table.Cell().Padding(2).Text(item.Index.ToString());
                                     table.Cell().Padding(2).Text(item.RawMaterialName);
                                     table.Cell().Padding(2).Text(item.MapType);
-                                    table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("0.###")} {item.RawMaterialUOM}");
+                                    table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("N3")} {item.RawMaterialUOM}").AlignEnd();
                                 }
                             });
 
@@ -181,7 +183,7 @@ namespace WebPortal.Pages
                                     TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity),
                                     MapType = g.Key.RawMaterialMapType,
                                     ShowInReport = g.Key.ShowInReport,
-                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? "kg"
+                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? " "
                                 })
                                 .ToList();
 
@@ -201,7 +203,7 @@ namespace WebPortal.Pages
                                         header.Cell().Text("#").Bold();
                                         header.Cell().Text("Ingrident Name").Bold();
                                         header.Cell().Text("Required For").Bold();
-                                        header.Cell().Text("Required Qty").Bold();
+                                        header.Cell().Text("Required Qty").Bold().AlignEnd();
                                     });
 
 
@@ -210,7 +212,7 @@ namespace WebPortal.Pages
                                         table.Cell().Padding(2).Text(item.Index.ToString());
                                         table.Cell().Padding(2).Text(item.RawMaterialName);
                                         table.Cell().Padding(2).Text(item.MapType);
-                                        table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("0.###")} {item.RawMaterialUOM}");
+                                        table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("N3")} {item.RawMaterialUOM}").AlignEnd();
                                     }
                                 });
                             }
@@ -227,12 +229,14 @@ namespace WebPortal.Pages
                                         ProductName = g.Key,
                                         ProductId = g.FirstOrDefault()?.ProductId ?? 0,
                                         ProductSortOrder = g.FirstOrDefault()?.ProductSortOrder ?? 0,
+                                        ProductUom = g.FirstOrDefault()?.ProductUom ?? "",
+                                        CategorySortOrder = g.FirstOrDefault()?.CategorySortOrder ?? 0,
                                         TotalRequired = g
                                             .Select(x => x.ProductOrderQuantity)
                                             .Distinct()
                                             .First()
                                     })
-                                    .OrderBy(o => o.ProductSortOrder).ThenBy(o => o.ProductName)
+                                    .OrderBy(o => o.CategorySortOrder).ThenBy(o => o.ProductSortOrder).ThenBy(o => o.ProductName)
                                     .ToList();
 
                             col.Item().Text($"Required Products List").FontSize(14).Bold().AlignLeft().Underline().FontColor(Color.FromHex("#31adec"));
@@ -252,7 +256,7 @@ namespace WebPortal.Pages
                                 {
                                     header.Cell().Text("#").Bold();
                                     header.Cell().Text("Product Name").Bold();
-                                    header.Cell().Text("Required Qty").Bold();
+                                    header.Cell().Text("Required Qty").Bold().AlignEnd();
                                 });
 
 
@@ -266,7 +270,7 @@ namespace WebPortal.Pages
                                     .Where(oi => oi.Product.Id == item.ProductId)
                                     .Sum(oi => oi.Quantity);
 
-                                    table.Cell().Padding(2).Text(sumOfQuantity.ToString("0"));
+                                    table.Cell().Padding(2).Text($"{sumOfQuantity.ToString("N3")} {item.ProductUom}").AlignEnd();
                                 }
                             });
 
@@ -309,7 +313,7 @@ namespace WebPortal.Pages
                                     RawMaterialName = g.Key.RawMaterialName,
                                     TotalRequired = g.Sum(x => x.RawMaterialRequiredQuantity * x.ProductOrderQuantity),
                                     ShowInReport = g.Key.ShowInReport,
-                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? "kg"
+                                    RawMaterialUOM = g.FirstOrDefault()?.RawMaterialUnit ?? " "
                                 })
                                 .ToList();
 
@@ -328,7 +332,7 @@ namespace WebPortal.Pages
                                 {
                                     header.Cell().Text("#").Bold();
                                     header.Cell().Text("Ingrident Name").Bold();
-                                    header.Cell().Text("Required Qty").Bold();
+                                    header.Cell().Text("Required Qty").Bold().AlignEnd();
                                 });
 
                                 // Rows
@@ -336,7 +340,7 @@ namespace WebPortal.Pages
                                 {
                                     table.Cell().Padding(2).Text(item.Index.ToString());
                                     table.Cell().Padding(2).Text(item.RawMaterialName);
-                                    table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("0.###")} {item.RawMaterialUOM}");
+                                    table.Cell().Padding(2).Text($"{item.TotalRequired.ToString("N3")} {item.RawMaterialUOM}").AlignEnd();
                                 }
                             });
                         }                       
@@ -344,99 +348,7 @@ namespace WebPortal.Pages
                     });
 
                     page.Footer().AlignRight().Text(FooterNote).FontSize(8);
-                })
-                //.Page(page =>
-                //{
-                //    page.Size(PageSizes.A4);
-                //    page.Margin(20);
-                //    page.DefaultTextStyle(x => x.FontSize(12));
-                //    page.Header().PaddingBottom(5).Text($"Customer Wise Packing List New").FontSize(18).Bold().AlignCenter().Underline().FontColor(Color.FromHex("#31adec"));
-
-                //    page.Content().Column(col =>
-                //    {
-                //        for (int i = 0; i < groupedByCustomer.Count; i++)
-                //        {
-                //            var customerGroup = groupedByCustomer[i];
-                //            var orderDate = customerGroup.FirstOrDefault()?.OrderDate.ToString("dd-MMM-yyyy") ?? "";
-                //            col.Item().PaddingBottom(3);
-                //            col.Item().Row(row =>
-                //            {
-                //                row.RelativeItem().Column(c =>
-                //                {
-                //                    c.Item().Text($"Customer: {customerGroup.Key}").Bold();
-                //                    c.Item().Text($"Order Date: {orderDate}").Bold();
-                //                });
-                //            });
-                //            col.Item().PaddingBottom(3);
-
-                //            // Group by Product
-                //            var rawMaterialData = customerGroup
-                //                .GroupBy(r => new { r.ProductSortOrder, r.ProductName, r.OrderDeliveryDateTime,r.CategoryName })
-                //                .Select((g, index) => new
-                //                {
-                //                    Index = index + 1,
-                //                    _ProductName = g.Key.ProductName,
-                //                    _CategoryName = g.Key.CategoryName,
-                //                    _ProductSortOrder = g.Key.ProductSortOrder,
-                //                    DeliveryTime = g.Key.OrderDeliveryDateTime,
-                //                    TotalRequired = g
-                //                        .Select(x => x.ProductOrderQuantity)
-                //                        .Distinct()
-                //                        .First()
-                //                })
-                //                .OrderByDescending(o => o.DeliveryTime ?? DateTime.MinValue)
-                //                .ThenBy(o => o._CategoryName).ThenBy(o => o._ProductSortOrder).ThenBy(o => o._ProductName)
-                //                .ToList();
-
-                //            // Table
-                //            col.Item().Table(table =>
-                //            {
-                //                table.ColumnsDefinition(columns =>
-                //                {
-                //                    columns.ConstantColumn(30); // #
-                //                    columns.RelativeColumn(2);  // Product Name
-                //                    columns.RelativeColumn(2);  // Required Qty
-                //                    columns.RelativeColumn(2);  // Delivery Time
-                //                });
-
-                //                // Header
-                //                table.Header(header =>
-                //                {
-                //                    header.Cell().Text("#").Bold();
-                //                    header.Cell().Text("Product Name").Bold();
-                //                    header.Cell().Text("Required Qty").Bold();
-                //                    header.Cell().Text("Delivery Time").Bold();
-                //                });
-
-                //                int SNo = 1;
-
-                //                foreach (var item in rawMaterialData)
-                //                {
-                //                    var firstTime = item?.DeliveryTime;
-                //                    string dlvtm = firstTime.HasValue ? firstTime.Value.ToString("hh:mm tt") : "";
-                //                    bool highlight = !string.IsNullOrEmpty(dlvtm);
-
-                //                    Color bgColor = highlight ? Colors.Grey.Lighten3 : Colors.White;
-
-                //                    table.Cell().Background(bgColor).Padding(2).Text(SNo.ToString());
-                //                    table.Cell().Background(bgColor).Padding(2).Text(item._ProductName);
-                //                    table.Cell().Background(bgColor).Padding(2).Text(item.TotalRequired.ToString("0.### nos"));
-                //                    table.Cell().Background(bgColor).Padding(2).Text(dlvtm);
-
-                //                    SNo++;
-                //                }
-                //            });
-
-                //            // Add page break only if this is NOT the last group
-                //            if (i < groupedByCustomer.Count - 1)
-                //            {
-                //                col.Item().PageBreak();
-                //            }
-                //        }
-                //    });
-
-                //    page.Footer().AlignRight().Text(FooterNote).FontSize(8);
-                //})
+                })                
                 .Page(page =>
                 {
                     page.Size(PageSizes.A4);
@@ -509,18 +421,20 @@ namespace WebPortal.Pages
 
             // Build rawMaterialData (same logic you had)
             var rawMaterialData = customerGroup
-                .GroupBy(r => new { r.ProductSortOrder, r.ProductName, r.OrderDeliveryDateTime, r.CategoryName })
+                .GroupBy(r => new { r.ProductSortOrder, r.ProductName, r.OrderDeliveryDateTime,r.CategoryName,r.ProductUom, r.CategorySortOrder })
                 .Select((g, index) => new
                 {
                     Index = index + 1,
                     _ProductName = g.Key.ProductName,
                     _CategoryName = g.Key.CategoryName,
+                    _ProductUom = g.Key.ProductUom,
+                    _CategorySortOrder = g.Key.CategorySortOrder,
                     _ProductSortOrder = g.Key.ProductSortOrder,
                     DeliveryTime = g.Key.OrderDeliveryDateTime,
                     TotalRequired = g.Select(x => x.ProductOrderQuantity).Distinct().First()
                 })
                 .OrderByDescending(o => o.DeliveryTime ?? DateTime.MinValue)
-                .ThenBy(o => o._CategoryName)
+                .ThenBy(o => o._CategorySortOrder)
                 .ThenBy(o => o._ProductSortOrder)
                 .ThenBy(o => o._ProductName)
                 .ToList();
@@ -539,7 +453,7 @@ namespace WebPortal.Pages
                 {
                     header.Cell().Text("#").Bold();
                     header.Cell().Text("Product Name").FontSize(10).Bold();
-                    header.Cell().Text("Required Qty").FontSize(10).Bold();
+                    header.Cell().Text("Required Qty").FontSize(10).Bold().AlignEnd();
                     header.Cell().Text("Delivery Time").FontSize(10).Bold();
                 });
 
@@ -553,7 +467,7 @@ namespace WebPortal.Pages
 
                     table.Cell().Background(bgColor).Padding(2).Text(SNo.ToString()).FontSize(10);
                     table.Cell().Background(bgColor).Padding(2).Text(item._ProductName).FontSize(10);
-                    table.Cell().Background(bgColor).Padding(2).Text(item.TotalRequired.ToString("0.### nos")).FontSize(10);
+                    table.Cell().Background(bgColor).Padding(2).Text($"{item.TotalRequired.ToString("N3")} {item._ProductUom}").FontSize(10).AlignEnd();
                     table.Cell().Background(bgColor).Padding(2).Text(dlvtm).FontSize(10);
 
                     SNo++;

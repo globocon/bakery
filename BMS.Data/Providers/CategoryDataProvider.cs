@@ -1,4 +1,5 @@
 using AutoMapper;
+using BMS.Data.Entity;
 using BMS.Data.Helpers;
 using BMS.Data.Models;
 using BMS.Data.Services;
@@ -67,7 +68,7 @@ namespace BMS.Data.Providers
             {
                 existing.Name = category.Name;
                 existing.PreparationTeamId = category.PreparationTeamId;
-                // Optionally update other fields
+                existing.Sort_Order = category.Sort_Order;
                 await _dbService.UpdateCategory(existing);
             }
         }

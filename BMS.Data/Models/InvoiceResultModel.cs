@@ -1,3 +1,5 @@
+using BMS.Data.Entity;
+
 namespace BMS.Data.Models
 {
     public class InvoiceResultModel

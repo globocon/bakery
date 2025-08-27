@@ -15,6 +15,7 @@ namespace BMS.Data.Models
         public string Name { get; set; }
         [Required(ErrorMessage = "Preparation Team is required.")]
         [DisplayName("Preparation Team")]
-        public int PreparationTeamId { get; set; }        
+        public int PreparationTeamId { get; set; }
+        public int Sort_Order { get; set; } = 0;
     }
 }

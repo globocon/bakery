@@ -1,3 +1,4 @@
+using BMS.Data.Entity;
 using BMS.Data.Models;
 using BMS.Data.Providers;
 using Microsoft.AspNetCore.Authorization;
@@ -26,6 +27,7 @@ namespace WebPortal.Pages
         {
             Customers = await _orderDataProvider.GetAllActiveCustomers();
             productsList = await _orderDataProvider.GetAllActiveProducts();
+           // productsList = productsList.OrderBy(x => x.Category.Sort_Order).ThenBy(x => x.Sort_Order).ToList();
         }
 
         //[IgnoreAntiforgeryToken]

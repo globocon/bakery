@@ -37,6 +37,7 @@ builder.Services.AddScoped<ICategoryDataProvider, CategoryDataProvider>();
 builder.Services.AddScoped<ISubCategoryDataProvider, SubCategoryDataProvider>();
 builder.Services.AddScoped<IInvoiceDataProvider, InvoiceDataProvider>();
 builder.Services.AddScoped<IUomDataProvider, UomDataProvider>();
+builder.Services.AddScoped<IProductRawMaterialMapTypeDataProvider, ProductRawMaterialMapTypeDataProvider>();
 
 // Add AutoMapper
 builder.Services.AddAutoMapper(cfg => cfg.AddProfile<MappingProfile>());

@@ -1,7 +1,9 @@
 using AutoMapper;
+using BMS.Data.Entity;
 using BMS.Data.Helpers;
 using BMS.Data.Models;
 using BMS.Data.Services;
+using System.Collections.Generic;
 
 namespace BMS.Data.Providers
 {
@@ -13,6 +15,7 @@ namespace BMS.Data.Providers
         Task<ProductRawMaterial?> GetProductRawMaterialMappingByProductIdAndRawMaterialIdAsync(int ProductId, int RawMaterialId);
         Task AddProductRawMaterialMappingAsync(ProductRawMaterialAddModal ingredient);
         Task UpdateProductRawMaterialMappingAsync(ProductRawMaterialAddModal ingredient);
+        Task BulkUpdateProductRawMaterialMappingAsync(List<ProductRawMaterialAddModal> ingredients);
         Task DeleteProductRawMaterialMappingAsync(int Id);
 
         Task<List<ProductRawMaterialMapType>> GetAllProductRawMaterialMapTypeListAsync();
@@ -55,7 +58,7 @@ namespace BMS.Data.Providers
 
             if (ingredient == null)
                 throw new ArgumentNullException(nameof(ingredient));
-                        
+
             // Check if mapping already exists
             var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(ingredient.ProductId, ingredient.RawMaterialId, ingredient.MapType);
             if (r != null) { throw new Exception($"Product and ingredient mapping already exists."); }
@@ -83,6 +86,32 @@ namespace BMS.Data.Providers
             {
                 throw new Exception($"Product and ingredient mapping not found.");
             }
+        }
+
+        public async Task BulkUpdateProductRawMaterialMappingAsync(List<ProductRawMaterialAddModal> ingredients)
+        {
+            List<ProductRawMaterial> changestoupdates = new List<ProductRawMaterial>();
+            foreach (var ingmap in ingredients)
+            {
+                // Check if mapping already exists
+                var r = await _dbService.GetProductRawMaterialMappingByProductIdAndRawMaterialIdAndMapType(ingmap.ProductId, ingmap.RawMaterialId, ingmap.MapType);
+                if (r != null && r.Id != ingmap.Id) { throw new Exception($"Similar Product {r.Product.Name} to ingredient {r.RawMaterial.Name} mapping already exists. Please check."); }                                
+                changestoupdates.Add(_mapper.Map<ProductRawMaterial>(ingmap));
+            }
+            if(changestoupdates.Count > 0 && changestoupdates.Any())
+            {
+                foreach(var ingredient in changestoupdates)
+                {
+                    var toupdate = await _dbService.GetProductRawMaterialMappingById(ingredient.Id);
+                    if (toupdate != null)
+                    {                       
+                        toupdate.QuantityRequired = ingredient.QuantityRequired;
+                        toupdate.MapType = ingredient.MapType;
+                        toupdate.ShowInReport = ingredient.ShowInReport;
+                    }
+                }
+                await _dbService.BulkUpdateProductRawMaterialMappingSaveChanges();
+            }  
         }
 
         public async Task DeleteProductRawMaterialMappingAsync(int Id)

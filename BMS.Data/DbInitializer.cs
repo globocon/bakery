@@ -1,6 +1,5 @@
-﻿using BMS.Data.Helpers;
-using BMS.Data.Models;
-using System.Linq;
+﻿using BMS.Data.Entity;
+using BMS.Data.Helpers;
 
 namespace BMS.Data
 {

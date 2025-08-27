@@ -2,6 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BMS.Data.Models;
 using BMS.Data.Providers;
+using BMS.Data.Entity;
 
 namespace WebPortal.Pages
 {

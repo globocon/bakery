@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace BMS.Data.Models
+namespace BMS.Data.Entity
 {
     public class Order
     {
