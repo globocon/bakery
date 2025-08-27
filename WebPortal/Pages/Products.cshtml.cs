@@ -1,4 +1,5 @@
 using AutoMapper;
+using BMS.Data.Entity;
 using BMS.Data.Models;
 using BMS.Data.Providers;
 using Microsoft.AspNetCore.Mvc;

@@ -1,5 +1,6 @@
 ﻿
 using AutoMapper;
+using BMS.Data.Entity;
 using BMS.Data.Helpers;
 using BMS.Data.Models;
 using BMS.Data.Services;

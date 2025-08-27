@@ -21,6 +21,7 @@
                 <li class="breadcrumb-item">
                     <a href="/"><i class="bx bx-home-alt"></i></a>
                 </li>
+                <li class="breadcrumb-item">Product Management</li>
                 <li class="breadcrumb-item active" aria-current="page">Categories</li>
             </ol>
         </nav>
@@ -72,7 +73,7 @@
                             <input class="form-control" type="text" id="CategoryAddEditModal_Name" name="CategoryAddEditModal.Name" placeholder="Category Name" required />
                             <div class="invalid-feedback">Category Name is required.</div>
                         </div>
-                        <div class="col-md-12">
+                        <div class="col-md-8">
                             <input id="CategoryAddEditModal_PreparationTeamId" name="CategoryAddEditModal.PreparationTeamId" hidden />
                             <label for="select_modal_editcategory_preparationteam" class="form-label">Preparation Team</label>
                             <select id="select_modal_editcategory_preparationteam" class="single-select-editcategory form-select" required>
@@ -83,7 +84,12 @@
                                 }
                             </select>
                             <div class="invalid-feedback">Preparation Team is required.</div>
-                        </div>                        
+                        </div>
+                        <div class="col-md-4">
+                            <label for="CategoryAddEditModal_Sort_Order" class="ml-3 col-form-label">Sort Order</label>
+                            <input class="form-control" type="number" id="CategoryAddEditModal_Sort_Order" name="CategoryAddEditModal.Sort_Order" placeholder="Enter Sort Order" required />
+                            <div class="invalid-feedback">Sort Order is required.</div>
+                        </div>
                     </div>
                 </form>
             </div>

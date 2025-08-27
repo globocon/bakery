@@ -1,4 +1,4 @@
-﻿using BMS.Data.Models;
+﻿using BMS.Data.Entity;
 using Microsoft.EntityFrameworkCore;
 
 namespace BMS.Data

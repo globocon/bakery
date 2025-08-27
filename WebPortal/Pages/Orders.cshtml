@@ -60,13 +60,13 @@
 
                     @{
                         var groupedProducts = Model.productsList
-                        .OrderBy(p => p.Category.Name) // Sort by Category name
+                        .OrderBy(p => p.Category.Sort_Order) // Sort by Category name
                         .GroupBy(p => p.Category);
 
                         foreach (var group in groupedProducts)
                         {
                             <div class="row mb-3">
-                                <h4 class="text-primary">Category: @group.Key.Name</h4> <!-- Category Name Header -->
+                                <h4 class="text-black">Category: @group.Key.Name</h4> <!-- Category Name Header -->
                                 @foreach (var product in group.OrderBy(x=> x.Sort_Order).ThenBy(x=> x.Name))
                                 {
                                     <div class="col-md-3">

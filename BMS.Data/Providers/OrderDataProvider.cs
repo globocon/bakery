@@ -3,6 +3,7 @@ using BMS.Data.Services;
 using AutoMapper;
 using BMS.Data.Helpers;
 using Microsoft.AspNetCore.Http;
+using BMS.Data.Entity;
 
 namespace BMS.Data.Providers
 {
@@ -137,6 +138,7 @@ namespace BMS.Data.Providers
                     float ProductOrderQuantity;
                     string ProductUom;
                     int ProductSortOrder = 0;
+                    int CategorySortOrder = 0;
                     DateTime? OrderDeliveryDateTime;
 
 
@@ -146,6 +148,7 @@ namespace BMS.Data.Providers
                         CustomerName = Customers.FirstOrDefault(c => c.CustomerId == order.CustomerId)?.Name ?? "";
                         CategoryId = item.Product.CategoryId;
                         CategoryName = Categories.FirstOrDefault(c => c.Id == item.Product.CategoryId)?.Name ?? "";
+                        CategorySortOrder = Categories.FirstOrDefault(c => c.Id == item.Product.CategoryId)?.Sort_Order ?? 0;
                         SubCategoryId = item.Product.SubCategoryId;
                         SubCategoryName = SubCategories.FirstOrDefault(sc => sc.Id == item.Product.SubCategoryId)?.Name ?? CategoryName;
 
@@ -176,6 +179,7 @@ namespace BMS.Data.Providers
                                 orderConfirmData.OrderDate = order.OrderDate;
                                 orderConfirmData.CategoryId = CategoryId;
                                 orderConfirmData.CategoryName = CategoryName;
+                                orderConfirmData.CategorySortOrder = CategorySortOrder;
                                 orderConfirmData.SubCategoryId = SubCategoryId;
                                 orderConfirmData.SubCategoryName = SubCategoryName;
                                 orderConfirmData.TeamId = TeamId;

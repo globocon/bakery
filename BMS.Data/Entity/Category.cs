@@ -1,8 +1,7 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace BMS.Data.Models
+namespace BMS.Data.Entity
 {
     public class Category
     {
@@ -14,6 +13,7 @@ namespace BMS.Data.Models
         public string CreatedById { get; set; }
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
         public bool IsDeleted { get; set; } = false;
+        public int Sort_Order { get; set; } = 0;
 
         public PreparationTeam PreparationTeam { get; set; }
         public ICollection<Product> Products { get; set; }

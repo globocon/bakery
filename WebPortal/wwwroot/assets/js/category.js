@@ -24,6 +24,7 @@ $(function () {
             { data: 'preparationTeamId', visible: false },
             { data: 'name', width: '50%', title: "Category Name" },
             { data: 'preparationTeam.teamName', width: '30%', title: "Preparation Team" },
+            { data: 'sort_Order', width: '10%', className: "text-center", title: "Sort Order" },
             { data: 'id' } // Placeholder for actions, real config below
         ],
         columnDefs: [
@@ -116,6 +117,7 @@ var editCategory = function (t) {
         $('#select_modal_editcategory_preparationteam').val(row.preparationTeamId).trigger('change'); // Or row.categoryId based on your data
         $('#CategoryAddEditModal_PreparationTeamId').val(row.preparationTeamId);
         $('#CategoryAddEditModal_Name').val(row.name);
+        $('#CategoryAddEditModal_Sort_Order').val(row.sort_Order);
         $('#CategoryAddEditModal_Operation').val('EDIT');
         $('#EditCategoryModal').modal('show');             
                
@@ -130,6 +132,7 @@ var addCategory = function () {
     $('#CategoryAddEditModal_PreparationTeamId').val('');
     $('#select_modal_editcategory_preparationteam').val(null).trigger('change');
     $('#CategoryAddEditModal_Name').val('');
+    $('#CategoryAddEditModal_Sort_Order').val('0');
     $('#CategoryAddEditModal_Operation').val('ADD');
     $('#EditCategoryModal').modal('show');
 };

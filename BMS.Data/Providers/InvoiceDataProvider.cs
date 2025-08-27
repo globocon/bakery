@@ -23,7 +23,7 @@ namespace BMS.Data.Providers
 
         public async Task<InvoiceResultModel?> GenerateInvoiceAsync(int customerId, DateTime invoiceDate)
         {
-            var customer = await _dbService.GetCustomersById(customerId);
+            var customer = await _dbService.GetCustomerById(customerId);
             if (customer == null) return null;
 
             // Get all orders for this customer for the given date (customize as needed)

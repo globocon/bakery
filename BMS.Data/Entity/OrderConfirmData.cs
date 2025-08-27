@@ -1,7 +1,6 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
-namespace BMS.Data.Models
+namespace BMS.Data.Entity
 {
     public class OrderConfirmData
     {
@@ -36,6 +35,7 @@ namespace BMS.Data.Models
         public DateTime CreatedOn { get; set; } = DateTime.UtcNow;
         public string ProductUom { get; set; }
         public int ProductSortOrder { get; set; } = 0;
+        public int CategorySortOrder { get; set; } = 0;
 
     }
 }

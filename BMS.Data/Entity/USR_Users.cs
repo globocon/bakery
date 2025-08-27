@@ -1,8 +1,7 @@
-﻿
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 
 
-namespace BMS.Data.Models
+namespace BMS.Data.Entity
 {
     public class USR_Users
     {
